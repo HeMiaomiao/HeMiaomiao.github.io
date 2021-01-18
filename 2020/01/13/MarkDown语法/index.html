@@ -290,41 +290,76 @@
         
         <div class="entry-content">
           <h2 id="1-写代码的格式："><a href="#1-写代码的格式：" class="headerlink" title="1.写代码的格式："></a>1.写代码的格式：</h2><figure class="highlight arcade"><table><tr><td class="code"><pre><code class="hljs arcade"><span class="hljs-number">3</span>个<span class="hljs-string">`+一个空格+语言类型 </span><br><span class="hljs-string"> 代码内容</span><br><span class="hljs-string">3个`</span><br></code></pre></td></tr></table></figure>
+
 <p>效果如下：</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">hello world<br></code></pre></td></tr></table></figure>
 <h2 id="2-标题"><a href="#2-标题" class="headerlink" title="2.标题"></a>2.标题</h2><figure class="highlight clean"><table><tr><td class="code"><pre><code class="hljs clean"># 一级标题<br>## 二级标题<br>### 三级标题<br>#### 四级标题<br>##### 五级标题<br>###### 六级标题<br></code></pre></td></tr></table></figure>
+
 <p>效果如下：</p>
 <h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><h2 id="3-字体"><a href="#3-字体" class="headerlink" title="3.字体"></a>3.字体</h2><figure class="highlight asciidoc"><table><tr><td class="code"><pre><code class="hljs asciidoc"><span class="hljs-strong">**文字加粗**</span><br><span class="hljs-strong">*文字倾斜*</span><br><span class="hljs-strong">***文字倾斜加粗**</span>*<br>~~文字加删除线~~<br><span class="hljs-code">`字体粉红色标出`</span><br></code></pre></td></tr></table></figure>
-<p>效果如下：<br><strong>文字加粗</strong><br><em>文字倾斜</em><br><strong><em>文字倾斜加粗</em></strong><br><del>文字加删除线</del><br><code>字体粉红色标出</code></p>
+
+<p>效果如下：</p>
+<p><strong>文字加粗</strong><br><em>文字倾斜</em><br><strong><em>文字倾斜加粗</em></strong><br><del>文字加删除线</del><br><code>字体粉红色标出</code></p>
 <h2 id="4-分割线"><a href="#4-分割线" class="headerlink" title="4.分割线"></a>4.分割线</h2><figure class="highlight asciidoc"><table><tr><td class="code"><pre><code class="hljs asciidoc"><span class="hljs-strong">***</span><br></code></pre></td></tr></table></figure>
+
 <p>效果如下：</p>
 <hr>
 <h2 id="5-给文字加链接"><a href="#5-给文字加链接" class="headerlink" title="5.给文字加链接"></a>5.给文字加链接</h2><figure class="highlight clojure"><table><tr><td class="code"><pre><code class="hljs clojure">[文字内容](链接地址)<br></code></pre></td></tr></table></figure>
+
 <p>效果如下：<br><a href="https://hemiaomiao.github.io/">我的博客</a></p>
 <h2 id="6-插入图片"><a href="#6-插入图片" class="headerlink" title="6.插入图片"></a>6.插入图片</h2><figure class="highlight less"><table><tr><td class="code"><pre><code class="hljs less">（<span class="hljs-selector-tag">1</span>）图片下面有文字描述<br>!<span class="hljs-selector-attr">[图片下面的文字描述（可以不写）]</span>(图片的链接地址)<br>（<span class="hljs-selector-tag">2</span>）图片下面没有文字描述<br>!<span class="hljs-selector-attr">[]</span>(图片的链接地址)<br></code></pre></td></tr></table></figure>
-<p>效果如下：<br>（1）<br>![夏目]<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg">https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg</a><br>（2）<br>![]<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg">https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg</a></p>
+
+<p>效果如下：<br>（1）<br><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg" alt="夏目"><br>（2）<br><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg"></p>
 <h2 id="7-列表"><a href="#7-列表" class="headerlink" title="7.列表"></a>7.列表</h2><p>（1）有序列表</p>
 <figure class="highlight asciidoc"><table><tr><td class="code"><pre><code class="hljs asciidoc"><span class="hljs-bullet">* </span>列表内容<br></code></pre></td></tr></table></figure>
+
 <p>效果如下：</p>
 <ul>
-<li>列表内容<br>（2）无序列表<figure class="highlight markdown"><table><tr><td class="code"><pre><code class="hljs markdown"><span class="hljs-bullet">1.</span> 列表内容<br></code></pre></td></tr></table></figure>
-效果如下：</li>
+<li>列表内容</li>
 </ul>
+<p>（2）无序列表</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><code class="hljs markdown"><span class="hljs-bullet">1.</span> 列表内容<br></code></pre></td></tr></table></figure>
+
+<p>效果如下：</p>
 <ol>
-<li>列表内容<br>（3）列表嵌套<figure class="highlight markdown"><table><tr><td class="code"><pre><code class="hljs markdown"><span class="hljs-bullet">*</span> 一级无序列表内容<br>   <br><span class="hljs-bullet">1.</span> 二级有序列表内容<br><span class="hljs-bullet">2.</span> 二级有序列表内容<br><span class="hljs-bullet">3.</span> 二级有序列表内容<br></code></pre></td></tr></table></figure>
-注意：上一级和下一级之间空一行<br>效果如下：</li>
+<li>列表内容</li>
 </ol>
+<p>（3）列表嵌套</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><code class="hljs markdown"><span class="hljs-bullet">*</span> 一级无序列表内容<br>   <br><span class="hljs-bullet">1.</span> 二级有序列表内容<br><span class="hljs-bullet">2.</span> 二级有序列表内容<br><span class="hljs-bullet">3.</span> 二级有序列表内容<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：上一级和下一级之间空一行</p>
+</blockquote>
+<p>效果如下：</p>
 <ul>
 <li>一级无序列表内容</li>
 </ul>
 <ol>
 <li>二级有序列表内容</li>
 <li>二级有序列表内容</li>
-<li>二级有序列表内容<h2 id="8-缩进两字符"><a href="#8-缩进两字符" class="headerlink" title="8.缩进两字符"></a>8.缩进两字符</h2><figure class="highlight 1c"><table><tr><td class="code"><pre><code class="hljs 1c"><span class="hljs-meta">&amp;emsp;文字内容</span><br></code></pre></td></tr></table></figure>
-效果如下：<br>&emsp;例子<h2 id="9-表格"><a href="#9-表格" class="headerlink" title="9.表格"></a>9.表格</h2><figure class="highlight asciidoc"><table><tr><td class="code"><pre><code class="hljs asciidoc">表头|表头|表头<br><span class="hljs-meta">:-|:-:|-:</span><br><span class="hljs-meta">内容|内容|内容</span><br><span class="hljs-meta">内容|内容|内容</span><br></code></pre></td></tr></table></figure>
-效果如下：<br>姓名|技能|排行</li>
+<li>二级有序列表内容<h2 id="8-换行时缩进两字符"><a href="#8-换行时缩进两字符" class="headerlink" title="8.换行时缩进两字符"></a>8.换行时缩进两字符</h2><figure class="highlight 1c"><table><tr><td class="code"><pre><code class="hljs 1c"><span class="hljs-meta">&amp;emsp;文字内容</span><br></code></pre></td></tr></table></figure>
+效果如下：<br>&emsp;换行时缩进两字符<h2 id="9-表格"><a href="#9-表格" class="headerlink" title="9.表格"></a>9.表格</h2><figure class="highlight asciidoc"><table><tr><td class="code"><pre><code class="hljs asciidoc">表头|表头|表头<br><span class="hljs-meta">:-|:-:|-:</span><br><span class="hljs-meta">内容|内容|内容</span><br><span class="hljs-meta">内容|内容|内容</span><br></code></pre></td></tr></table></figure>
+效果如下：</li>
 </ol>
-<p>–|:–:|–:<br>刘备|哭|大哥<br>关羽|打|二</p>
+<table>
+<thead>
+<tr>
+<th align="left">姓名</th>
+<th align="center">技能</th>
+<th align="right">排行</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">刘备</td>
+<td align="center">哭</td>
+<td align="right">大哥</td>
+</tr>
+<tr>
+<td align="left">关羽</td>
+<td align="center">打</td>
+<td align="right">二</td>
+</tr>
+</tbody></table>
 <h2 id="10-文字内容引用"><a href="#10-文字内容引用" class="headerlink" title="10.文字内容引用"></a>10.文字内容引用</h2><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">&gt;</span><span class="bash">引用的内容</span><br></code></pre></td></tr></table></figure>
 <p>效果如下：</p>
 <blockquote>
