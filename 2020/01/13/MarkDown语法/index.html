@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Tag: hexo | Miaomiao&#39;s Blog</title>
+  <title itemprop="name">MarkDown语法 | Miaomiao&#39;s Blog</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -253,64 +253,164 @@
   </div>
 </header>
 
-      
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
-<div class="pattern-center ">
-  <div class="pattern-attachment-img">
-    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      MarkDown语法</h1>
+      <p class="entry-census">
+        <span>
+          <a href="https://hemiaomiao.github.io/">
+            <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="https://hemiaomiao.github.io/">Miaomiao</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2020-1-13<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
   </div>
-  <header class="pattern-header ">
-    <h1 class="cat-title">hexo</h1>
-  </header>
-</div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-      
-  <!-- 首页默认取最最新文章集 -->
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/01/13/Hexo-Theme-Sakura/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <h2 id="1-写代码的格式："><a href="#1-写代码的格式：" class="headerlink" title="1.写代码的格式："></a>1.写代码的格式：</h2><figure class="highlight arcade"><table><tr><td class="code"><pre><code class="hljs arcade"><span class="hljs-number">3</span>个<span class="hljs-string">`+一个空格+语言类型 </span><br><span class="hljs-string"> 代码内容</span><br><span class="hljs-string">3个`</span><br></code></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">hello world<br></code></pre></td></tr></table></figure>
+<h2 id="2-标题"><a href="#2-标题" class="headerlink" title="2.标题"></a>2.标题</h2><figure class="highlight clean"><table><tr><td class="code"><pre><code class="hljs clean"># 一级标题<br>## 二级标题<br>### 三级标题<br>#### 四级标题<br>##### 五级标题<br>###### 六级标题<br></code></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><h2 id="3-字体"><a href="#3-字体" class="headerlink" title="3.字体"></a>3.字体</h2><figure class="highlight asciidoc"><table><tr><td class="code"><pre><code class="hljs asciidoc"><span class="hljs-strong">**文字加粗**</span><br><span class="hljs-strong">*文字倾斜*</span><br><span class="hljs-strong">***文字倾斜加粗**</span>*<br>~~文字加删除线~~<br><span class="hljs-code">`字体粉红色标出`</span><br></code></pre></td></tr></table></figure>
+<p>效果如下：<br><strong>文字加粗</strong><br><em>文字倾斜</em><br><strong><em>文字倾斜加粗</em></strong><br><del>文字加删除线</del><br><code>字体粉红色标出</code></p>
+<h2 id="4-分割线"><a href="#4-分割线" class="headerlink" title="4.分割线"></a>4.分割线</h2><figure class="highlight asciidoc"><table><tr><td class="code"><pre><code class="hljs asciidoc"><span class="hljs-strong">***</span><br></code></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<hr>
+<h2 id="5-给文字加链接"><a href="#5-给文字加链接" class="headerlink" title="5.给文字加链接"></a>5.给文字加链接</h2><figure class="highlight clojure"><table><tr><td class="code"><pre><code class="hljs clojure">[文字内容](链接地址)<br></code></pre></td></tr></table></figure>
+<p>效果如下：<br><a href="https://hemiaomiao.github.io/">我的博客</a></p>
+<h2 id="6-插入图片"><a href="#6-插入图片" class="headerlink" title="6.插入图片"></a>6.插入图片</h2><figure class="highlight less"><table><tr><td class="code"><pre><code class="hljs less">（<span class="hljs-selector-tag">1</span>）图片下面有文字描述<br>!<span class="hljs-selector-attr">[图片下面的文字描述（可以不写）]</span>(图片的链接地址)<br>（<span class="hljs-selector-tag">2</span>）图片下面没有文字描述<br>!<span class="hljs-selector-attr">[]</span>(图片的链接地址)<br></code></pre></td></tr></table></figure>
+<p>效果如下：<br>（1）<br>![夏目]<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg">https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg</a><br>（2）<br>![]<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg">https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg</a></p>
+<h2 id="7-列表"><a href="#7-列表" class="headerlink" title="7.列表"></a>7.列表</h2><p>（1）有序列表</p>
+<figure class="highlight asciidoc"><table><tr><td class="code"><pre><code class="hljs asciidoc"><span class="hljs-bullet">* </span>列表内容<br></code></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<ul>
+<li>列表内容<br>（2）无序列表<figure class="highlight markdown"><table><tr><td class="code"><pre><code class="hljs markdown"><span class="hljs-bullet">1.</span> 列表内容<br></code></pre></td></tr></table></figure>
+效果如下：</li>
+</ul>
+<ol>
+<li>列表内容<br>（3）列表嵌套<figure class="highlight markdown"><table><tr><td class="code"><pre><code class="hljs markdown"><span class="hljs-bullet">*</span> 一级无序列表内容<br>   <br><span class="hljs-bullet">1.</span> 二级有序列表内容<br><span class="hljs-bullet">2.</span> 二级有序列表内容<br><span class="hljs-bullet">3.</span> 二级有序列表内容<br></code></pre></td></tr></table></figure>
+注意：上一级和下一级之间空一行<br>效果如下：</li>
+</ol>
+<ul>
+<li>一级无序列表内容</li>
+</ul>
+<ol>
+<li>二级有序列表内容</li>
+<li>二级有序列表内容</li>
+<li>二级有序列表内容<h2 id="8-缩进两字符"><a href="#8-缩进两字符" class="headerlink" title="8.缩进两字符"></a>8.缩进两字符</h2><figure class="highlight 1c"><table><tr><td class="code"><pre><code class="hljs 1c"><span class="hljs-meta">&amp;emsp;文字内容</span><br></code></pre></td></tr></table></figure>
+效果如下：<br>&emsp;例子<h2 id="9-表格"><a href="#9-表格" class="headerlink" title="9.表格"></a>9.表格</h2><figure class="highlight asciidoc"><table><tr><td class="code"><pre><code class="hljs asciidoc">表头|表头|表头<br><span class="hljs-meta">:-|:-:|-:</span><br><span class="hljs-meta">内容|内容|内容</span><br><span class="hljs-meta">内容|内容|内容</span><br></code></pre></td></tr></table></figure>
+效果如下：<br>姓名|技能|排行</li>
+</ol>
+<p>–|:–:|–:<br>刘备|哭|大哥<br>关羽|打|二</p>
+<h2 id="10-文字内容引用"><a href="#10-文字内容引用" class="headerlink" title="10.文字内容引用"></a>10.文字内容引用</h2><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">&gt;</span><span class="bash">引用的内容</span><br></code></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<blockquote>
+<p>奥利给</p>
+</blockquote>
+
         </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/01/13/Hexo-Theme-Sakura/">
-    Hexo-Theme-Sakura</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-1-13</div>
-    <p>
-    hexo-sakura主题使用教程</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/01/13/Hexo-Theme-Sakura/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+        
+          
+            <div class="post-nepre full next">
+          
+            <a href="/2020/01/13/%E7%94%9F%E6%B4%BB-test/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                生活类例子</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "K6UwYN6dMijp5h01cRysnTrG-gzGzoHsz",
+        appKey: "NI1nkxc4Yhim5rlut3lno7p5",
+        path: window.location.pathname,
+        placeholder: "欢迎评论哦 ..."
+      })
+  }
+</script>
 
-
-      <div class="clearer">
-      </div>
-    </main>
-    <!--  -->
-    
-  </div>
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+          <a href="https://hemiaomiao.github.io/" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg" itemprop="image" alt="Miaomiao" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="https://hemiaomiao.github.io/" itemprop="url" rel="author">Miaomiao</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>努力呀</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
+
+
+
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>
