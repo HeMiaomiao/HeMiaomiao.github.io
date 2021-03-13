@@ -300,14 +300,19 @@
 
 <p>效果如下：</p>
 <p><strong>文字加粗</strong><br><em>文字倾斜</em><br><strong><em>文字倾斜加粗</em></strong><br><del>文字加删除线</del><br><code>字体粉红色标出</code></p>
-<h2 id="4-给文字加链接"><a href="#4-给文字加链接" class="headerlink" title="4.给文字加链接"></a>4.给文字加链接</h2><figure class="highlight clojure"><table><tr><td class="code"><pre><code class="hljs clojure">[文字内容](链接地址)<br></code></pre></td></tr></table></figure>
+<h2 id="4-设置字体的大小、颜色、字体风格"><a href="#4-设置字体的大小、颜色、字体风格" class="headerlink" title="4.设置字体的大小、颜色、字体风格"></a>4.设置字体的大小、颜色、字体风格</h2><figure class="highlight routeros"><table><tr><td class="code"><pre><code class="hljs routeros">&lt;font <span class="hljs-attribute">color</span>=red <span class="hljs-attribute">size</span>=4 <span class="hljs-attribute">face</span>=<span class="hljs-string">&quot;华文楷体&quot;</span>&gt;hello&lt;/font&gt;<br></code></pre></td></tr></table></figure>
+
+<p>效果如下：</p>
+<p><font color=red size=4 face="华文楷体">hello</font></p>
+<p><strong>注：</strong> <a target="_blank" rel="noopener" href="https://www.cnblogs.com/stars-one/p/9502576.html">字体颜色的种类</a></p>
+<h2 id="5-给文字加链接"><a href="#5-给文字加链接" class="headerlink" title="5.给文字加链接"></a>5.给文字加链接</h2><figure class="highlight clojure"><table><tr><td class="code"><pre><code class="hljs clojure">[文字内容](链接地址)<br></code></pre></td></tr></table></figure>
 
 <p>效果如下：<br><a href="https://hemiaomiao.github.io/">我的博客</a></p>
-<h2 id="5-插入图片"><a href="#5-插入图片" class="headerlink" title="5.插入图片"></a>5.插入图片</h2><figure class="highlight less"><table><tr><td class="code"><pre><code class="hljs less">!<span class="hljs-selector-attr">[]</span>(图片的链接地址)<br></code></pre></td></tr></table></figure>
+<h2 id="6-插入图片"><a href="#6-插入图片" class="headerlink" title="6.插入图片"></a>6.插入图片</h2><figure class="highlight less"><table><tr><td class="code"><pre><code class="hljs less">!<span class="hljs-selector-attr">[]</span>(图片的链接地址)<br></code></pre></td></tr></table></figure>
 
 <p>效果如下：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg"></p>
-<h2 id="6-列表"><a href="#6-列表" class="headerlink" title="6.列表"></a>6.列表</h2><p>（1）无序列表</p>
+<h2 id="7-列表"><a href="#7-列表" class="headerlink" title="7.列表"></a>7.列表</h2><p>（1）无序列表</p>
 <figure class="highlight asciidoc"><table><tr><td class="code"><pre><code class="hljs asciidoc"><span class="hljs-bullet">* </span>列表内容<br></code></pre></td></tr></table></figure>
 
 <p>效果如下：</p>
@@ -321,9 +326,9 @@
 <ol>
 <li>列表内容</li>
 </ol>
-<h2 id="7-换行时缩进两字符"><a href="#7-换行时缩进两字符" class="headerlink" title="7.换行时缩进两字符"></a>7.换行时缩进两字符</h2><figure class="highlight 1c"><table><tr><td class="code"><pre><code class="hljs 1c"><span class="hljs-meta">&amp;emsp;文字内容</span><br></code></pre></td></tr></table></figure>
+<h2 id="8-换行时缩进两字符"><a href="#8-换行时缩进两字符" class="headerlink" title="8.换行时缩进两字符"></a>8.换行时缩进两字符</h2><figure class="highlight 1c"><table><tr><td class="code"><pre><code class="hljs 1c"><span class="hljs-meta">&amp;emsp;文字内容</span><br></code></pre></td></tr></table></figure>
 <p>效果如下：<br>&emsp;换行时缩进两字符</p>
-<h2 id="8-表格"><a href="#8-表格" class="headerlink" title="8.表格"></a>8.表格</h2><figure class="highlight asciidoc"><table><tr><td class="code"><pre><code class="hljs asciidoc">表头|表头|表头<br><span class="hljs-meta">:-|:-:|-:</span><br><span class="hljs-meta">内容|内容|内容</span><br><span class="hljs-meta">内容|内容|内容</span><br></code></pre></td></tr></table></figure>
+<h2 id="9-表格"><a href="#9-表格" class="headerlink" title="9.表格"></a>9.表格</h2><figure class="highlight asciidoc"><table><tr><td class="code"><pre><code class="hljs asciidoc">表头|表头|表头<br><span class="hljs-meta">:-|:-:|-:</span><br><span class="hljs-meta">内容|内容|内容</span><br><span class="hljs-meta">内容|内容|内容</span><br></code></pre></td></tr></table></figure>
 <p>效果如下：</p>
 <table>
 <thead>
@@ -344,7 +349,7 @@
 <td align="right">二</td>
 </tr>
 </tbody></table>
-<h2 id="9-文字内容引用"><a href="#9-文字内容引用" class="headerlink" title="9.文字内容引用"></a>9.文字内容引用</h2><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">&gt;</span><span class="bash">引用的内容</span><br></code></pre></td></tr></table></figure>
+<h2 id="10-文字内容引用"><a href="#10-文字内容引用" class="headerlink" title="10.文字内容引用"></a>10.文字内容引用</h2><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">&gt;</span><span class="bash">引用的内容</span><br></code></pre></td></tr></table></figure>
 <p>效果如下：</p>
 <blockquote>
 <p>奥利给</p>
