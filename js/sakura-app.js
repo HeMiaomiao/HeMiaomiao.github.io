@@ -826,7 +826,7 @@ function add_copyright () {
   function setClipboardText (event) {
     event.preventDefault()
     if (event.clipboardData) {
-      addComment.createButterbar('复制成功！<br>Copied to clipboard successfully!', 1000)
+      addComment.createButterbar('复制成功！', 1000)
     } else if (window.clipboardData) {
       return window.clipboardData.setData('text', textData)
     }
