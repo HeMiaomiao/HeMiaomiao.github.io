@@ -290,46 +290,59 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h2 id="1-写代码的格式："><a href="#1-写代码的格式：" class="headerlink" title="1.写代码的格式："></a>1.写代码的格式：</h2><figure class="highlight arcade"><table><tbody><tr><td class="code"><pre class=" language-hljs arcade"><span class="hljs-number">3</span>个<span class="hljs-string">`+一个空格+语言类型 </span><br><span class="hljs-string"> 代码内容</span><br><span class="hljs-string"><code class="language-hljs arcade"><span class="hljs-number">3</span>个<span class="hljs-string">`+一个空格+语言类型 </span><br><span class="hljs-string"> 代码内容</span><br><span class="hljs-string">3个`</span><br></code></pre></td></tr></tbody></table></figure>
-
+          <h2 id="1-写代码的格式："><a href="#1-写代码的格式：" class="headerlink" title="1.写代码的格式："></a>1.写代码的格式：</h2><pre><code>3个`+一个空格+语言类型 
+ 代码内容
+3个`
+</code></pre>
 <p>效果如下：</p>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre class=" language-hljs C"><code class="language-hljs C">hello world<br></code></pre></td></tr></tbody></table></figure>
-<h2 id="2-标题"><a href="#2-标题" class="headerlink" title="2.标题"></a>2.标题</h2><figure class="highlight clean"><table><tbody><tr><td class="code"><pre class=" language-hljs clean"><code class="language-hljs clean">## 二级标题<br>### 三级标题<br></code></pre></td></tr></tbody></table></figure>
-
+<pre class=" language-C"><code class="language-C">hello world
+</code></pre>
+<h2 id="2-标题"><a href="#2-标题" class="headerlink" title="2.标题"></a>2.标题</h2><pre><code>## 二级标题
+### 三级标题
+</code></pre>
 <p>效果如下：</p>
-<h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h2 id="3-字体"><a href="#3-字体" class="headerlink" title="3.字体"></a>3.字体</h2><figure class="highlight asciidoc"><table><tbody><tr><td class="code"><pre class=" language-hljs asciidoc"><span class="hljs-strong">**文字加粗**</span><br><span class="hljs-strong">*文字倾斜*</span><br><span class="hljs-strong">***文字倾斜加粗**</span>*<br>~~文字加删除线~~<br><span class="hljs-code"><code class="language-hljs asciidoc"><span class="hljs-strong">**文字加粗**</span><br><span class="hljs-strong">*文字倾斜*</span><br><span class="hljs-strong">***文字倾斜加粗**</span>*<br>~~文字加删除线~~<br><span class="hljs-code">`字体粉红色标出`</span><br></code></pre></td></tr></tbody></table></figure>
-
+<h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h2 id="3-字体"><a href="#3-字体" class="headerlink" title="3.字体"></a>3.字体</h2><pre><code>**文字加粗**
+*文字倾斜*
+***文字倾斜加粗***
+~~文字加删除线~~
+`字体粉红色标出`
+</code></pre>
 <p>效果如下：</p>
 <p><strong>文字加粗</strong><br><em>文字倾斜</em><br><strong><em>文字倾斜加粗</em></strong><br><del>文字加删除线</del><br><code>字体粉红色标出</code></p>
-<h2 id="4-设置字体的大小、颜色、字体风格"><a href="#4-设置字体的大小、颜色、字体风格" class="headerlink" title="4.设置字体的大小、颜色、字体风格"></a>4.设置字体的大小、颜色、字体风格</h2><figure class="highlight routeros"><table><tbody><tr><td class="code"><pre class=" language-hljs routeros">&lt;font <span class="hljs-attribute">color</span>=red <span class="hljs-attribute">size</span>=4 <span class="hljs-attribute">face</span>=<span class="hljs-string"><code class="language-hljs routeros">&lt;font <span class="hljs-attribute">color</span>=red <span class="hljs-attribute">size</span>=4 <span class="hljs-attribute">face</span>=<span class="hljs-string">"楷体"</span>>hello</font><br></code></pre></td></tr></tbody></table></figure>
-
+<h2 id="4-设置字体的大小、颜色、字体风格"><a href="#4-设置字体的大小、颜色、字体风格" class="headerlink" title="4.设置字体的大小、颜色、字体风格"></a>4.设置字体的大小、颜色、字体风格</h2><pre><code>&lt;font color=red size=4 face="楷体"&gt;hello&lt;/font&gt;
+</code></pre>
 <p>效果如下：</p>
 <p><font color="red" size="4" face="华文楷体">hello</font></p>
 <p><strong>注：</strong> <a target="_blank" rel="noopener" href="https://www.cnblogs.com/stars-one/p/9502576.html">字体颜色的种类</a></p>
-<h2 id="5-给文字加链接"><a href="#5-给文字加链接" class="headerlink" title="5.给文字加链接"></a>5.给文字加链接</h2><figure class="highlight clojure"><table><tbody><tr><td class="code"><pre class=" language-hljs clojure"><code class="language-hljs clojure">[文字内容](链接地址)<br></code></pre></td></tr></tbody></table></figure>
-
+<h2 id="5-给文字加链接"><a href="#5-给文字加链接" class="headerlink" title="5.给文字加链接"></a>5.给文字加链接</h2><pre><code>[文字内容](链接地址)
+</code></pre>
 <p>效果如下：<br><a href="https://hemiaomiao.github.io/">我的博客</a></p>
-<h2 id="6-插入图片"><a href="#6-插入图片" class="headerlink" title="6.插入图片"></a>6.插入图片</h2><figure class="highlight less"><table><tbody><tr><td class="code"><pre class=" language-hljs less">!<span class="hljs-selector-attr"><code class="language-hljs less">!<span class="hljs-selector-attr">[]</span>(图片的链接地址)<br></code></pre></td></tr></tbody></table></figure>
-
+<h2 id="6-插入图片"><a href="#6-插入图片" class="headerlink" title="6.插入图片"></a>6.插入图片</h2><pre><code>![](图片的链接地址)
+</code></pre>
 <p>效果如下：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg"></p>
 <h2 id="7-列表"><a href="#7-列表" class="headerlink" title="7.列表"></a>7.列表</h2><p>（1）无序列表</p>
-<figure class="highlight asciidoc"><table><tbody><tr><td class="code"><pre class=" language-hljs asciidoc"><span class="hljs-bullet"><code class="language-hljs asciidoc"><span class="hljs-bullet">* </span>列表内容<br></code></pre></td></tr></tbody></table></figure>
-
+<pre><code>* 列表内容
+</code></pre>
 <p>效果如下：</p>
 <ul>
 <li>列表内容</li>
 </ul>
 <p>（2）有序列表</p>
-<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre class=" language-hljs markdown"><span class="hljs-bullet"><code class="language-hljs markdown"><span class="hljs-bullet">1.</span> 列表内容<br></code></pre></td></tr></tbody></table></figure>
-
+<pre><code>1. 列表内容
+</code></pre>
 <p>效果如下：</p>
 <ol>
 <li>列表内容</li>
 </ol>
-<h2 id="8-换行时缩进两字符"><a href="#8-换行时缩进两字符" class="headerlink" title="8.换行时缩进两字符"></a>8.换行时缩进两字符</h2><figure class="highlight 1c"><table><tbody><tr><td class="code"><pre class=" language-hljs 1c"><span class="hljs-meta"><code class="language-hljs 1c"><span class="hljs-meta">&emsp;文字内容</span><br></code></pre></td></tr></tbody></table></figure>
+<h2 id="8-换行时缩进两字符"><a href="#8-换行时缩进两字符" class="headerlink" title="8.换行时缩进两字符"></a>8.换行时缩进两字符</h2><pre><code>&amp;emsp;文字内容
+</code></pre>
 <p>效果如下：<br> 换行时缩进两字符</p>
-<h2 id="9-表格"><a href="#9-表格" class="headerlink" title="9.表格"></a>9.表格</h2><figure class="highlight asciidoc"><table><tbody><tr><td class="code"><pre class=" language-hljs asciidoc">表头|表头|表头<br><span class="hljs-meta">:-|:-:|-:</span><br><span class="hljs-meta">内容|内容|内容</span><br><span class="hljs-meta"><code class="language-hljs asciidoc">表头|表头|表头<br><span class="hljs-meta">:-|:-:|-:</span><br><span class="hljs-meta">内容|内容|内容</span><br><span class="hljs-meta">内容|内容|内容</span><br></code></pre></td></tr></tbody></table></figure>
+<h2 id="9-表格"><a href="#9-表格" class="headerlink" title="9.表格"></a>9.表格</h2><pre><code>表头|表头|表头
+:-|:-:|-:
+内容|内容|内容
+内容|内容|内容
+</code></pre>
 <p>效果如下：</p>
 <table>
 <thead>
@@ -350,7 +363,8 @@
 <td align="right">二</td>
 </tr>
 </tbody></table>
-<h2 id="10-文字内容引用"><a href="#10-文字内容引用" class="headerlink" title="10.文字内容引用"></a>10.文字内容引用</h2><figure class="highlight shell"><table><tbody><tr><td class="code"><pre class=" language-hljs shell"><span class="hljs-meta">&gt;</span><span class="bash"><code class="language-hljs shell"><span class="hljs-meta">&gt;</span><span class="bash">引用的内容</span><br></code></pre></td></tr></tbody></table></figure>
+<h2 id="10-文字内容引用"><a href="#10-文字内容引用" class="headerlink" title="10.文字内容引用"></a>10.文字内容引用</h2><pre><code>&gt;引用的内容
+</code></pre>
 <p>效果如下：</p>
 <blockquote>
 <p>奥利给</p>
@@ -412,7 +426,7 @@
         appId: "K6UwYN6dMijp5h01cRysnTrG-gzGzoHsz",
         appKey: "NI1nkxc4Yhim5rlut3lno7p5",
         path: window.location.pathname,
-        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+        placeholder: "欢迎评论哦 ..."
       })
   }
 </script>
@@ -480,11 +494,11 @@
         <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/wordpress-rotating-ball-o.svg">
         <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/disqus-preloader.svg">
       </div>
-      <p style="color: #666666;">&copy 2018</p>
+      <p style="color: #666666;">&copy 2020年</p>
     </div>
     <div class="footer-device">
     <p style="font-family: 'Ubuntu', sans-serif;">
-        <span style="color: #b9b9b9;">Theme <a href="https://github.com/honjun/hexo-theme-sakura" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Sakura</a> <i class="iconfont icon-sakura rotating" style="color: #ffc0cb;display:inline-block"></i> by <a href="https://2heng.xin/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Mashiro</a>&<a href="https://www.hojun.cn/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Hojun</a>, Powered by Hexo, Hosted by Coding Pages</a>
+	    <span style="color: #b9b9b9;">Miaomiao's Blog
         </span>
       </p>
     </div>
