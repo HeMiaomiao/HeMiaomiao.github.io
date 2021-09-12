@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Category: 技术 | Miaomiao&#39;s Blog</title>
+  <title itemprop="name">jsDelivr+PicGo+github搭建个人图床 | Miaomiao&#39;s Blog</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -255,567 +255,143 @@
   </div>
 </header>
 
-      
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
-<div class="pattern-center ">
-  <div class="pattern-attachment-img">
-    <img data-src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/comment.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/comment.jpg">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      jsDelivr+PicGo+github搭建个人图床</h1>
+      <p class="entry-census">
+        <span>
+          <a href="https://hemiaomiao.github.io/">
+            <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/startdash/wangshiwu.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="https://hemiaomiao.github.io/">Miaomiao</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2021-9-12<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
   </div>
-  <header class="pattern-header ">
-    <h1 class="cat-title">技术</h1>
-    <span class="cat-des">
-      <p>Geek – Only for Love</p>
-    </span>
-  </header>
-</div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h4 id="1-CDN加速"><a href="#1-CDN加速" class="headerlink" title="1.CDN加速"></a>1.CDN加速</h4><p>CDN的全称是Content Delivery Network，即内容分发网络。CDN是构建在网络之上的内容分发网络，依靠部署在各地的边缘服务器，通过中心平台的负载均衡、内容分发、调度等功能模块，使用户就近获取所需内容，降低网络拥塞，提高用户访问响应速度和命中率。CDN的关键技术主要有内容存储和分发技术。</p>
+<p>放在github的资源在国内加载速度比较慢，因此需要使用CDN加速来优化网站打开速度。</p>
+<h4 id="2-jsDelivr"><a href="#2-jsDelivr" class="headerlink" title="2.jsDelivr"></a>2.jsDelivr</h4><p>jsDelivr是一个免费开源的CDN 解决方案，最大特点是支持github加速。jsDelivr和github结合起来就有了免费、快速的CDN,非常适合博客网站使用</p>
+<h2 id="步骤1：-在github新建一个仓库，用来存放博客图片"><a href="#步骤1：-在github新建一个仓库，用来存放博客图片" class="headerlink" title="步骤1： 在github新建一个仓库，用来存放博客图片"></a>步骤1： 在github新建一个仓库，用来存放博客图片</h2><p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109122022794.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109122022836.png"></p>
+<h2 id="步骤2：-创建token令牌，并且复制保存该令牌"><a href="#步骤2：-创建token令牌，并且复制保存该令牌" class="headerlink" title="步骤2： 创建token令牌，并且复制保存该令牌"></a>步骤2： 创建token令牌，并且复制保存该令牌</h2><p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109122022943.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109122022926.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109122022972.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109122022624.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109122022260.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109122022975.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109122022726.png"></p>
+<h4 id="注意：-token令牌只出现一次，所以要保存一下"><a href="#注意：-token令牌只出现一次，所以要保存一下" class="headerlink" title="注意： token令牌只出现一次，所以要保存一下"></a>注意： token令牌只出现一次，所以要保存一下</h4><h2 id="步骤3：下载PicGo"><a href="#步骤3：下载PicGo" class="headerlink" title="步骤3：下载PicGo"></a>步骤3：下载PicGo</h2><p>下载地址：<a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/picgo/releases">PicGo官网</a></p>
+<h4 id="注意：-exe为Windows系统版，-dmg为苹果系统版本"><a href="#注意：-exe为Windows系统版，-dmg为苹果系统版本" class="headerlink" title="注意： .exe为Windows系统版，.dmg为苹果系统版本"></a>注意： .exe为Windows系统版，.dmg为苹果系统版本</h4><p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109122022656.png"></p>
+<h2 id="步骤4：-配置PicGo"><a href="#步骤4：-配置PicGo" class="headerlink" title="步骤4： 配置PicGo"></a>步骤4： 配置PicGo</h2><p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109122057313.png"></p>
+<h4 id="注意：自定义域名的格式：-https-cdn-jsdelivr-net-gh-github用户名-仓库名"><a href="#注意：自定义域名的格式：-https-cdn-jsdelivr-net-gh-github用户名-仓库名" class="headerlink" title="注意：自定义域名的格式： https://cdn.jsdelivr.net/gh/github用户名/仓库名"></a>注意：自定义域名的格式： <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/github%E7%94%A8%E6%88%B7%E5%90%8D/%E4%BB%93%E5%BA%93%E5%90%8D">https://cdn.jsdelivr.net/gh/github用户名/仓库名</a></h4><h4 id="emsp-emsp-emsp-这样就使用了jsDeliver进行DNS加速"><a href="#emsp-emsp-emsp-这样就使用了jsDeliver进行DNS加速" class="headerlink" title="   这样就使用了jsDeliver进行DNS加速"></a>   这样就使用了jsDeliver进行DNS加速</h4><p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109122057696.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109122021126.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109122057859.png"></p>
+<h4 id="注意：-把“PicGo设置”中的“时间戳重命名”打开，这样防止上传和github图床里面同名的图片的时候上传失败，比如图床已经有了3-png，现在如果不选择时间戳重命名，再上传一个名字是3-png的图片就会上传失败"><a href="#注意：-把“PicGo设置”中的“时间戳重命名”打开，这样防止上传和github图床里面同名的图片的时候上传失败，比如图床已经有了3-png，现在如果不选择时间戳重命名，再上传一个名字是3-png的图片就会上传失败" class="headerlink" title="注意： 把“PicGo设置”中的“时间戳重命名”打开，这样防止上传和github图床里面同名的图片的时候上传失败，比如图床已经有了3.png，现在如果不选择时间戳重命名，再上传一个名字是3.png的图片就会上传失败"></a>注意： 把“PicGo设置”中的“时间戳重命名”打开，这样防止上传和github图床里面同名的图片的时候上传失败，比如图床已经有了3.png，现在如果不选择时间戳重命名，再上传一个名字是3.png的图片就会上传失败</h4><p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109122021753.png"></p>
+<p>通过PicGo上传图片成功之后，在github的仓库里面就会有该图片了</p>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+        
+          
+            <div class="post-nepre full next">
+          
+            <a href="/2021/09/12/hexo%E5%8F%91%E8%A1%A8%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/comment.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/comment.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                hexo发表博客的常用命令</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
       
-  <!-- 首页默认取最最新文章集 -->
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2021/09/12/jsDelivr+PicGo+github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%9B%BE%E5%BA%8A/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/comment.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2021/09/12/jsDelivr+PicGo+github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%9B%BE%E5%BA%8A/">
-    jsDelivr+PicGo+github搭建个人图床</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2021-9-12</div>
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2021/09/12/jsDelivr+PicGo+github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%9B%BE%E5%BA%8A/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2021/09/12/hexo%E5%8F%91%E8%A1%A8%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/comment.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2021/09/12/hexo%E5%8F%91%E8%A1%A8%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
-    hexo发表博客的常用命令</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2021-9-12</div>
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2021/09/12/hexo%E5%8F%91%E8%A1%A8%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2021/09/11/%E8%A7%A3%E5%86%B3cmd%E8%BE%93%E5%85%A5ping%E5%92%8Cipconfig%E6%8F%90%E7%A4%BA%E4%B8%8D%E6%98%AF%E5%86%85%E9%83%A8%E6%88%96%E5%A4%96%E9%83%A8%E5%91%BD%E4%BB%A4/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/comment.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2021/09/11/%E8%A7%A3%E5%86%B3cmd%E8%BE%93%E5%85%A5ping%E5%92%8Cipconfig%E6%8F%90%E7%A4%BA%E4%B8%8D%E6%98%AF%E5%86%85%E9%83%A8%E6%88%96%E5%A4%96%E9%83%A8%E5%91%BD%E4%BB%A4/">
-    解决cmd输入ping和ipconfig提示不是内部或外部命令</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2021-9-11</div>
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2021/09/11/%E8%A7%A3%E5%86%B3cmd%E8%BE%93%E5%85%A5ping%E5%92%8Cipconfig%E6%8F%90%E7%A4%BA%E4%B8%8D%E6%98%AF%E5%86%85%E9%83%A8%E6%88%96%E5%A4%96%E9%83%A8%E5%91%BD%E4%BB%A4/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2021/09/11/%E5%8A%A0%E9%80%9F%E8%AE%BF%E9%97%AEgithub%E7%9A%84%E6%96%B9%E6%B3%95/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/comment.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2021/09/11/%E5%8A%A0%E9%80%9F%E8%AE%BF%E9%97%AEgithub%E7%9A%84%E6%96%B9%E6%B3%95/">
-    加速访问github的方法</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2021-9-11</div>
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2021/09/11/%E5%8A%A0%E9%80%9F%E8%AE%BF%E9%97%AEgithub%E7%9A%84%E6%96%B9%E6%B3%95/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/03/14/%E7%A0%94%E7%A9%B6%E7%94%9F%E5%A4%8D%E8%AF%95%E7%9A%84%E8%8B%B1%E8%AF%AD%E9%9D%A2%E8%AF%95/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/comment.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/03/14/%E7%A0%94%E7%A9%B6%E7%94%9F%E5%A4%8D%E8%AF%95%E7%9A%84%E8%8B%B1%E8%AF%AD%E9%9D%A2%E8%AF%95/">
-    研究生复试的英语面试</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-3-14</div>
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/03/14/%E7%A0%94%E7%A9%B6%E7%94%9F%E5%A4%8D%E8%AF%95%E7%9A%84%E8%8B%B1%E8%AF%AD%E9%9D%A2%E8%AF%95/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/03/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%80%83%E7%A0%94%E5%A4%8D%E8%AF%95%E7%9A%84%E5%87%86%E5%A4%87/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/comment.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/03/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%80%83%E7%A0%94%E5%A4%8D%E8%AF%95%E7%9A%84%E5%87%86%E5%A4%87/">
-    计算机考研复试的准备</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-3-10</div>
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/03/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%80%83%E7%A0%94%E5%A4%8D%E8%AF%95%E7%9A%84%E5%87%86%E5%A4%87/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/01/13/MarkDown%E8%AF%AD%E6%B3%95/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/01/13/MarkDown%E8%AF%AD%E6%B3%95/">
-    MarkDown语法</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-1-13</div>
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/01/13/MarkDown%E8%AF%AD%E6%B3%95/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/01/13/Java%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/01/13/Java%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/">
-    Java面试题总结</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-1-13</div>
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/01/13/Java%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "K6UwYN6dMijp5h01cRysnTrG-gzGzoHsz",
+        appKey: "NI1nkxc4Yhim5rlut3lno7p5",
+        path: window.location.pathname,
+        placeholder: "欢迎评论哦 ..."
+      })
+  }
+</script>
 
-
-      <div class="clearer">
-      </div>
-    </main>
-    <!--  -->
-    
-  </div>
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+          <a href="https://hemiaomiao.github.io/" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/startdash/wangshiwu.jpg" itemprop="image" alt="Miaomiao" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="https://hemiaomiao.github.io/" itemprop="url" rel="author">Miaomiao</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>坚持</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
 
-<!-- 
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2021/09/12/jsDelivr+PicGo+github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%9B%BE%E5%BA%8A/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/comment.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2021/09/12/jsDelivr+PicGo+github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%9B%BE%E5%BA%8A/">
-    jsDelivr+PicGo+github搭建个人图床</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2021-9-12</div>
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2021/09/12/jsDelivr+PicGo+github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%9B%BE%E5%BA%8A/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2021/09/12/hexo%E5%8F%91%E8%A1%A8%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/comment.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2021/09/12/hexo%E5%8F%91%E8%A1%A8%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
-    hexo发表博客的常用命令</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2021-9-12</div>
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2021/09/12/hexo%E5%8F%91%E8%A1%A8%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2021/09/11/%E8%A7%A3%E5%86%B3cmd%E8%BE%93%E5%85%A5ping%E5%92%8Cipconfig%E6%8F%90%E7%A4%BA%E4%B8%8D%E6%98%AF%E5%86%85%E9%83%A8%E6%88%96%E5%A4%96%E9%83%A8%E5%91%BD%E4%BB%A4/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/comment.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2021/09/11/%E8%A7%A3%E5%86%B3cmd%E8%BE%93%E5%85%A5ping%E5%92%8Cipconfig%E6%8F%90%E7%A4%BA%E4%B8%8D%E6%98%AF%E5%86%85%E9%83%A8%E6%88%96%E5%A4%96%E9%83%A8%E5%91%BD%E4%BB%A4/">
-    解决cmd输入ping和ipconfig提示不是内部或外部命令</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2021-9-11</div>
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2021/09/11/%E8%A7%A3%E5%86%B3cmd%E8%BE%93%E5%85%A5ping%E5%92%8Cipconfig%E6%8F%90%E7%A4%BA%E4%B8%8D%E6%98%AF%E5%86%85%E9%83%A8%E6%88%96%E5%A4%96%E9%83%A8%E5%91%BD%E4%BB%A4/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2021/09/11/%E5%8A%A0%E9%80%9F%E8%AE%BF%E9%97%AEgithub%E7%9A%84%E6%96%B9%E6%B3%95/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/comment.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2021/09/11/%E5%8A%A0%E9%80%9F%E8%AE%BF%E9%97%AEgithub%E7%9A%84%E6%96%B9%E6%B3%95/">
-    加速访问github的方法</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2021-9-11</div>
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2021/09/11/%E5%8A%A0%E9%80%9F%E8%AE%BF%E9%97%AEgithub%E7%9A%84%E6%96%B9%E6%B3%95/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/03/14/%E7%A0%94%E7%A9%B6%E7%94%9F%E5%A4%8D%E8%AF%95%E7%9A%84%E8%8B%B1%E8%AF%AD%E9%9D%A2%E8%AF%95/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/comment.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/03/14/%E7%A0%94%E7%A9%B6%E7%94%9F%E5%A4%8D%E8%AF%95%E7%9A%84%E8%8B%B1%E8%AF%AD%E9%9D%A2%E8%AF%95/">
-    研究生复试的英语面试</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-3-14</div>
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/03/14/%E7%A0%94%E7%A9%B6%E7%94%9F%E5%A4%8D%E8%AF%95%E7%9A%84%E8%8B%B1%E8%AF%AD%E9%9D%A2%E8%AF%95/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/03/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%80%83%E7%A0%94%E5%A4%8D%E8%AF%95%E7%9A%84%E5%87%86%E5%A4%87/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/comment.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/03/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%80%83%E7%A0%94%E5%A4%8D%E8%AF%95%E7%9A%84%E5%87%86%E5%A4%87/">
-    计算机考研复试的准备</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-3-10</div>
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/03/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%80%83%E7%A0%94%E5%A4%8D%E8%AF%95%E7%9A%84%E5%87%86%E5%A4%87/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/01/13/MarkDown%E8%AF%AD%E6%B3%95/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/01/13/MarkDown%E8%AF%AD%E6%B3%95/">
-    MarkDown语法</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-1-13</div>
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/01/13/MarkDown%E8%AF%AD%E6%B3%95/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/01/13/Java%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/01/13/Java%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/">
-    Java面试题总结</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-1-13</div>
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/01/13/Java%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
 
- -->
+
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>
