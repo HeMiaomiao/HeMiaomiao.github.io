@@ -291,7 +291,7 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h2 id="1-打开IPAddress-com网站，查询下面3个网址对应的IP地址"><a href="#1-打开IPAddress-com网站，查询下面3个网址对应的IP地址" class="headerlink" title="1.打开IPAddress.com网站，查询下面3个网址对应的IP地址"></a>1.打开IPAddress.com网站，查询下面3个网址对应的IP地址</h2><p>[网站传送门]（<a target="_blank" rel="noopener" href="https://www.ipaddress.com/ip-lookup%EF%BC%89">https://www.ipaddress.com/ip-lookup）</a></p>
+          <h2 id="1-打开IPAddress-com网站，查询下面3个网址对应的IP地址"><a href="#1-打开IPAddress-com网站，查询下面3个网址对应的IP地址" class="headerlink" title="1.打开IPAddress.com网站，查询下面3个网址对应的IP地址"></a>1.打开IPAddress.com网站，查询下面3个网址对应的IP地址</h2><p><a target="_blank" rel="noopener" href="https://www.ipaddress.com/ip-lookup">网站传送门</a></p>
 <ol>
 <li>github.com</li>
 <li>assets-cdn.github.com</li>
@@ -299,10 +299,10 @@
 </ol>
 <p>比如，查询github.com的IP地址<br><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109121552818.png"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109121552169.png"></p>
-<p><strong>注意：</strong> </p>
-<p>查询第四个assets-cdn.github.com网址的时候会返回四个IP地址</p>
+<h4 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h4><p>查询第四个assets-cdn.github.com网址的时候会返回四个IP地址</p>
 <p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109121555415.png"></p>
-<p>在cmd里面分别ping四个IP地址，选择平均时间最短的那个IP地址 （格式：ping IP地址）<br><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109121559422.png"></p>
+<p><code>在cmd里面分别ping四个IP地址，选择平均时间最短的那个IP地址 （格式：ping + 一个空格 + IP地址）</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109121559422.png"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109121559964.png"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109121559875.png"></p>
 <p>这样就得到了3个网站的IP地址：</p>
@@ -310,12 +310,14 @@
 <p>140.82.114.3 github.com<br>185.199.111.153 assets-cdn.github.com<br>199.232.69.194 github.global.ssl.fastly.net</p>
 </blockquote>
 <h2 id="2-修改host文件"><a href="#2-修改host文件" class="headerlink" title="2.修改host文件"></a>2.修改host文件</h2><h4 id="host文件路径：C-Windows-System32-drivers-etc"><a href="#host文件路径：C-Windows-System32-drivers-etc" class="headerlink" title="host文件路径：C:\Windows\System32\drivers\etc"></a>host文件路径：C:\Windows\System32\drivers\etc</h4><p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109121615068.png"></p>
-<p>(1) 先右击以管理员身份打开host文件</p>
-<p>(2) 把刚刚查到的3个需要重定向的网址和IP地址复制到host文件的最后面</p>
-<p> 格式： IP地址 + 空格 + 网址</p>
+<ol>
+<li>先右击以管理员身份打开host文件</li>
+<li>把刚刚查到的3个需要重定向的网址和IP地址复制到host文件的最后面<br> 格式： IP地址 + 空格 + 网址</li>
+</ol>
 <blockquote>
-<p>140.82.114.3 github.com<br>185.199.111.153 assets-cdn.github.com<br>199.232.69.194 github.global.ssl.fastly.net<br><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109121620010.png"></p>
+<p>140.82.114.3 github.com<br>185.199.111.153 assets-cdn.github.com<br>199.232.69.194 github.global.ssl.fastly.net</p>
 </blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109121620010.png"></p>
 <h2 id="3-刷新-DNS"><a href="#3-刷新-DNS" class="headerlink" title="3.刷新 DNS"></a>3.刷新 DNS</h2><p>打开cmd输入以下命令刷新DNS： ipconfig /flushdns</p>
 <p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109121620429.png"></p>
 
