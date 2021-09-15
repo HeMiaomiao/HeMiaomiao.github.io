@@ -828,7 +828,7 @@ function add_copyright () {
 	var textData = window.getSelection().toString().replace(/\r\n/g, '\n')
     if (event.clipboardData) {
       addComment.createButterbar('复制成功！', 1000)
-	  event.clipboardData.setData('text/plain', textData)
+	  event.clipboardData.setData('text', textData)
     } else if (window.clipboardData) {
       return window.clipboardData.setData('text', textData)
     }
