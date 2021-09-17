@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Tag: tag1 | Miaomiao&#39;s Blog</title>
+  <title itemprop="name">hexo Sakura主题的文章复制功能 | Miaomiao&#39;s Blog</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -256,71 +256,145 @@
   </div>
 </header>
 
-      
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
-<div class="pattern-center ">
-  <div class="pattern-attachment-img">
-    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="tag1.img" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109171645207.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109171645207.jpg">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      hexo Sakura主题的文章复制功能</h1>
+      <p class="entry-census">
+        <span>
+          <a href="">
+            <img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109171643661.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="">Miaomiao</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2021-9-17<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
   </div>
-  <header class="pattern-header ">
-    <h1 class="cat-title">tag1</h1>
-  </header>
-</div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-      
-    <!-- 置顶文章 -->
-    
-      
-        <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2021/09/16/clash-for-windows%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109161917661.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2021/09/16/clash-for-windows%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/">
-    clash for windows使用教程</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2021-9-16</div>
-	<div class="post-meta">
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2021/09/16/clash-for-windows%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-      
-    
-    <!-- 首页默认取最最新文章集 -->
-    
-      <!-- 其余文章 -->
-       
-    
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <h2 id="1-找到-sakura-app-js"><a href="#1-找到-sakura-app-js" class="headerlink" title="1. 找到 sakura-app.js"></a>1. 找到 sakura-app.js</h2><p>sakura-app.js 位置： E:\Blog\themes\Sakura\source\js</p>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109172107056.png"></p>
+<h2 id="2-在sakura-app-js里面使用快捷键-Ctrl-F-搜索-setClipboardText，修改代码"><a href="#2-在sakura-app-js里面使用快捷键-Ctrl-F-搜索-setClipboardText，修改代码" class="headerlink" title="2. 在sakura-app.js里面使用快捷键 Ctrl + F 搜索 setClipboardText，修改代码"></a>2. 在sakura-app.js里面使用快捷键 Ctrl + F 搜索 <code>setClipboardText</code>，修改代码</h2><p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109172113099.png"></p>
+<h4 id="修改后的代码如下："><a href="#修改后的代码如下：" class="headerlink" title="修改后的代码如下："></a>修改后的代码如下：</h4><pre><code>function add_copyright () {
+  document.body.addEventListener('copy', function (e) {
+    if (!mashiro_global.is_user_logged_in &amp;&amp; window.getSelection().toString().length &gt; 3) {
+      setClipboardText(e)
+    }
+  })
 
-      <div class="clearer">
-      </div>
-    </main>
-    <!--  -->
-    
-  </div>
+  function setClipboardText (event) {
+    event.preventDefault()
+ var textData = window.getSelection().toString().replace(/\r\n/g, '\n')
+    if (event.clipboardData) {
+      addComment.createButterbar('复制成功！', 1000)
+   event.clipboardData.setData('text', textData)
+    } else if (window.clipboardData) {
+      return window.clipboardData.setData('text', textData)
+    }
+  }
+}
+</code></pre>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+        
+          
+            <div class="post-nepre full next">
+          
+            <a href="/2021/09/17/hexo-Sakura%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE%E6%96%87%E7%AB%A0%E6%8C%89%E7%85%A7top%E5%80%BC%E6%8E%92%E5%BA%8F/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109161805421.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109161805421.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                hexo Sakura主题设置文章按照top值排序</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "K6UwYN6dMijp5h01cRysnTrG-gzGzoHsz",
+        appKey: "NI1nkxc4Yhim5rlut3lno7p5",
+        path: window.location.pathname,
+        placeholder: "欢迎评论哦 ..."
+      })
+  }
+</script>
+
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+          <a href="" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109171643661.jpg" itemprop="image" alt="Miaomiao" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="" itemprop="url" rel="author">Miaomiao</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>坚持</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
+
+
+
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>
