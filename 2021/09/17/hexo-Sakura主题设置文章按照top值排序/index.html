@@ -301,8 +301,8 @@ date: 2021-09-17 10:25:54
 categories: 技术
 top: 1
 </code></pre>
-<p><strong>注意：</strong></p>
-<h4 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h4><ul>
+<p><font color="red"><strong>注意：</strong></font></p>
+<ul>
 <li>经过以上三步，博客文章按照top值排序的功能按理说已经可以实现了，但是Sakura主题有一点不同。因为Sakura主题在themes\sakura\layout_partial\文件里面的archive.ejs 和 category-archive.ejs 中设置了按照日期排序，所以还需要修改archive.ejs 和 category-archive.ejs</li>
 </ul>
 <h2 id="4-修改themes-Sakura-layout-partial文件里面的-archive-ejs-和-category-archive-ejs-（-仅Sakura主题需要进行第四步-）"><a href="#4-修改themes-Sakura-layout-partial文件里面的-archive-ejs-和-category-archive-ejs-（-仅Sakura主题需要进行第四步-）" class="headerlink" title="4. 修改themes\Sakura\layout_partial文件里面的 archive.ejs 和 category-archive.ejs （ 仅Sakura主题需要进行第四步 ）"></a>4. 修改themes\Sakura\layout_partial文件里面的 archive.ejs 和 category-archive.ejs （ 仅Sakura主题需要进行第四步 ）</h2><h4 id="原来的archive-ejs"><a href="#原来的archive-ejs" class="headerlink" title="原来的archive.ejs:"></a>原来的archive.ejs:</h4><pre><code>&lt;% if (pagination == 2){ %&gt;
