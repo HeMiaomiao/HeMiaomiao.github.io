@@ -292,16 +292,20 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h2 id="一-卸载hexo-generator-index插件"><a href="#一-卸载hexo-generator-index插件" class="headerlink" title="一.卸载hexo-generator-index插件"></a>一.卸载hexo-generator-index插件</h2><h4 id="hexo站点目录下，输入下面命令卸载默认的排序插件"><a href="#hexo站点目录下，输入下面命令卸载默认的排序插件" class="headerlink" title="hexo站点目录下，输入下面命令卸载默认的排序插件"></a>hexo站点目录下，输入下面命令卸载默认的排序插件</h4><pre><code>npm uninstall hexo-generator-index --save
+          <h2 id="1-卸载hexo-generator-index插件"><a href="#1-卸载hexo-generator-index插件" class="headerlink" title="1. 卸载hexo-generator-index插件"></a>1. 卸载hexo-generator-index插件</h2><h4 id="hexo站点目录下，输入下面命令卸载默认的排序插件"><a href="#hexo站点目录下，输入下面命令卸载默认的排序插件" class="headerlink" title="hexo站点目录下，输入下面命令卸载默认的排序插件"></a>hexo站点目录下，输入下面命令卸载默认的排序插件</h4><pre><code>npm uninstall hexo-generator-index --save
 </code></pre>
-<h2 id="二-安装hexo-generator-index-pin-top插件"><a href="#二-安装hexo-generator-index-pin-top插件" class="headerlink" title="二.安装hexo-generator-index-pin-top插件"></a>二.安装hexo-generator-index-pin-top插件</h2><h4 id="hexo站点目录下，输入下面命令安装新的排序插件"><a href="#hexo站点目录下，输入下面命令安装新的排序插件" class="headerlink" title="hexo站点目录下，输入下面命令安装新的排序插件"></a>hexo站点目录下，输入下面命令安装新的排序插件</h4><pre><code>npm install hexo-generator-index-pin-top --save
+<h2 id="2-安装hexo-generator-index-pin-top插件"><a href="#2-安装hexo-generator-index-pin-top插件" class="headerlink" title="2. 安装hexo-generator-index-pin-top插件"></a>2. 安装hexo-generator-index-pin-top插件</h2><h4 id="hexo站点目录下，输入下面命令安装新的排序插件"><a href="#hexo站点目录下，输入下面命令安装新的排序插件" class="headerlink" title="hexo站点目录下，输入下面命令安装新的排序插件"></a>hexo站点目录下，输入下面命令安装新的排序插件</h4><pre><code>npm install hexo-generator-index-pin-top --save
 </code></pre>
-<h2 id="三-添加front-matter配置项"><a href="#三-添加front-matter配置项" class="headerlink" title="三.添加front-matter配置项"></a>三.添加front-matter配置项</h2><h4 id="在需要置顶的文章的Front-matter中加上top-数值即可实现文章按照top值排序。比如下面这篇文章："><a href="#在需要置顶的文章的Front-matter中加上top-数值即可实现文章按照top值排序。比如下面这篇文章：" class="headerlink" title="在需要置顶的文章的Front-matter中加上top: 数值即可实现文章按照top值排序。比如下面这篇文章："></a>在需要置顶的文章的Front-matter中加上<code>top: 数值</code>即可实现文章按照top值排序。比如下面这篇文章：</h4><pre><code>title: test
+<h2 id="3-添加front-matter配置项"><a href="#3-添加front-matter配置项" class="headerlink" title="3. 添加front-matter配置项"></a>3. 添加front-matter配置项</h2><h4 id="在需要置顶的文章的Front-matter中加上top-数值即可实现文章按照top值排序。比如下面这篇文章："><a href="#在需要置顶的文章的Front-matter中加上top-数值即可实现文章按照top值排序。比如下面这篇文章：" class="headerlink" title="在需要置顶的文章的Front-matter中加上top: 数值即可实现文章按照top值排序。比如下面这篇文章："></a>在需要置顶的文章的Front-matter中加上<code>top: 数值</code>即可实现文章按照top值排序。比如下面这篇文章：</h4><pre><code>title: test
 date: 2021-09-17 10:25:54
 categories: 技术
 top: 1
 </code></pre>
-<h4 id="注意：经过以上三步，博客文章按照top值排序的功能按理说已经可以实现了，但是Sakura主题有一点不同。因为在Sakura主题里面，在themes-sakura-layout-partial-archive-ejs-和-category-archive-ejs-中设置了按照日期排序，所以还需要修改archive-ejs-和-category-archive-ejs"><a href="#注意：经过以上三步，博客文章按照top值排序的功能按理说已经可以实现了，但是Sakura主题有一点不同。因为在Sakura主题里面，在themes-sakura-layout-partial-archive-ejs-和-category-archive-ejs-中设置了按照日期排序，所以还需要修改archive-ejs-和-category-archive-ejs" class="headerlink" title="注意：经过以上三步，博客文章按照top值排序的功能按理说已经可以实现了，但是Sakura主题有一点不同。因为在Sakura主题里面，在themes\sakura\layout_partial\ archive.ejs 和 category-archive.ejs 中设置了按照日期排序，所以还需要修改archive.ejs 和 category-archive.ejs"></a>注意：经过以上三步，博客文章按照top值排序的功能按理说已经可以实现了，但是Sakura主题有一点不同。因为在Sakura主题里面，在themes\sakura\layout_partial\ archive.ejs 和 category-archive.ejs 中设置了按照日期排序，所以还需要修改archive.ejs 和 category-archive.ejs</h4><h2 id="四-修改themes-Sakura-layout-partial文件里面的-archive-ejs-和-category-archive-ejs-（-仅Sakura主题需要进行第四步-）"><a href="#四-修改themes-Sakura-layout-partial文件里面的-archive-ejs-和-category-archive-ejs-（-仅Sakura主题需要进行第四步-）" class="headerlink" title="四.修改themes\Sakura\layout_partial文件里面的 archive.ejs 和 category-archive.ejs （ 仅Sakura主题需要进行第四步 ）"></a>四.修改themes\Sakura\layout_partial文件里面的 archive.ejs 和 category-archive.ejs （ 仅Sakura主题需要进行第四步 ）</h2><h4 id="原来的archive-ejs"><a href="#原来的archive-ejs" class="headerlink" title="原来的archive.ejs:"></a>原来的archive.ejs:</h4><pre><code>&lt;% if (pagination == 2){ %&gt;
+<p><strong>注意：</strong></p>
+<h4 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h4><ul>
+<li>经过以上三步，博客文章按照top值排序的功能按理说已经可以实现了，但是Sakura主题有一点不同。因为Sakura主题在themes\sakura\layout_partial\文件里面的archive.ejs 和 category-archive.ejs 中设置了按照日期排序，所以还需要修改archive.ejs 和 category-archive.ejs</li>
+</ul>
+<h2 id="4-修改themes-Sakura-layout-partial文件里面的-archive-ejs-和-category-archive-ejs-（-仅Sakura主题需要进行第四步-）"><a href="#4-修改themes-Sakura-layout-partial文件里面的-archive-ejs-和-category-archive-ejs-（-仅Sakura主题需要进行第四步-）" class="headerlink" title="4. 修改themes\Sakura\layout_partial文件里面的 archive.ejs 和 category-archive.ejs （ 仅Sakura主题需要进行第四步 ）"></a>4. 修改themes\Sakura\layout_partial文件里面的 archive.ejs 和 category-archive.ejs （ 仅Sakura主题需要进行第四步 ）</h2><h4 id="原来的archive-ejs"><a href="#原来的archive-ejs" class="headerlink" title="原来的archive.ejs:"></a>原来的archive.ejs:</h4><pre><code>&lt;% if (pagination == 2){ %&gt;
   &lt;!-- 首页默认取最最新文章集 --&gt;
   &lt;% page.posts.sort('date', theme.homePageSortType).limit(theme.homeArticleShown).each(function(post, index){ %&gt;
     &lt;%- partial('_widget/index-items', {index: index, post: post}) %&gt;
@@ -312,8 +316,7 @@ top: 1
   &lt;% }) %&gt;
 &lt;% } %&gt;
 </code></pre>
-<p>**　修改后的archive.ejs：**</p>
-<pre><code>&lt;!-- 两篇文章以上 --&gt;
+<h4 id="修改后的archive-ejs："><a href="#修改后的archive-ejs：" class="headerlink" title="修改后的archive.ejs："></a>修改后的archive.ejs：</h4><pre><code>&lt;!-- 两篇文章以上 --&gt;
 &lt;% if (pagination &gt;= 2){ %&gt;
   &lt;!-- 置顶文章 --&gt;
   &lt;% page.posts.each(function(post, index){ %&gt;
@@ -334,8 +337,7 @@ top: 1
   &lt;% }) %&gt;
 &lt;% } %&gt;
 </code></pre>
-<p>原来的category-archive.ejs：</p>
-<pre><code>&lt;% if (pagination == 2){ %&gt;
+<h4 id="原来的category-archive-ejs："><a href="#原来的category-archive-ejs：" class="headerlink" title="原来的category-archive.ejs："></a>原来的category-archive.ejs：</h4><pre><code>&lt;% if (pagination == 2){ %&gt;
   &lt;!-- 首页默认取最最新文章集 --&gt;
   &lt;% page.posts.sort('date', theme.homePageSortType).limit(theme.homeArticleShown).each(function(post, index){ %&gt;
     &lt;%- partial('_widget/category-items', {index: index, post: post}) %&gt;
@@ -346,8 +348,7 @@ top: 1
   &lt;% }) %&gt;
 &lt;% } %&gt;
 </code></pre>
-<p>修改后的category-archive.ejs：</p>
-<pre><code>&lt;% if (pagination &gt;= 2){ %&gt;
+<h4 id="修改后的category-archive-ejs："><a href="#修改后的category-archive-ejs：" class="headerlink" title="修改后的category-archive.ejs："></a>修改后的category-archive.ejs：</h4><pre><code>&lt;% if (pagination &gt;= 2){ %&gt;
     &lt;!-- 置顶文章 --&gt;
     &lt;% page.posts.each(function(post, index){ %&gt;
       &lt;% if (post.top){ %&gt;
@@ -367,7 +368,7 @@ top: 1
   &lt;% }) %&gt;
 &lt;% } %&gt;
 </code></pre>
-<h2 id="五-重新部署"><a href="#五-重新部署" class="headerlink" title="五.重新部署"></a>五.重新部署</h2><pre><code>hexo clean 
+<h2 id="5-重新部署"><a href="#5-重新部署" class="headerlink" title="5. 重新部署"></a>5. 重新部署</h2><pre><code>hexo clean 
 hexo g
 hexo d
 </code></pre>
