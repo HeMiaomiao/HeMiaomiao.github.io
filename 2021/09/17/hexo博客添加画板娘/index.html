@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">hexo博客添加画板娘 | Miaomiao&#39;s Blog</title>
+  <title itemprop="name">hexo博客添加看板娘 | Miaomiao&#39;s Blog</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -266,7 +266,7 @@
     </div>
     <header class="pattern-header single-header">
       <h1 class="entry-title">
-      hexo博客添加画板娘</h1>
+      hexo博客添加看板娘</h1>
       <p class="entry-census">
         <span>
           <a href="https://hemiaomiao.github.io/">
@@ -292,7 +292,59 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          
+          <h2 id="一-安装依赖"><a href="#一-安装依赖" class="headerlink" title="一.安装依赖"></a>一.安装依赖</h2><p>在博客根目录下输入以下命令安装 live2d 模块</p>
+<pre><code>npm install --save hexo-helper-live2d
+</code></pre>
+<p>安装成功之后可以看到博客根目录下的<code>node_modules</code>里面有<code>live2d-widget</code>文件，这是动画的主配置</p>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109191059320.png"></p>
+<h2 id="二-下载模型文件"><a href="#二-下载模型文件" class="headerlink" title="二.下载模型文件"></a>二.下载模型文件</h2><p>在博客根目录下输入以下命令下载相应的画板娘模型：</p>
+<pre><code>npm install live2d-widget-model-haruto
+</code></pre>
+<p>模型被下载到了博客根目录下的node_modules文件夹里面</p>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109191001492.png"></p>
+<p><font color="red" size="3.5"><strong>注：</strong></font></p>
+<p>把模型名称 <code>haruto</code>&nbsp;换成你想要的模型名称即可（本人选的看板娘模型是 haruto）</p>
+<h4 id="live2d看板娘的模型预览如下："><a href="#live2d看板娘的模型预览如下：" class="headerlink" title="live2d看板娘的模型预览如下："></a>live2d看板娘的模型预览如下：</h4><p>live2d-widget-model-epsilon2_1</p>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109191105152.png"></p>
+<p>live2d-widget-model-chitose</p>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109191106924.png"></p>
+<p>live2d-widget-model-izumi</p>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109191113221.png"></p>
+<p>live2d-widget-model-koharu</p>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109191113697.png"></p>
+<p>live2d-widget-model-miku</p>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109191113458.png"></p>
+<p>live2d-widget-model-shizuku</p>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109191114882.png"></p>
+<p>live2d-widget-model-tororo</p>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109191113064.png"></p>
+<p>live2d-widget-model-tsumiki</p>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109191113308.png"></p>
+<p>live2d-widget-model-wanko</p>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109191113018.png"></p>
+<p>live2d-widget-model-z16</p>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109191113925.png"></p>
+<p>live2d-widget-model-hibiki</p>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109191113113.png"></p>
+<p>live2d-widget-model-hijiki</p>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109191113721.png"></p>
+<p>live2d-widget-model-haruto</p>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109191113062.png"></p>
+<h2 id="三-添加live2d看板娘到hexo博客"><a href="#三-添加live2d看板娘到hexo博客" class="headerlink" title="三.添加live2d看板娘到hexo博客"></a>三.添加live2d看板娘到hexo博客</h2><p>打开博客根目录下的&nbsp;_config.yml文件，添加如下代码：</p>
+<pre><code> #参数配置
+live2d:
+ enable: true
+ scriptFrom: local
+ model:
+   use: live2d-widget-model-shizuku   #下载的画板娘模型的名字，根据自己的喜好修改
+ display:
+   position: left #模型位置
+   width: 270  #模型宽度
+   height: 400 #模型高度
+ mobile:
+   show: false #是否在手机端显示
+</code></pre>
+<h2 id="四-执行hexo-g-amp-hexo-d即可"><a href="#四-执行hexo-g-amp-hexo-d即可" class="headerlink" title="四.执行hexo g &amp; hexo d即可"></a>四.执行hexo g &amp; hexo d即可</h2>
         </div>
         <!-- .entry-content -->
         <div class="single-reward">

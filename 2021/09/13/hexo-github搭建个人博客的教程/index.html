@@ -270,7 +270,7 @@
       <p class="entry-census">
         <span>
           <a href="https://hemiaomiao.github.io/">
-            <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/startdash/wangshiwu.jpg">
+            <img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109171645428.jpg">
           </a>
         </span>
         <span>
@@ -292,7 +292,142 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          
+          <h2 id="一．安装node-js-（Node-js是Hexo插件运行的基础）"><a href="#一．安装node-js-（Node-js是Hexo插件运行的基础）" class="headerlink" title="一．安装node.js （Node.js是Hexo插件运行的基础）"></a>一．安装node.js （Node.js是Hexo插件运行的基础）</h2><p>1.node.js的下载地址：<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/download/releases/">https://nodejs.org/zh-cn/download/releases/</a></p>
+<p>2.步骤：</p>
+<ol>
+<li>选择适合电脑的相应的安装包 （选择后缀名是.msi的安装包）</li>
+<li>下载完成之后直接安装，一直点“Next”即可</li>
+<li>安装完整后，打开cmd命令<br>（1）node -v 显示node.js的版本说明安装成功<br>（2）npm -v 显示npm版本说明自带的npm安装成功</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109190933641.png"></p>
+<p>安装完的目录如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109190933467.png"></p>
+<p><font color="red" size="3.5"><strong>注意：</strong></font></p>
+<p>新版的Node.js已自带npm，安装Node.js时会一起安装，npm的作用就是对Node.js依赖的包进行管理，也可以理解为用来安装/卸载Node.js需要装的东西</p>
+<h2 id="二．安装git"><a href="#二．安装git" class="headerlink" title="二．安装git"></a>二．安装git</h2><p>通过git把Hexo生成的网页提交到Github pages上</p>
+<ol>
+<li>git的下载地址 ： <a target="_blank" rel="noopener" href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></li>
+<li>下载完成之后直接安装，一直点“Next”即可</li>
+<li>安装完整后，打开cmd命令，输入git version检查Git版本</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109190933646.png"></p>
+<h2 id="三．安装Hexo"><a href="#三．安装Hexo" class="headerlink" title="三．安装Hexo"></a>三．安装Hexo</h2><p>1.在电脑常里创建一个文件夹，可以命名为Blog</p>
+<p>2.点击进入创建的文件夹，点击鼠标右键选择“Git Bash Here”</p>
+<p>（1）安装Hexo （hexo默认会被安装到C盘）</p>
+<p>输入以下命令：</p>
+<pre><code>npm install hexo -g 
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109190933919.png"></p>
+<p>（2）检查是否安装成功</p>
+<p>输入以下命令：</p>
+<pre><code>hexo -v 
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109190933869.png"></p>
+<p>(3) 初始化该文件夹</p>
+<p>输入以下命令：</p>
+<pre><code>hexo init
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109190933866.png"></p>
+<p>初始化完成之后打开所在的文件夹可以看到以下文件：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109190933310.png"></p>
+<ul>
+<li>node_modules：是依赖包</li>
+<li>public：存放的是生成的页面</li>
+<li>scaffolds：命令生成文章等的模板</li>
+<li>source：用命令创建的各种文章</li>
+<li>themes：主题</li>
+<li>_config.yml：整个博客的配置</li>
+<li>db.json：source解析所得到的</li>
+<li>package.json：项目所需模块项目的配置信息</li>
+</ul>
+<p>(4) 安装需要的组件</p>
+<p>输入以下命令：</p>
+<pre><code>npm install
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109190933857.png"></p>
+<p>(5) 生成静态文件</p>
+<p>输入以下命令：</p>
+<pre><code>hexo g
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109190933351.png"></p>
+<p>(6) 启动服务器，现在在浏览器输入<a target="_blank" rel="noopener" href="http://localhost:4000/%E6%89%93%E5%BC%80%E5%8D%9A%E5%AE%A2%E7%95%8C%E9%9D%A2">http://localhost:4000/打开博客界面</a></p>
+<p>输入以下命令：</p>
+<pre><code>hexo s
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109190933476.png"></p>
+<p><font color="red" size="3.5"><strong>注意：</strong></font></p>
+<p>此时遇到一个情况，虽然hexo正常启动了，但是浏览器无法访问<a target="_blank" rel="noopener" href="http://localhost:4000/%EF%BC%8C%E5%9B%A0%E4%B8%BA4000%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8%E4%BA%86%EF%BC%8C%E8%BE%93%E5%85%A5hexo">http://localhost:4000/，因为4000端口被占用了，输入hexo</a> s -p 5000，然后访问<a target="_blank" rel="noopener" href="http://localhost:5000/">http://localhost:5000/</a>&nbsp;</p>
+<h2 id="四．GitHub创建个人仓库"><a href="#四．GitHub创建个人仓库" class="headerlink" title="四．GitHub创建个人仓库"></a>四．GitHub创建个人仓库</h2><p>1.github的地址：<a target="_blank" rel="noopener" href="https://github.com/">https://github.com/</a></p>
+<p>2.步骤</p>
+<ol>
+<li>注册账号成功之后，点击右上角<code>+</code>号，选择<code>New repository</code><br><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109190933557.png"></li>
+<li>进入一个页面，该页面的<code>Repository name</code>填写的格式必须是：用户名.github.io<br><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109190933381.png"></li>
+<li>必须勾选<code>public</code>和<code>Add a README file</code><br><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109190929564.png"></li>
+<li>最后点击<code>create repositorie</code>按钮</li>
+</ol>
+<h2 id="五．生成SSH添加到gitHub"><a href="#五．生成SSH添加到gitHub" class="headerlink" title="五．生成SSH添加到gitHub"></a>五．生成SSH添加到gitHub</h2><p>点击进入之前创建的博客文件夹里面，选择<code>Git Bash Here</code></p>
+<p>1.依次输入以下命令：</p>
+<pre><code>git config --global user.name "你的GitHub用户名"
+git config --global user.email "你的GitHub注册邮箱"
+cd ~/.ssh
+ls
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109190929505.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109190929618.png"></p>
+<p><font color="red" size="3.5"><strong>注意：</strong></font></p>
+<p>第3个命令<code>cd ~/.ssh</code>和第4个命令<code>ls</code>就是检查是否已经存在 id_rsa.pub 或 id_dsa.pub 文件，如果文件已经存在，那么就跳过步骤2，直接进入步骤3</p>
+<p>2.输入命令</p>
+<pre><code>ssh-keygen -t rsa -C "你的GitHub注册邮箱" 
+</code></pre>
+<p><strong>接着回车三下</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109190929845.png"></p>
+<p>最后得到了两个文件：id_rsa和id_rsa.pub，默认存储路径是：C:\Users\Administrator.ssh</p>
+<p>3.在目录C:\Users\Administrator.ssh找到id_rsa.pub文件,这个文件存储的是密钥</p>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109190929536.png"></p>
+<p>4.登录Github，点击 用户头像→Settings→SSH and GPG keys→New SSH key→将文件id_rsa.pub里面的内容复制到Key文本框中，&nbsp;title随便取，然后点击 Add SSH key 按钮</p>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109191254150.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109191254487.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109191254263.png"></p>
+<p>5.在电脑桌面右击，选择<code>Git Bash Here</code>，在git bash窗口中输入以下命令，验证是否添加成功 </p>
+<pre><code>ssh -T git@github.com
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109190929471.png"></p>
+<h2 id="六．将hexo部署到gitHub"><a href="#六．将hexo部署到gitHub" class="headerlink" title="六．将hexo部署到gitHub"></a>六．将hexo部署到gitHub</h2><p>1.找到之前建的博客文件根目录，例如我的是在E:\Blog，找到_config.yml配置文件<br>2.打开_config.yml配置文件，翻到配置文件的最下方，修改为：</p>
+<pre><code>deploy:
+    type: git
+    repo: git@github.com:HeMiaomiao/HeMiaomiao.github.io.git
+    branch: main
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109190929165.png"></p>
+<p>（注意现在分支不能写成master，因为github现在把默认分支从master改为了main）<br>（注意冒号后面有一个半角空格，并且type，repository，branch的首字母要对齐）</p>
+<p>3.点击进入之前创建的博客文件夹里面，右击选择<code>Git Bash Here</code>，依次输入以下命令：</p>
+<pre><code>npm install hexo-deployer-git --save
+hexo clean 
+hexo g
+hexo d  
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109190929190.png"></p>
+<p><font color="red" size="3.5"><strong>注意：</strong></font></p>
+<p>输入<code>hexo d</code>之后要输入gitHub账户的用户名和密码,命令行出现INFO Deploy done:git就表明发布成功</p>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109190928166.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109190928758.png"></p>
+<p>4.打开网页，输入<a target="_blank" rel="noopener" href="http://github账户的用户名.github.io,就可以看到个人博客啦/">http://GitHub账户的用户名.github.io，就可以看到个人博客啦</a>!</p>
+<h2 id="七．更换Hexo主题"><a href="#七．更换Hexo主题" class="headerlink" title="七．更换Hexo主题"></a>七．更换Hexo主题</h2><p>1.地址：<a target="_blank" rel="noopener" href="https://github.com/search?q=hexo-theme%EF%BC%8C%E6%89%BE%E5%88%B0%E8%87%AA%E5%B7%B1%E5%96%9C%E6%AC%A2%E7%9A%84%E4%B8%BB%E9%A2%98%EF%BC%8C%E7%82%B9%E5%87%BB%E8%BF%9B%E5%8E%BB%E6%9F%A5%E7%9C%8B%E6%96%87%E6%A1%A3%E9%87%8C%E9%9D%A2%E7%9A%84%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D%EF%BC%8C%E6%89%BE%E5%88%B0%E8%BF%99%E6%A0%B7%E4%B8%8B%E8%BD%BD%E9%93%BE%E6%8E%A5%EF%BC%9A">https://github.com/search?q=hexo-theme，找到自己喜欢的主题，点击进去查看文档里面的详细介绍，找到这样下载链接：</a></p>
+<p>例如主题pacman:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109190928115.png"></p>
+<p>主题next:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109190928694.png"></p>
+<p>2.点击进入之前创建的博客文件夹里面，例如我的是在E:\Blog，右击选择<code>Git Bash Here</code>，在窗口中输入上面找到的下载链接，例如下载主题pacman，就在窗口中输入git clone <a target="_blank" rel="noopener" href="https://github.com/A-limon/pacman.git">https://github.com/A-limon/pacman.git</a> themes/pacman</p>
+<p>3.点击进入之前创建的博客文件夹里面，找到配置文件_config.yml，把配置文件_config.yml里面的theme修改为现在选择的主题，格式为：theme: 主题名字，例如，theme:pacman</p>
+<p>4.点击进入之前创建的博客文件夹里面，例如我的是在E:\Blog，右击选择<code>Git Bash Here</code>，在窗口中依次输入以下命令：</p>
+<pre><code>hexo clean
+hexo g
+hexo s
+hexo d
+</code></pre>
+<p><font color="red" size="3.5"><strong>注意：</strong></font></p>
+<p>跟现在新选择的主题相关的配置在themes/主题名字/_config.yml里面,然后根据你的需要在这修改就行了</p>
+
         </div>
         <!-- .entry-content -->
         <div class="single-reward">
@@ -373,7 +508,7 @@
 
       <section class="author-profile">
         <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
-          <a href="https://hemiaomiao.github.io/" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/startdash/wangshiwu.jpg" itemprop="image" alt="Miaomiao" height="70" width="70"></a>
+          <a href="https://hemiaomiao.github.io/" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109171645428.jpg" itemprop="image" alt="Miaomiao" height="70" width="70"></a>
           <div class="meta">
             <span class="title">Author</span>
             <h3 itemprop="name">
