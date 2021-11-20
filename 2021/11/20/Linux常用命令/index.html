@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Tag: 机器学习 | Miaomiao&#39;s Blog</title>
+  <title itemprop="name">Linux常用命令 | Miaomiao&#39;s Blog</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -256,71 +256,165 @@
   </div>
 </header>
 
-      
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
-<div class="pattern-center ">
-  <div class="pattern-attachment-img">
-    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109161805136.jpg" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109171643209.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109171643209.jpg">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      Linux常用命令</h1>
+      <p class="entry-census">
+        <span>
+          <a href="https://hemiaomiao.github.io/">
+            <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/startdash/wangshiwu.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="https://hemiaomiao.github.io/">Miaomiao</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2021-11-20<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
   </div>
-  <header class="pattern-header ">
-    <h1 class="cat-title">机器学习</h1>
-  </header>
-</div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-      
-    <!-- 置顶文章 -->
-    
-      
-        <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2021/10/09/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/comment.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2021/10/09/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
-    机器学习</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2021-10-9</div>
-	<div class="post-meta">
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2021/10/09/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-      
-    
-    <!-- 首页默认取最最新文章集 -->
-    
-      <!-- 其余文章 -->
-       
-    
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <h2 id="从windows上传文件："><a href="#从windows上传文件：" class="headerlink" title="从windows上传文件："></a>从windows上传文件：</h2><p>在Linux命令行下输入：</p>
+<pre><code>rz
+</code></pre>
+<p>输入rz命令后，会弹出对话框，选择你要上传的文件，选择打开就上传到Linux主机，文件会被长传到当前命令行所在的目录下</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202111202302896.png"></p>
+<h2 id="查看上传的文件："><a href="#查看上传的文件：" class="headerlink" title="查看上传的文件："></a>查看上传的文件：</h2><p>在Linux命令行下输入：</p>
+<pre><code>ls
+</code></pre>
+<h2 id="从Linux主机下载文件："><a href="#从Linux主机下载文件：" class="headerlink" title="从Linux主机下载文件："></a>从Linux主机下载文件：</h2><p>在Linux命令行下输入：</p>
+<pre><code>sz 文件名
+</code></pre>
+<p><font color="red" size="3"><strong>解释：</strong></font></p>
+<p>rz中的r意为received（接收），告诉客户端，服务器要接收文件，就等同于客户端在上传</p>
+<p>sz中的s意为send（发送），告诉客户端，服务器要发送文件，就等同于客户端在下载</p>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-file-content-manage.html">Linux文件与目录管理的命令</a></p>
+<h2 id="ls-列出目录-："><a href="#ls-列出目录-：" class="headerlink" title="ls (列出目录)："></a>ls (列出目录)：</h2><ul>
+<li>-a ：全部的文件，连同隐藏文件( 开头为 . 的文件) 一起列出来(常用)</li>
+<li>-d ：仅列出目录本身，而不是列出目录内的文件数据(常用)</li>
+<li>-l ：长数据串列出，包含文件的属性与权限等等数据；(常用)</li>
+</ul>
+<p>例如：<br>将家目录下的所有文件列出来(含属性与隐藏档):</p>
+<pre><code>ls -al
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202111202302511.png"></p>
+<h2 id="mkdir-创建新目录-："><a href="#mkdir-创建新目录-：" class="headerlink" title="mkdir (创建新目录)："></a>mkdir (创建新目录)：</h2><pre><code>mkdir [-m/-p] 目录名称
+</code></pre>
+<ul>
+<li>-m ：配置文件的权限,没有加上 -m 来强制配置属性，系统会使用默认属性</li>
+<li>-p ：创建多层目录</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202111202302639.png"></p>
+<h2 id="rmdir-删除空的目录"><a href="#rmdir-删除空的目录" class="headerlink" title="rmdir (删除空的目录):"></a>rmdir (删除空的目录):</h2><pre><code>rmdir [-p] 目录名称
+</code></pre>
+<ul>
+<li>-p ：从该目录起，一次删除多级空目录</li>
+</ul>
+<p><font color="red" size="3.5"><strong>注意</strong></font></p>
+<p>rmdir 仅能删除空的目录，使用 rm 命令来删除非空目录</p>
+<p>例如：<br>删除AIOps目录：</p>
+<pre><code>rmdir AIOps
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202111202302153.png"></p>
 
-      <div class="clearer">
-      </div>
-    </main>
-    <!--  -->
-    
-  </div>
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+        
+          
+            <div class="post-nepre full next">
+          
+            <a href="/2021/11/20/Xshell%E8%BF%9E%E6%8E%A5Linux%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109171645207.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109171645207.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                Xshell连接Linux服务器</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "K6UwYN6dMijp5h01cRysnTrG-gzGzoHsz",
+        appKey: "NI1nkxc4Yhim5rlut3lno7p5",
+        path: window.location.pathname,
+        placeholder: "欢迎评论哦 ..."
+      })
+  }
+</script>
+
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+          <a href="https://hemiaomiao.github.io/" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/startdash/wangshiwu.jpg" itemprop="image" alt="Miaomiao" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="https://hemiaomiao.github.io/" itemprop="url" rel="author">Miaomiao</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>坚持</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
+
+
+
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>
