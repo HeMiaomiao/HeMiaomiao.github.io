@@ -1,0 +1,1614 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  
+  <title itemprop="name">Python基础知识 | Miaomiao&#39;s Blog</title>
+  
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC" media="all">
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="stylesheet" id="saukra_css-css" href="/css/style.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/lib.min.css" media="all">
+  <link rel="stylesheet" href="/css/font.css" media="all">
+  <link rel="stylesheet" href="/css/insight.css" media="all">
+  <link rel="stylesheet" href="/css/jquery.fancybox.min.css" media="all">
+  <link rel="stylesheet" href="/css/zoom.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+  
+<!--   <link rel="stylesheet" id="saukra_css-css" href="https://2heng.xin/wp-content/cache/autoptimize/css/autoptimize_ad42a61f4c7d4bdd9f91afcff6b5dda5.css
+" type="text/css" media="all"> -->
+  <script>
+  /*Initial Variables*/
+  var mashiro_option = new Object();
+  var mashiro_global = new Object();
+  mashiro_option.NProgressON = true;
+  /* 
+   * 邮箱信息之类的东西可以填在这里，这些js变量基本都作用于sakura-app.js
+   * 这样的设置仅是为了方便在基于PHP开发的主题中设置js变量，既然移植到了Node上，我想或许可以精简这一逻辑吧
+   */
+  mashiro_option.email_domain = "";
+  mashiro_option.email_name = "";
+  mashiro_option.cookie_version_control = "";
+  mashiro_option.qzone_autocomplete = false;
+  mashiro_option.site_name = "Miaomiao's Blog";
+  mashiro_option.author_name = "Miaomiao's Blog";
+  mashiro_option.site_url = "https://hemiaomiao.github.io/";
+  mashiro_option.v_appId = "K6UwYN6dMijp5h01cRysnTrG-gzGzoHsz";
+  mashiro_option.v_appKey = "NI1nkxc4Yhim5rlut3lno7p5";
+  mashiro_option.mathjax = "0";
+  
+  mashiro_option.qq_api_url = "https://api.mashiro.top/qqinfo/"; 
+  mashiro_option.qq_avatar_api_url = "https://api.mashiro.top/qqinfo/";
+
+  // mashiro_option.jsdelivr_css_src = "https://cdn.jsdelivr.net/gh/moezx/cdn@3.4.5/css/lib.min.css";
+  // mashiro_option.float_player_on = true;
+
+  /*End of Initial Variables*/
+  </script>
+  <script type="text/javascript">
+  var bg = "https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109161805207.jpg".split(",");
+  var bgindex = Math.floor(Math.random()*bg.length);
+  if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+    alert('朋友，IE浏览器未适配哦~');
+  }
+  </script>
+  <style type="text/css">
+  .hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}
+  </style>
+  <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
+  </style>
+<meta name="generator" content="Hexo 5.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+
+<script src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/sakura.js"></script>
+<script src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+<script type="text/javascript">
+    var OriginTitile=document.title,st;
+	document.addEventListener("visibilitychange",function(){
+        document.hidden?(document.title="ヽ(●-`Д´-)ノ你要玩捉迷藏嘛",clearTimeout(st)):(document.title="(Ő∀Ő3)ノ好哦！",st=setTimeout(function(){document.title=OriginTitile},3e3))
+    })
+</script>
+<body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
+  <div class="scrollbar" id="bar">
+  </div>
+  <a href="#" class="cd-top faa-float animated"></a>
+  <section id="main-container">
+    <div class="headertop ">
+  <div id="banner_wave_1"></div>
+  <div id="banner_wave_2"></div>
+  <figure id="centerbg" class="centerbg">
+    <div class="focusinfo no-select">
+      <div class="header-tou">
+        <a href="https://hemiaomiao.github.io/">
+          <img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109161806483.jpg">
+        </a>
+      </div>
+      <div class="header-info">
+        <p>未来可期</p>
+        <div class="top-social_v2">
+          <li id="bg-pre">
+            <img class="flipx" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+          
+            
+              
+                <li>
+                  <a href="https://music.163.com/" target="_blank" class="social-github" title="wangyiyun">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/wangyiyun.png">
+                  </a>
+                </li>
+              
+            
+          
+          <li id="bg-next">
+            <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+        </div>
+      </div>
+    </div>
+  </figure>
+  <div id="video-container" style="">
+    <video style="object-fit: fill" id="bgvideo" class="video" video-name="" src="" width="auto" preload="auto">
+    </video>
+    <div id="video-btn" class="loadvideo videolive">
+    </div>
+    <div id="video-add">
+    </div>
+    <div class="video-stu">
+    </div>
+  </div>
+  <div class="headertop-down faa-float animated" onclick="headertop_down()">
+    <span>
+      <i class="fa fa-chevron-down" aria-hidden="true">
+      </i>
+    </span>
+  </div>
+</div>
+    <div id="page" class="site wrapper">
+      <header class="site-header no-select gizle sabit" role="banner">
+  <div class="site-top">
+    <div class="site-branding">
+      <span class="site-title">
+        <span class="logolink moe-mashiro">
+          <a href="/">
+            <span class="sakurasono"></span>
+            <span class="shironeko">Miaomiao&#39;s Blog</span>
+          </a>
+        </span>
+      </span>
+    </div>
+    <div class="searchbox search-form-submit">
+      <i class="iconfont js-toggle-search iconsearch icon-search">
+      </i>
+    </div>
+    <div id="show-nav" class="showNav mobile-fit">
+      <div class="line line1">
+      </div>
+      <div class="line line2">
+      </div>
+      <div class="line line3">
+      </div>
+    </div>
+    <div class="lower-cantiner">
+      <div class="lower">
+        <nav class="mobile-fit-control hide">
+          <ul id="menu-new" class="menu">
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+                    首页
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+                    归档
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/categories/%E6%8A%80%E6%9C%AF/">
+                          <i class="fa fa-code" aria-hidden="true"></i>
+                          技术
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/%E7%A7%91%E7%A0%94/">
+                          <i class="fa fa-book" aria-hidden="true"></i>
+                          科研
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/%E6%9D%82%E9%A1%B9/">
+                          <i class="fa fa-heart" aria-hidden="true"></i>
+                          杂项
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/%E8%8F%9C%E8%B0%B1/">
+                          <i class="fa fa-angellist" aria-hidden="true"></i>
+                          菜谱
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/%E8%BD%AC%E8%BD%BD/">
+                          <i class="fa fa-share" aria-hidden="true"></i>
+                          转载
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="/links/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-link faa-shake" aria-hidden="true"></i>
+                    友人帐
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+                    关于
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/about/">
+                          <i class="fa fa-meetup" aria-hidden="true"></i>
+                          我？
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/comment.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/comment.jpg">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      Python基础知识</h1>
+      <p class="entry-census">
+        <span>
+          <a href="https://hemiaomiao.github.io/">
+            <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/startdash/wangshiwu.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="https://hemiaomiao.github.io/">Miaomiao</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2022-1-14<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
+  </div>
+
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <h2 id="一-安装python解释器"><a href="#一-安装python解释器" class="headerlink" title="一. 安装python解释器"></a>一. 安装python解释器</h2><p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201141500289.png"></p>
+<h2 id="二-安装PyCharm"><a href="#二-安装PyCharm" class="headerlink" title="二. 安装PyCharm"></a>二. 安装PyCharm</h2><p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201141502685.gif"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201141502414.gif"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201141506865.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201141507980.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201141507377.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201141510494.png"></p>
+<h2 id="三-调整PyCharm的主题和字体"><a href="#三-调整PyCharm的主题和字体" class="headerlink" title="三. 调整PyCharm的主题和字体"></a>三. 调整PyCharm的主题和字体</h2><p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201141510767.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201141506139.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201141510631.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201141517734.jpg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201141551097.png"></p>
+<h2 id="四-新建项目"><a href="#四-新建项目" class="headerlink" title="四. 新建项目"></a>四. 新建项目</h2><p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201141503442.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201141504324.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201141510767.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201141503975.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201141503403.png"></p>
+<h2 id="五-运行项目"><a href="#五-运行项目" class="headerlink" title="五. 运行项目"></a>五. 运行项目</h2><p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201141504903.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201141504511.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201141504827.png"></p>
+<h2 id="六-debug代码"><a href="#六-debug代码" class="headerlink" title="六. debug代码"></a>六. debug代码</h2><h4 id="dubug的步骤："><a href="#dubug的步骤：" class="headerlink" title="dubug的步骤："></a>dubug的步骤：</h4><p>按F8单步执行，要进入函数的时候按F7，要跳出函数的时候按shift + F8，按F9跳到下一个断点</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201141551948.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201141551327.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201141551704.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201141626668.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201141636865.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201141626093.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201141643961.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201142118690.png"></p>
+<h2 id="七-注释"><a href="#七-注释" class="headerlink" title="七. 注释"></a>七. 注释</h2><h4 id="1-单行注释-快捷键-ctrl-）"><a href="#1-单行注释-快捷键-ctrl-）" class="headerlink" title="1.单行注释 ( 快捷键 ctrl + / ）"></a>1.单行注释 ( 快捷键 ctrl + / ）</h4><pre><code>
+# 注释内容
+代码
+</code></pre>
+<h4 id="2-多行注释"><a href="#2-多行注释" class="headerlink" title="2.多行注释"></a>2.多行注释</h4><pre><code>"""
+注释的内容
+"""
+</code></pre>
+<h2 id="八-导入Matplotlib、numpy、pandas"><a href="#八-导入Matplotlib、numpy、pandas" class="headerlink" title="八.导入Matplotlib、numpy、pandas"></a>八.导入Matplotlib、numpy、pandas</h2><p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201162044143.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201162047940.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201162044202.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201162044507.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201162047908.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201162047932.png"></p>
+<h2 id="九-命名原则"><a href="#九-命名原则" class="headerlink" title="九.命名原则"></a>九.命名原则</h2><h4 id="1-小驼峰原则"><a href="#1-小驼峰原则" class="headerlink" title="1.小驼峰原则"></a>1.小驼峰原则</h4><p>第一个单词的首字母小写，第二个单词的首字母大写，例如firstName</p>
+<h4 id="2-大驼峰原则"><a href="#2-大驼峰原则" class="headerlink" title="2.大驼峰原则"></a>2.大驼峰原则</h4><p>每个单词的首字母都要大写，例如FirstName</p>
+<h2 id="十-输入和输出"><a href="#十-输入和输出" class="headerlink" title="十. 输入和输出"></a>十. 输入和输出</h2><h4 id="1-输入"><a href="#1-输入" class="headerlink" title="1. 输入"></a>1. 输入</h4><p>(1) input()让程序暂停运行，等待用户输入信息，获取用户输入后，会赋值给一个变量</p>
+<p>(2) int()将字符串转换为整型</p>
+<h4 id="2-输出"><a href="#2-输出" class="headerlink" title="2. 输出"></a>2. 输出</h4><p>用print()输出</p>
+<pre><code>name = input("请输入字符串：")
+print("用户输入的是：",name)
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201142153188.png"></p>
+<pre><code>age = input("输入年龄:")
+if int(age) &gt; 0:
+    print(f"{age}")
+else:
+    print(f"不合理")
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201150010262.png"></p>
+<h2 id="十一-数据类型"><a href="#十一-数据类型" class="headerlink" title="十一. 数据类型"></a>十一. 数据类型</h2><h4 id="1-字符串"><a href="#1-字符串" class="headerlink" title="1.字符串"></a>1.字符串</h4><p>(1) 字符串是以单引号’或双引号”括起来的任意文本</p>
+<pre><code>'This is test'
+
+"This is test"
+</code></pre>
+<p>(2) 字符串输出</p>
+<p>方法1：</p>
+<pre><code>print('字符串 + 占位符' % 变量)
+print('字符串 + 占位符1 + 占位符2' % (变量1,变量2))
+</code></pre>
+<p><strong>占位符：</strong></p>
+<ul>
+<li>字符串：%s</li>
+<li>整数：%d </li>
+<li>浮点数：%f  （ %.2f：显示小数点后2位数 ）</li>
+</ul>
+<p>方法2：</p>
+<pre><code>print(f"字符串 + {变量1}{变量2}")
+</code></pre>
+<pre><code>age = 18
+name = 'Tom'
+weight = 120.123
+student_id = 1
+print( "我的名字是%s" % name )
+print(f"我的名字是{name}")
+print( "我的学号是%d" % student_id)
+print(f"我的学号是{student_id}")
+print( "我的体重是%.2f斤" % weight)
+print( "我的体重是{weight}斤")
+print( "我的名字是%s，今年%d岁" % (name, age))
+print(f"我的名字是{name}，今年{age}岁\n")
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201142332090.png"></p>
+<p>(3) 字符串的索引从0开始</p>
+<p>(4) 字符串的常用操作</p>
+<ul>
+<li>获取字符串的长度： len(字符串)</li>
+<li>统计字符串2在字符串里面的出现次数： 字符串.count(字符串2)</li>
+<li>从字符串中取出单个字符：字符串[索引]</li>
+<li>获取字符串2第一次出现的索引： 字符串.index(字符串)</li>
+<li>拆分字符串： 字符串.split()</li>
+<li>用连接符合并字符串: “连接符”.join(字符串)</li>
+</ul>
+<h4 id="2-整型-int"><a href="#2-整型-int" class="headerlink" title="2.整型: int"></a>2.整型: int</h4><h4 id="3-浮点型-float"><a href="#3-浮点型-float" class="headerlink" title="3.浮点型: float"></a>3.浮点型: float</h4><h4 id="4-布尔型-bool"><a href="#4-布尔型-bool" class="headerlink" title="4.布尔型: bool"></a>4.布尔型: bool</h4><h4 id="5-列表：list"><a href="#5-列表：list" class="headerlink" title="5.列表：list"></a>5.列表：list</h4><p>(1) 列表在其它语言中通常叫做数组</p>
+<p>(2) 列表可以存储不同类型的数据</p>
+<p>(3) 列表用 <strong>[]</strong> 定义，数据之间用 “逗号,” 隔开</p>
+<p>(4) 列表的索引从0开始，索引就是数据在列表中的位置编号，索引也称为下标</p>
+<p>(5) 列表的常用操作</p>
+<ul>
+<li>从列表中取值： 列表[索引]</li>
+<li>获取数据第一次出现的索引： 列表.index(数据)</li>
+<li>获取列表长度: len (列表)</li>
+<li>在末尾追加数据: 列表. append (数据)</li>
+<li>修改指定索弓|的数据: 列表[索引]=数据</li>
+<li>删除末尾数据: 列表.pop</li>
+<li>升序排序: 列表.sort ()</li>
+<li>在指定位置插入数据: 列表.insert (索引,数据)</li>
+<li>将列表2的数据追加到列表: 列表.extend (列表2)</li>
+<li>删除第一个出现的指定数据: 列表.remove [数据]</li>
+<li>删除指定索弓|数据: 列表.pop (索引)</li>
+<li>清空列表: 列表.clear</li>
+<li>统计数据在列表中出现的次数: 列表.count (数据)</li>
+<li>降序排序: 列表.sort (reverse= True)</li>
+<li>逆序 / 反转: 列表.reverse ()</li>
+</ul>
+<pre><code>name_list = ["zhangsan", "Lisi", "wangwu" ]
+"""len(length长度)函数可以统计列表中元素的总数"""
+list_len = len(name_list)
+print ("列表中包含%d个元素" % list_len)
+"""count方法可以统计列表中某一个数据出现的次数"""
+count = name_list. count ("zhangsan")
+print("zhangsan出现了%d 次" % count)
+"""取值和取索引"""
+print (name_list[2])
+"""知道数据的内容，想确定数据在列表中的位置"""
+print (name_list . index("wangwu"))
+"""修改"""
+name_list[1] = "李四"
+"""从列表中删除第一次出现的数据，如果数据不存在，程序会报错"""
+name_list.remove("zhangsan")
+print (name_list)
+"""append 方法可以向列表的末尾追加数据"""
+name_list . append("王小二")
+"""insert方法可以在列表的指定索引位置插入数据"""
+name_list . insert(1, "小美眉")
+"""extend方法可以把其他列表中的完整内容，追加到当前列表的末尾"""
+temp_list = ["孙悟空", "猪二哥","沙师弟"]
+name_list . extend(temp_list)
+print(name_list)
+"""remove 方法可以从列表中删除指定的数据"""
+name_list . remove ("wangwu")
+"""pop方法默认可以把列表中最后一个元素删除"""
+name_list . pop()
+"""pop方法可以指定要删除元素的索引"""
+name_list . pop(3)
+"""clear 方法可以清空列表"""
+name_list. clear()
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201161048467.png"></p>
+<p>(6) 列表的循环</p>
+<pre><code>name_list = [ 'Tom','Lily','Rose']
+i = 0
+while i &lt; len(name_list):
+    print(name_list[i] )
+    i = i + 1
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201162346566.png"></p>
+<h4 id="6-元组-tuple"><a href="#6-元组-tuple" class="headerlink" title="6.元组: tuple"></a>6.元组: tuple</h4><p>(1) 元组用**()**定义</p>
+<p>(2) 元组里面的数据不能修改</p>
+<p>(3) 元组表示多个元素组成的序列，数据之间使用 “逗号,” 分隔</p>
+<p>(4) 元组可以存储不同的数据类型</p>
+<p>(5) 元组的索引从0开始,索引就是数据在元组中的位置编号</p>
+<p>(6) 元组中只包含一个元素时，需要在元素后面添加”逗号,”</p>
+<pre><code>info_tuple1 = ()  # 创建空元组
+info_tuple2 = (10, )  # 元组中只包含一个元素时，需要在元素后面添加逗号
+info_tuple3 = ("zhangsan", 18, 1.75)
+</code></pre>
+<p>(7) 元组的常用操作</p>
+<ul>
+<li>根据索引从元组中取值：元组[索引]</li>
+<li>获取元组的长度：len(元组)</li>
+<li>获取数据在元组中出现的次数：元组.count(数据)</li>
+<li>获得数据在元组中第一次出现的索引：元组.index(数据)</li>
+</ul>
+<pre><code>info_tuple = ("zhangsan", 18, 1.75, "zhangsan")
+print(info_tuple[0])  # 取值
+print (info_tuple. index ("zhangsan"))  #已经知道数据的内容，希望知道该数据在元组中的索引
+print (info_tuple. count ("zhangsan"))  # 疏计计数
+print (len(info_tuple))  # 统计元组中包含元素的个数
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201162001942.png"></p>
+<p><strong>注： 列表和元组的转换</strong></p>
+<ul>
+<li>使用list函数可以把元组转换成列表：list(元组)</li>
+<li>使用tuple函数可以把列表转换成元组：tuple(列表)</li>
+</ul>
+<h4 id="7-集合-set"><a href="#7-集合-set" class="headerlink" title="7.集合: set"></a>7.集合: set</h4><p>(1) 集合用**{}或者set()**定义，如果创建空集合只能用set()</p>
+<p>(2) 集合的数据是无序的，不支持下标访问</p>
+<p>(3) 集合没有重复元素</p>
+<pre><code>test1 = {"java","c"}
+test2 = {1,2,3,4}
+</code></pre>
+<p>(4) 集合的常见操作</p>
+<ul>
+<li>添加数据：add()</li>
+<li>添加的数据是序列: update()</li>
+<li>删除数据：remove()</li>
+</ul>
+<pre><code>s1 = {10,20}
+s1.add(30)
+print(s1)
+s1.update([40,50])
+s1.update('abc')
+print(s1)
+s1.remove(10)
+print(s1)
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201162354719.png"></p>
+<h4 id="8-字典-dict"><a href="#8-字典-dict" class="headerlink" title="8.字典:dict"></a>8.字典:dict</h4><p>(1) 字典用**{}**定义</p>
+<p>(2) 字典使用<strong>键值对</strong>存储数据，键值对之间使用 “逗号,” 分隔</p>
+<ul>
+<li>键key是索引</li>
+<li>值value 是数据</li>
+<li>键key和值value之间使用 “冒号:” 分隔</li>
+<li>键必须是唯一的</li>
+<li>键只能是字符串、数字或者元组</li>
+<li>值可以取任何数据类型</li>
+</ul>
+<p>(3) 字典同样可以用来存储不同的数据类型</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201162013463.png"></p>
+<p>(4) 循环遍历字典</p>
+<pre><code>xiaoming = {"name":"小明",
+            "age":8,
+            "gender":True,
+            "height": 1.75}
+print(f"xiaoming={xiaoming}")
+for k in xiaoming.keys():  # 遍历字典
+    print(f"k={k},value={xiaoming[k]}")
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201162027818.png"></p>
+<p>(5) 遍历字典的元素</p>
+<pre><code>xiaoming = {"name":"小明",
+            "age":8,
+            "gender":True,
+            "height": 1.75}
+for item in xiaoming.items():
+    print(item)
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201170001201.png"></p>
+<p>(6) 遍历字典的键值对</p>
+<pre><code>xiaoming = {"name":"小明",
+            "age":8,
+            "gender":True,
+            "height": 1.75}
+for key,value in xiaoming.items():
+    print(f"key={key},value={value}")
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201171052190.png"></p>
+<p>(7) 列表里面嵌套字典</p>
+<pre><code>"""将多个字典放在一个列表中"""
+card_list = [{"name": "张三",
+               "qq":"12345",
+               "phone":"110"},
+              {"name":"李四",
+               "qq" :"54321",
+               "phone":"10086"}
+              ]
+for card_info in card_list:
+    print (card_info)
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201162023654.png"></p>
+<p>(8) 字典是一个无序的数据集合，使用print函数输出字典时，通常输出的顺序和定义的顺序是不一致的</p>
+<p>(9) 字典不支持下标访问，只能按照键的名字去找值</p>
+<p>(10) 字典的常用操作</p>
+<ul>
+<li>获取字典的键值对数量：len(字典)</li>
+<li>获取所有key列表：字典.keys()</li>
+<li>获取所有value列表：字典.values()</li>
+<li>获取字典的所有元素 / 所有键值对：字典.items()</li>
+<li>根据key值查找：字典[key] (key不存在会报错）</li>
+<li>根据key值查找：字典.get(key) (key不存在不会报错）</li>
+<li>删除指定键值对：字典.pop(key)</li>
+<li>随机删除一个键值对：字典.popitem()</li>
+<li>清空字典：字典.clear()</li>
+<li>字典[key] = value：如果key存在，修改数据，如果key不存，新建键值对</li>
+<li>字典.setdefault(key, value)：如果key存在，不会修改数据，如果key不存在，新建键值对</li>
+<li>将字典2的数据合并到字典：字典.update(字典2)</li>
+</ul>
+<pre><code>xiaoming_dict = {"name": "小明"}
+print (xiaoming_dict ["name"]) #在取值的时候，如果指定的key不存在，程序会报错!
+xiaoming_dict["age"] = 18 # 如果key不存在，会新增键值对,如果key已经存在，会修改已经存在的键值对
+print(xiaoming_dict)
+xiaoming_dict["name"] = "小小明"
+print(f"键值对数量={xiaoming_dict}")
+print(len(xiaoming_dict)) # 统计键值对数量
+xiaoming_dict.pop ("name" ) # 在删除指定键值对的时候，如果指定的key不存在，程序会报错
+print (xiaoming_dict)
+temp_dict = {"height": 1.75, "age": 20}  #注意:如果被合并的字典中包含已经存在的键值对，会覆盖原有的键值对
+xiaoming_dict.update(temp_dict )  # 合并字典
+print(xiaoming_dict)
+xiaoming_dict.clear( )  # 清空字典
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201162038475.png"></p>
+<h2 id="十二-if-和-else的语法"><a href="#十二-if-和-else的语法" class="headerlink" title="十二.if 和 else的语法"></a>十二.if 和 else的语法</h2><pre><code>if 条件1:
+  代码
+elif 条件2:
+  代码
+else：
+  代码
+</code></pre>
+<p><strong>注：</strong></p>
+<p>1.属于if条件的代码要缩进四个空格，属于elif条件的代码要缩进四个空格，属于else的代码要缩进四个空格</p>
+<p>2.if语句以及缩进部分是一个完整的代码块，else语句以及缩进部分是一个完整的代码块</p>
+<pre><code>age = int(input( '请输入年龄: '))
+if age &lt; 18:
+  print(f"年龄是{age},童工")
+elif 18 &lt;= age &lt;= 60:
+  print(f"您的年龄是{age},合法工龄")
+else:
+  print(f"您的年龄是{age},可以退休")
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201142345409.png"></p>
+<h2 id="十三-循环"><a href="#十三-循环" class="headerlink" title="十三.循环"></a>十三.循环</h2><h4 id="1-while循环"><a href="#1-while循环" class="headerlink" title="(1) while循环"></a>(1) while循环</h4><pre><code>定义计数器
+while 条件:
+  在循环内部执行的代码
+  改变计数器的值
+</code></pre>
+<p><strong>注：</strong></p>
+<p>1.属于while循环的代码要缩进四个空格</p>
+<p>3.while语句以及缩进部分是一个完整的代码块</p>
+<pre><code>i = 1
+while i &lt;= 3:
+  print( f"{i}")
+  i = i + 1
+print( f"{i}")
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201150011819.png"></p>
+<h4 id="2-for循环"><a href="#2-for循环" class="headerlink" title="(2) for循环"></a>(2) for循环</h4><pre><code>for 变量 in 列表:
+  代码
+</code></pre>
+<pre><code>str1 = 'ihem'
+for i in / not in str1:
+  if i == 'e':
+    print('遇到e不打印')
+    break
+  print(i)
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201150011913.png"></p>
+<p><strong>注：</strong></p>
+<p>1.属于for循环的代码要缩进四个空格</p>
+<p>2.break某一条件满足时，退出循环，不再执行后续重复的代码</p>
+<p>3.cont inue某一条件满足时，不执行后续重复的代码</p>
+<p>4.break和continue只针对当前所在循环有效</p>
+<h2 id="十四-range-函数"><a href="#十四-range-函数" class="headerlink" title="十四.range()函数"></a>十四.range()函数</h2><p>1.range(start,end, step)：左闭右开[start,end),生成从start到end-1的数字，不包含end，步长为step</p>
+<pre><code>for i in range(1, 4, 1):
+    print(i)
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201170012314.png"></p>
+<p>2.range(num):生成从0到num-1的数字 （range函数只有一个参数的时候）</p>
+<pre><code>for i in range(4):
+    print(i)
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201170012440.png"></p>
+<p>3.使用range()创建数字列表</p>
+<p>list()函数将range()的结果直接转换成列表</p>
+<pre><code>number1 = list(range(1, 4))
+print(number1)
+number2 = list(range(4))
+print(number2)
+number3 = list(range(1,10,2))
+print(number3)
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201170018184.png"></p>
+<h2 id="十五-列表解析-列表生成式"><a href="#十五-列表解析-列表生成式" class="headerlink" title="十五.列表解析 / 列表生成式"></a>十五.列表解析 / 列表生成式</h2><p>列表解析：把for循环和创建新元素的代码合并成一行</p>
+<pre><code>square = [value * 2 for value in range(1,5)] # 把1到4的数字提供给表达式value*2，
+print(f"square={square}")
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201170051307.png"></p>
+<p>等价于</p>
+<pre><code>square = []
+for value in range(1,5):
+    square.append(value * 2)
+print(f"square={square}")
+</code></pre>
+<h2 id="十六-切片"><a href="#十六-切片" class="headerlink" title="十六.切片"></a>十六.切片</h2><h4 id="1-切片适用："><a href="#1-切片适用：" class="headerlink" title="1.切片适用："></a>1.切片适用：</h4><p>字符串、列表、元组</p>
+<h4 id="2-切片的格式"><a href="#2-切片的格式" class="headerlink" title="2.切片的格式"></a>2.切片的格式</h4><p>(1) 字符串/列表/元组[开始索引:结束索引:步长]</p>
+<p>(2) 切片的区间是左闭右开：[开始索引，结束索引)，从开始索引到结束索引的前一位，不包括结束索引</p>
+<p>(3) [：结束索引]：省略开始索引，表示默认从索引0(第一个元素)开始</p>
+<p>(4) [开始索引:]：省略结束索引，表示默认到最后一个元素结束</p>
+<p>(5) [开始索引：结束索引]:省略步长，表示步长默认是1</p>
+<p>(6) [:]:省略开始索引和结束索引，表示复制列表，从第一个元素到最后一个元素</p>
+<p>(7) 如果步长是-1，表示从右向左切片</p>
+<p>(8) 索引是负数：表示倒数第几个元素，-1表示倒数第一个元素，-3表示倒数第三个元素</p>
+<p>(9) 开始索引是负数：表示从倒数第几个元素开始，是包括倒数第几个元素</p>
+<p>(10) 结束索引是负数：表示到倒数第几个元素之前的元素，不包括倒数第几个元素，因为区间是左闭右开</p>
+<pre><code>num_str = "abcde"
+print(f"num_str={num_str}")
+print(f"num_str[2:5]={num_str[2:5]}")  # 从索引2到索引5，即第3个元素到第5个元素
+print(f"num_str[2:]={num_str[2:]}")  # 从索引2到最后一个元素，即第3个元素到最后一个元素
+print(f"num_str[:5]={num_str[:5]}")  # 从索引0到索引4，即从第1个元素到第5个元素
+print(f"num_str[:]={num_str[:]}")  # 从第1个元素到最后1个元素
+print(f"num_str[::2]={num_str[::2]}")  # 从第1个元素到最后1个元素，步长是2
+print(f"num_str[1::2]={num_str[1::2]}")  # 从索引1到最后1个元素，即从第2个元素到最后1个元素，步长是2
+print(f"num_str[2:-1]={num_str[2:-1]}") # 从索引2到倒数第1个元素之前的元素，即从第3个元素到倒数第2个元素，不包括倒数第1个元素
+print(f"num_str[-2:]={num_str[-2:]}") # 从倒数第2个元素到最后1个元素
+print(f"num_str[::-1]={num_str[::-1]}")  # 从右向左切片
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201170044892.png"></p>
+<pre><code>name = "abcdefg"
+print(f"name={name}")
+print(f"name[2:5:1]={name[2:5:1]}")
+print(f"name[2:5:2]={name[2:5:2]}")
+print(f"name[2:5]={name[2:5]}")
+print(f"name[:5]={name[:5]}")
+print(f"name[1:]={name[1:]}")
+print(f"name[:]={name[:]}")
+print (f"name[::2]={name[::2]}")
+print(f"name[:-1]={name[:-1]}")
+print (f"name[-4:-1]={name[-4:-1]}")
+print(f"name[::-1]={name[::-1]}")
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201170025079.png"></p>
+<h2 id="十七-函数"><a href="#十七-函数" class="headerlink" title="十七.函数"></a>十七.函数</h2><h4 id="1-函数的定义"><a href="#1-函数的定义" class="headerlink" title="1.函数的定义"></a>1.函数的定义</h4><pre><code>def 函数名
+    函数封装的代码
+</code></pre>
+<h4 id="2-函数的调用"><a href="#2-函数的调用" class="headerlink" title="2.函数的调用"></a>2.函数的调用</h4><p>通过函数名调用函数，如果不主动调用函数，函数是不会执行的</p>
+<p><strong>注意：</strong> 函数定义要放在函数调用前面</p>
+<h4 id="3-函数的注释"><a href="#3-函数的注释" class="headerlink" title="3.函数的注释"></a>3.函数的注释</h4><p>函数的注释要写在定义函数的下方</p>
+<p><strong>注意：</strong> 函数定义的上方要有两个空行</p>
+<pre><code>def say_hello():
+    """
+    打招呼
+    """
+    print("hello")
+
+say_hello()
+</code></pre>
+<h4 id="4-函数的返回值"><a href="#4-函数的返回值" class="headerlink" title="4.函数的返回值"></a>4.函数的返回值</h4><p>函数返回多个值：</p>
+<p>(1) return a,b 返回多个数据的时候，默认是元组类型</p>
+<p>(2) return后面可以连接列表、元组或者字典，从而返回多个值</p>
+<p>(3) 使用元组可以让函数一次返回多个结果，如果函数的返回值是元组，括号可以省略</p>
+<pre><code>def measure():
+    temp = 39
+    wetness = 50
+    return temp, wetness  # 省略了元组的括号，本来是 return (temp， wetness)
+result = measure( )
+print ( result)
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201161650542.png"></p>
+<p>(4) 如果函数返回值是元组，同时希望单独处理元组中的元素，可以使用多个变量，一次接收函数的返回结果,注意：变量的数量需要和元组中的元素数量保持一致</p>
+<pre><code>def measure():
+    temp = 39
+    wetness = 50
+    return temp, wetness  # 返回值是元祖，所以省略了元祖的括号
+gl_temp,gl_wetness = measure()
+print(gl_temp)
+print(gl_wetness )
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201161908875.png"></p>
+<h4 id="5-不定长参数-可变参数"><a href="#5-不定长参数-可变参数" class="headerlink" title="5.不定长参数 / 可变参数"></a>5.不定长参数 / 可变参数</h4><p>(1) 有时可能需要一个函数能够处理的参数个数是不确定的，这个时候，就可以使用多值参数</p>
+<p>(2) python中有两种多值参数:</p>
+<ol>
+<li><p>参数名前增加 * ：接收元组</p>
+</li>
+<li><p>参数名前增加 ** ： 接收字典</p>
+<p>(3) 一般在给多值参数命名时，习惯使用以下两个名字</p>
+</li>
+<li><p>*args：传进来的所有参数都会被args变量收集，它会根据传进参数的位置合并为一个元组，args是元组类型</p>
+</li>
+<li><p>**kwargs：存放字典参数,记忆键值对参数</p>
+</li>
+</ol>
+<pre><code>def demo(num,*args, **kwargs):
+    print( num )
+    print(args )
+    print( kwargs)
+demo(1, 2, 3, 4, 5, name="小明",age=18, gender=True )
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201161936151.png"></p>
+<h4 id="6-元组和字典的拆包"><a href="#6-元组和字典的拆包" class="headerlink" title="6.元组和字典的拆包"></a>6.元组和字典的拆包</h4><p>(1) 在调用带有多值参数的函数时，如果希望:</p>
+<ul>
+<li>将一个元组变量，直接传递给args</li>
+<li>将一个字典变量，直接传递给kwargs </li>
+</ul>
+<p>(2) 就可以使用拆包，简化参数的传递，拆包的方式是:</p>
+<ul>
+<li>在元组变量前，增加 *</li>
+<li>在字典变量前，增加 **</li>
+</ul>
+<pre><code>def demo (*args,**kwargs):
+    print(f"元组变量args={args}")
+    print (f"字典变量kwargs={kwargs}")
+nums = (1, 2, 3) # 元组变量
+dict = {"name": "小明", "age": 18} # 字典变量
+demo(*nums, **dict)
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201161943532.png"></p>
+<h2 id="十八-变量的引用"><a href="#十八-变量的引用" class="headerlink" title="十八.变量的引用"></a>十八.变量的引用</h2><p>1.变量和数据是分开存储的，数据保存在内存中，变量保存着数据在内存中的地址</p>
+<p>2.变量中记录数据的地址，就叫做<strong>引用</strong></p>
+<p>3.如果变量已经被定义，当给一个变量赋值的时候，本质上是修改了数据的引用，变量不再对之前的数据引用，而是改为对新赋值的数据引用</p>
+<pre><code>a = 2
+print("a=%d,a在内存中的地址是%d" % (a,id(a)))
+a = 3
+print("赋值后，a=%d,a在内存中的地址是%d" % (a,id(a)))
+b = a
+print("b=%d,b在内存中的地址是%d" % (b,id(b)))
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201161523741.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201161523071.png"></p>
+<h2 id="十九-可变类型和不可变类型"><a href="#十九-可变类型和不可变类型" class="headerlink" title="十九.可变类型和不可变类型"></a>十九.可变类型和不可变类型</h2><p>(1) 可变类型：内存中的数据能直接修改</p>
+<p>(2) 可变类型有：</p>
+<ul>
+<li>列表</li>
+<li>字典</li>
+<li>集合</li>
+</ul>
+<p>(3) 如果给可变类型的变量赋值了一个新的数据，引用会被修改：变量不再对之前的数据引用，变量改为对新赋值的数据引用</p>
+<p>(4) 不可变类型：内存中的数据不能直接修改</p>
+<p>(5) 不可变类型有：</p>
+<ul>
+<li>数字型(int、bool、float等)</li>
+<li>字符串</li>
+<li>元组</li>
+</ul>
+<h2 id="二十-局部变量和全局变量"><a href="#二十-局部变量和全局变量" class="headerlink" title="二十.局部变量和全局变量"></a>二十.局部变量和全局变量</h2><h4 id="1-局部变量"><a href="#1-局部变量" class="headerlink" title="1.局部变量"></a>1.局部变量</h4><p>(1) 局部变量的定义</p>
+<ul>
+<li>局部变量是在函数内部定义的变量，只能在函数内部使用</li>
+<li>函数执行结束后，函数内部的局部变量,会被系统回收</li>
+<li>不同的函数，可以定义相同的名字的局部变量，但是彼此之间不会产生影响</li>
+</ul>
+<p>(2) 局部变量的作用</p>
+<p>在函数内部使用，临时保存函数内部需要使用的数据</p>
+<p>(3) 局部变量的生命周期</p>
+<ul>
+<li>所谓生命周期就是变量从被创建到被系统回收的过程</li>
+<li>局部变量在函数执行时才会被创建</li>
+<li>函数执行结束后局部变量被系统回收</li>
+<li>局部变量在生命周期内，可以用来存储函数内部临时使用到的数据</li>
+</ul>
+<h4 id="2-全局变量"><a href="#2-全局变量" class="headerlink" title="2.全局变量"></a>2.全局变量</h4><p>(1) 全局变量是在函数外部定义的变量，所有函数内部都可以使用这个变量</p>
+<p>(2) 为了保证所有的函数都能够正确使用到全局变量，应该将全局变量定义在其他函数的上方</p>
+<p>(3) 全局变量名前应该增加g_ 或者g1_的前缀</p>
+<p>(4) 在函数内部不允许直接修改全局变量的值，如果在函数内部使用赋值语句修改全局变量的值，只是相当于定义了一个局部变量</p>
+<pre><code>#全局变量
+num = 10
+
+
+def demo1():
+# 是不允许直接修改全局变量的值
+# 如果使用赋值语句，会在函数内部，定义一个局部变量
+    num = 99
+    print ("demo1 ==&gt; %d" % num)
+def demo2():
+    print("demo2 ==&gt; %d" % num)
+demo1()
+demo2()
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201161544871.png"></p>
+<p>(5) 如果在函数中需要修改全局变量，需要使用global进行声明</p>
+<pre><code>#全局变量
+num = 10
+
+
+def demo1():
+    #希望修改全局变量的值.使用global 声明一下变量即可
+    #global关键字会告诉解释器后面的变量是--个全局变量
+    #再使用赋值语句时，就不会创建局部变量
+    global num
+    num = 99
+    print("demo1 ==&gt; %d" % num)
+def demo2() :
+    print("demo2 ==&gt; %d" % num)
+demo1()
+demo2()
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201161553925.png"></p>
+<pre><code>def demo (num_list):
+    print ("函数内部的代码")
+    #在函数内部，针对参数使用赋值语句，不会修改到外部的实参变量
+    num = 100
+    num_list = [1, 2, 3]
+    print(num_list)
+    print("函数执行完成后")
+gl_list = [4, 5, 6]
+demo(gl_list)
+print(gl_list)
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201161604855.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201161606984.png"></p>
+<pre><code>def demo(num_list):
+    print ("函数内部的代码")
+    #使用方法修改列表的内容
+    num_list. append(9)
+    print(num_list)
+    print ("函数执行完成")
+gl_list = [1,2,3]
+demo(gl_list)
+print(gl_list)
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201161613716.png"></p>
+<p><strong>注意:</strong></p>
+<p>函数执行时，需要处理变量时会:</p>
+<p>1.首先查找函数内部是否存在指定名称的局部变量,如果有，直接使用</p>
+<p>2.如果没有，查找函数外部是否存在指定名称的全局变量，如果有，直接使用</p>
+<p>3.如果还没有,程序报错!</p>
+<h2 id="二十一-模块"><a href="#二十一-模块" class="headerlink" title="二十一.模块"></a>二十一.模块</h2><h4 id="1-导入模块的方式"><a href="#1-导入模块的方式" class="headerlink" title="1.导入模块的方式"></a>1.导入模块的方式</h4><ol>
+<li>import 模块名</li>
+<li>import 模块名1,模块名2,…</li>
+<li>from 模块名 import 功能名</li>
+<li>from 模块名 import 功能名1,功能名2,…</li>
+<li>from 模块名 import *</li>
+<li>import 模块名 as 别名</li>
+<li>from 模块名 import 功能名 as 别名</li>
+</ol>
+<p><strong>别名要符合大驼峰原则</strong></p>
+<h4 id="2-调用功能"><a href="#2-调用功能" class="headerlink" title="2.调用功能"></a>2.调用功能</h4><p>模块名.功能名()</p>
+<h4 id="3-制作自定义模块"><a href="#3-制作自定义模块" class="headerlink" title="3.制作自定义模块"></a>3.制作自定义模块</h4><p>python中每个文件都可以作为一个模块，模块的名字就是文件的名字</p>
+<p>(1) 只在当前文件中执行测试代码，其它导入该模块的文件不执行测试代码</p>
+<p>(2) 测试代码格式：</p>
+<pre><code>if __name__ == '__main__':
+    调用模块里面的函数  
+</code></pre>
+<pre><code>def testA(a, b):  # 在 my_module1.py文件中定义模块和测试模块
+    print(a + b)
+if __name__ == '__main__':
+    testA(1,1)
+</code></pre>
+<p>(4) 调用模块</p>
+<pre><code>import my_module1
+my_module1.testA(1，1)
+</code></pre>
+<h2 id="二十二-包"><a href="#二十二-包" class="headerlink" title="二十二.包"></a>二十二.包</h2><h4 id="1-导入包"><a href="#1-导入包" class="headerlink" title="1.导入包"></a>1.导入包</h4><p>(1) 方法1</p>
+<p>导入包：import 包名.模块名</p>
+<p>调用：包名.模块名.目标</p>
+<p>(2) 方法2</p>
+<p>导入包：</p>
+<p>1.from 包名 import *</p>
+<p>2.在包内部的<strong>init</strong>.py文件添加<strong>all</strong> == []，控制允许导入的模块列表</p>
+<p>调用：模块名.目标</p>
+<pre><code>""" 新建一个包my_package,在包里面添加模块my_module.py，模块内代码如下："""
+def info_print(): 
+    print("test")
+
+方法1：
+
+"""导入包里面的模块"""
+import my_package.my_ module
+
+"""调用模块里面的方法"""
+my_package.my_ module.info_print()
+
+方法2：
+
+在__init__.py文件中添加__all__ = []
+
+"""导入包里面的模块"""
+from my_package import *
+
+"""调用模块里面的方法"""
+my_module.info_print( )
+</code></pre>
+<h2 id="二十三-类和对象"><a href="#二十三-类和对象" class="headerlink" title="二十三.类和对象"></a>二十三.类和对象</h2><h4 id="1-定义类-类名要符合大驼峰原则-首字母大写"><a href="#1-定义类-类名要符合大驼峰原则-首字母大写" class="headerlink" title="1.定义类:类名要符合大驼峰原则 (首字母大写)"></a>1.定义类:类名要符合大驼峰原则 (首字母大写)</h4><pre><code>class 类名():
+    def 函数(self,参数列表): 
+        pass
+</code></pre>
+<p><strong>类里面定义的函数必须有self,self是调用该函数的对象</strong></p>
+<p><strong>类里面的代码是：class下面缩进的代码</strong></p>
+<pre><code>class Person:
+    def run(self):
+        print("调用Person类里面的run方法")
+
+xiaoming = Person()
+xiaoming.run()
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201172011796.png"></p>
+<h4 id="2-创建对象（实例对象）"><a href="#2-创建对象（实例对象）" class="headerlink" title="2.创建对象（实例对象）"></a>2.创建对象（实例对象）</h4><p>对象名 = 类名()</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201172135785.png"></p>
+<ul>
+<li>创建对象的动作叫作实例化</li>
+<li>对象的属性叫做实例属性</li>
+<li>对象调用的方法叫做实例方法</li>
+<li>在程序执行的时候，对象可以通过self.访问自己的属性和调用自己的方法</li>
+</ul>
+<h4 id="3-self"><a href="#3-self" class="headerlink" title="3.self"></a>3.self</h4><p>self：是调用该函数的对象，哪一个对象调用的函数，self就是哪一个对象的引用</p>
+<h4 id="4-调用类里面的函数"><a href="#4-调用类里面的函数" class="headerlink" title="4.调用类里面的函数"></a>4.调用类里面的函数</h4><p>对象名.函数()</p>
+<h4 id="5-获取属性-实例属性）"><a href="#5-获取属性-实例属性）" class="headerlink" title="5.获取属性(实例属性）"></a>5.获取属性(实例属性）</h4><p>(1) 类外面获取对象属性</p>
+<p>对象名.属性名</p>
+<p>(2) 类里面获取对象属性</p>
+<p>self.属性名</p>
+<p><strong>属性要封装在类的内部</strong></p>
+<p><strong>在类的外部，通过 “变量名.” 访问对象的属性和方法</strong></p>
+<p><strong>在类封装的方法中，通过 “self.” 访问对象的属性和方法</strong></p>
+<h4 id="6-初始化方法-init-方法"><a href="#6-初始化方法-init-方法" class="headerlink" title="6.初始化方法 __init__方法"></a>6.初始化方法 __init__方法</h4><p><strong>__init__方法是专门用来定义一个类具有哪些属性的方法</strong></p>
+<p><strong>__init__在创建对象的时候会自动被调用</strong></p>
+<p>(1) 当使用类名()创建对象时，会自动执行以下操作:</p>
+<p>1.在内存中为对象分配空间和返回对象的引用：使用__new__方法</p>
+<p>2.为对象的属性设置初始值：调用初始化方法(__init__方法)</p>
+<p>(2）不带形参的__init__方法</p>
+<ul>
+<li>在__init__方法内部定义属性：self.属性名 = 初始值 </li>
+<li>定义属性之后，再使用类名创建的对象都会拥有该属性</li>
+</ul>
+<p>格式：</p>
+<pre><code>class Cat:
+
+    def __init__ (self):
+        pass
+对象名 = 类名()  # #使用类名( )创建对象的时候，会自动调用初始化方法__init__
+</code></pre>
+<p><strong>注：</strong> <strong>init</strong>(self) 中的self参数，不需要开发者传递，python解释器器会自动把当前的对象引用传递过去</p>
+<pre><code>class Cat:
+
+    def __init__ (self):
+        print("这是个初始化方法" )
+        self.name = "Tom"  # 定义用Cat类创建的对象都有name属性
+
+    def eat(self): # slef是调用方法的对象，即 tom
+        print(f"{self.name}")
+
+tom = Cat()  # #使用类名( )创建对象的时候，会自动调用初始化方法__init__
+tom.eat()
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201171941296.png"></p>
+<p>(3) 带形参的<strong>init</strong>()方法</p>
+<p>如果希望在创建对象的同时，就设置对象的属性：</p>
+<ol>
+<li><p>把希望设置的属性值，定义成__init__方法的参数</p>
+</li>
+<li><p>在__init__方法内部定义属性: self.属性 = 形参</p>
+</li>
+<li><p>在创建对象时，使用类名(属性1的值，属性2的值，…)调用</p>
+</li>
+</ol>
+<pre><code>class Cat:
+
+    def __init__ (self, name):
+        print("这是个初始化方法" )
+        self.name = name  # 接收传递的参数
+
+    def eat(self):  # slef是调用方法的对象，即 tom
+        print(f"{self.name}")
+
+tom = Cat("Tom")  # #使用类名( )创建对象的时候，会自动调用初始化方法__init__
+tom.eat()
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201171949013.png"></p>
+<h4 id="7-str-方法"><a href="#7-str-方法" class="headerlink" title="7.__str__方法"></a>7.__str__方法</h4><p>(1) __str__方法可以让print输出对象的时候，输出的是__str__方法的返回值</p>
+<p>(2) 如果没有__str__方法，当用print输出对象的时候，是输出对象是由哪个类创建的和对象在内存中的地址</p>
+<pre><code>class Cat:
+
+    def __init__ (self, name):
+        self.name = name
+
+tom = Cat("Tom")
+print(tom)
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201172001732.png"></p>
+<pre><code>class Cat:
+
+    def __init__ (self, name):
+        self.name = name
+    def __str__(self):
+        return "是: %s" % self.name
+
+tom = Cat("Tom")
+print(tom)
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201172000415.png"></p>
+<pre><code>class Person:
+    def __init__(self, name, weight):
+        print("__init__方法")
+        self.name = name
+        self.weight = weight
+    def __str__(self):
+        return "__str__方法:%.2f斤" % (self .weight)
+    def run(self):
+        print("run方法:%s跑步" % self.name )
+
+xiaoming = Person("小明", 75)
+xiaoming.run( )
+print(xiaoming)
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201172011036.png"></p>
+<h4 id="8-私有属性和私有方法"><a href="#8-私有属性和私有方法" class="headerlink" title="8.私有属性和私有方法"></a>8.私有属性和私有方法</h4><p>(1) 定义私有属性：在属性前面增加两个_</p>
+<p>(2) 定义私有方法：在方法前面增加两个_</p>
+<p>(3) 对象不不能访问私有属性和私有⽅方法，在类的外部访问不到私有属性和私有方法</p>
+<p>(4) 子类⽆无法继承⽗父类的私有属性和私有⽅方法</p>
+<p>(5) 获取私有属性: 定义函数get_xx</p>
+<p>(6) 修改私有属性的值: 定义函数set_xx</p>
+<pre><code>class Women :
+    def __init__ (self, name):
+        self.name = name
+        self.__age = 18  # 私有属性
+        print(f"私有属性__age={self.__age}")
+    def __secret(self):  # 私有方法
+        print(f"年龄是{self.__age}")
+xiaofang = Women("小芳")
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201172024961.png"></p>
+<pre><code>class Women :
+    def __init__ (self):
+        self.__age = 8  # 私有属性
+        print(f"私有属性__age={self.__age}")
+    def set_age(self):  # 修改私有属性
+        self.__age = 1
+        print(f"修改后私有属性__age={self.__age}")
+    def get_age(self): # 获取私有属性
+        return self.__age
+xiaofang = Women()
+xiaofang.set_age()
+age = xiaofang.get_age()
+print(f"返回的私有属性__age={age}")
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201172039301.png"></p>
+<h2 id="二十四-类属性和类方法"><a href="#二十四-类属性和类方法" class="headerlink" title="二十四.类属性和类方法"></a>二十四.类属性和类方法</h2><h4 id="1-概念"><a href="#1-概念" class="headerlink" title="1.概念"></a>1.概念</h4><ol>
+<li>类是一种特殊的对象，”class 类名”定义的类是类对象</li>
+<li>类对象在内存中只有一份，一个类可以创建多个实例对象</li>
+<li>类对象可以拥有自己的属性和方法，称为类属性和类方法</li>
+<li>通过”类名.”可以访问类属性和调用类方法</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201172135519.png"></p>
+<h4 id="2-类属性"><a href="#2-类属性" class="headerlink" title="2.类属性"></a>2.类属性</h4><p>类属性用来记录和类相关的特征</p>
+<pre><code>class Tool(object):
+    count = 0  # 类属性
+    def __init__ (self, name):
+        self.name = name  # 对象的属性，即 对象的实例属性
+        Tool. count = Tool. count + 1
+
+tool1 = Tool("斧头")
+tool2 = Tool("榔头")
+print(f"类属性Tool.count={Tool.count}")
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201172152492.png"></p>
+<h2 id="二十五-面向对象三大特性"><a href="#二十五-面向对象三大特性" class="headerlink" title="二十五.面向对象三大特性"></a>二十五.面向对象三大特性</h2><p>1.封装是把属性和方法封裝到一个类里面</p>
+<p>2.继承实现代码的重用，相同的代码不需要重复的编写</p>
+<p>3.多态不同的对象调用相同的方法，产生不同的结果</p>
+<h2 id="二十六-继承"><a href="#二十六-继承" class="headerlink" title="二十六.继承"></a>二十六.继承</h2><p>1.单继承</p>
+<p>(1) 继承：子类拥有父类以及父类的父类中封装的所有非私有属性和非私有方法</p>
+<p>(2) 格式：</p>
+<pre><code>class 子类名(父类名):
+    pass
+</code></pre>
+<p>(3) 方法的重写</p>
+<ol>
+<li>当父类的方法不能满足子类需求时，子类可以对方法进行重写</li>
+<li>重写之后，在运行中只会调用子类中重写的方法，不会调用父类的同名方法</li>
+<li>重写之后，子类调用父类的同名方法，在子类里面使用”super().函数()”</li>
+<li>子类和父类具有同名属性和方法，默认使用子类的同名属性和同名方法</li>
+</ol>
+<pre><code>class Master(object) :  # 父类
+    def __init__(self):
+        self.feel = "开心"
+    def make_cake(self):
+        print(f"父类里面feel={self.feel}")
+class Prentice(Master):  # 子类
+    def __init__(self):
+        self.feel = "悲伤"
+    def make_cake(self):
+        print(f"子类里面feel={self.feel}")
+    def father(self):
+        super().make_cake()
+son = Prentice( )
+son.make_cake()
+son.father()
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201172105265.png"></p>
+<p>2.多继承</p>
+<p>(1) 子类同时继承了多个父类</p>
+<p>(2) 格式：</p>
+<pre><code>class 子类名(父类名1, 父类名2, ...):
+    pass
+</code></pre>
+<h2 id="二十七-多态"><a href="#二十七-多态" class="headerlink" title="二十七.多态"></a>二十七.多态</h2><p>(1) 子类重写父类的方法，不同子类的对象调用和父类同名的方法，可以得到不同的结果</p>
+<p>(2) 实现步骤：</p>
+<ol>
+<li>定义父类，并提供公共方法</li>
+<li>定义子类,并重写父类方法</li>
+<li>传递子类对象给调用者，可以看到不同子类执行效果不同</li>
+</ol>
+<pre><code>class Dog(object):  # 定义父类
+    def __init__(self, name):
+        self.name = name
+    def game(self):
+        print(f"Dog类的name={self.name}")
+
+class FirstDog(Dog):  # 定义子类1
+    def game(self):  # 重写父类的方法
+        print(f"FirstDoag类的name={self.name}")
+
+class SecondDog(Dog):  # 定义子类2
+    def game(self):  # 重写父类的方法
+        print(f"SecondDoag类的name={self.name}")
+
+class Person( object) :
+    def with_dog(self, dog):  # 传入不同的对象，执行不同的代码，即不同的work函数
+        print("Person类里面")
+        dog.game()
+
+firstDog = FirstDog("子类1")
+secondDog = SecondDog("子类2")
+person = Person( )
+person.with_dog(firstDog)
+person.with_dog(secondDog)
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201172133650.png"></p>
+<h2 id="二十八-异常"><a href="#二十八-异常" class="headerlink" title="二十八.异常"></a>二十八.异常</h2><h4 id="1-捕获异常的格式："><a href="#1-捕获异常的格式：" class="headerlink" title="1.捕获异常的格式："></a>1.捕获异常的格式：</h4><pre><code>try: 
+    可能发生错误的代码
+except 错误类型1:
+    发生错误类型1，执行的代码
+except 错误类型2:
+    发生错误类型2，执行的代码
+except Exception as result:
+    捕获未知错误，执行的代码
+print( result)
+else:
+    没有异常才会执行的代码
+finally:
+    无论是否有异常，都会执行的代码
+</code></pre>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2022/01/18/numpy%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/comment.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/comment.jpg">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                numpy基础知识</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2021/11/21/%E6%99%BA%E8%83%BD%E8%BF%90%E7%BB%B4%E7%9A%84%E8%AE%BA%E6%96%87/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109171644091.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109171644091.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                智能运维的论文</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "K6UwYN6dMijp5h01cRysnTrG-gzGzoHsz",
+        appKey: "NI1nkxc4Yhim5rlut3lno7p5",
+        path: window.location.pathname,
+        placeholder: "欢迎评论哦 ..."
+      })
+  }
+</script>
+
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+          <a href="https://hemiaomiao.github.io/" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/startdash/wangshiwu.jpg" itemprop="image" alt="Miaomiao" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="https://hemiaomiao.github.io/" itemprop="url" rel="author">Miaomiao</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>坚持</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
+</div>
+
+
+
+    </div>    
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            // PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+    <!-- <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 Miaomiao<br>
+      powered_by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer> -->
+<footer id="colophon" class="site-footer" role="contentinfo">
+  <div class="site-info">
+    <div class="footertext">
+      <div class="img-preload">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/wordpress-rotating-ball-o.svg">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/disqus-preloader.svg">
+      </div>
+      <p style="color: #666666;">&copy 2020年</p>
+    </div>
+    <div class="footer-device">
+    <p style="font-family: 'Ubuntu', sans-serif;">
+	    <span style="color: #b9b9b9;">Miaomiao's Blog
+        </span>
+      </p>
+    </div>
+  </div><!-- .site-info -->
+</footer>
+
+
+
+<!-- <script src="/js/tocbot.js"></script> -->
+<script type="text/javascript" src="/js/lib.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/InsightSearch.js"></script>
+<script type="text/javascript" src="/js/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="/js/zoom.min.js"></script>
+<script type="text/javascript" src="/js/sakura-app.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine@1.3.4/dist/Valine.min.js'></script>
+<script src="/js/botui.js"></script>
+<!-- 不蒜子 网页计数器 -->
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script> -->
+<script type="text/javascript">
+/* <![CDATA[ */
+if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  var Poi = {"pjax":"1","movies":{"url": "https://www.bilibili.com/video/BV1sW411g7XC?from=search&seid=18438728832443631125","name":"Unbroken.mp4","live":"close"},"windowheight":"fixed","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+} else {
+  var Poi = {"pjax":"1","movies":{"url": "https://www.bilibili.com/video/BV1sW411g7XC?from=search&seid=18438728832443631125","name":"Unbroken.mp4","live":"open"},"windowheight":"auto","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+}
+/* ]]> */
+
+</script>
+<script>
+$(document).ready(function() {
+  if ($(".toc").length > 0 && document.body.clientWidth > 1200) {
+    if ($(".pattern-center").length > 0) { //有图的情况
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -400,
+          scrollSmoothOffset: -85
+      });
+    } else {
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -85,
+          scrollSmoothOffset: -85
+      });
+    }
+    var offsetTop = $('.toc').offset().top - 95;
+    window.onscroll = function() {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+      if (scrollTop >= offsetTop) {
+        $('.toc').addClass('toc-fixed');
+      } else {
+        $('.toc').removeClass('toc-fixed');
+      }
+    }
+  }
+});
+</script>
+
+    <div class="openNav no-select" style="height: 50px;">
+      <div class="iconflat no-select" style="width: 50px; height: 50px;">
+        <div class="icon"></div>
+      </div>
+      <div class="site-branding search-form-submit">
+        <i class="iconfont js-toggle-search iconsearch icon-search"></i>
+      </div>
+    </div>
+  </section>
+  <div id="mo-nav" class="">
+  <div class="m-avatar">
+    <img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109161806483.jpg">
+  </div>
+  <p style="text-align: center; color: #333; font-weight: 900; font-family: 'Ubuntu', sans-serif; letter-spacing: 1.5px">Miaomiao's Blog</p>
+  <p style="text-align: center; word-spacing: 20px;">
+    
+      
+        <a href="https://music.163.com/" class="fa " target="_blank" style="color: #; margin-left:20px"></a>
+      
+    
+  </p>
+  <ul id="menu-new-1" class="menu">
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+            首页
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/archives">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+            归档
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/categories/%E6%8A%80%E6%9C%AF/">
+                  <i class="fa fa-code" aria-hidden="true"></i>
+                  技术
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/%E7%A7%91%E7%A0%94/">
+                  <i class="fa fa-book" aria-hidden="true"></i>
+                  科研
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/%E6%9D%82%E9%A1%B9/">
+                  <i class="fa fa-heart" aria-hidden="true"></i>
+                  杂项
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/%E8%8F%9C%E8%B0%B1/">
+                  <i class="fa fa-angellist" aria-hidden="true"></i>
+                  菜谱
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/%E8%BD%AC%E8%BD%BD/">
+                  <i class="fa fa-share" aria-hidden="true"></i>
+                  转载
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="/links/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-link faa-shake" aria-hidden="true"></i>
+            友人帐
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+            关于
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/about/">
+                  <i class="fa fa-meetup" aria-hidden="true"></i>
+                  我？
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+  <p style="text-align: center; font-size: 13px; color: #b9b9b9;">&copy 2020 Miaomiao</p>
+</div>
+<button onclick="topFunction()" class="mobile-cd-top" id="moblieGoTop" title="Go to top" style="display: none;"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<!-- require MetingJS -->
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+<style>
+  .aplayer .aplayer-lrc {
+    height: 35px;
+  }
+  .aplayer .aplayer-lrc p{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px !important;
+  }
+  .aplayer .aplayer-lrc p.aplayer-lrc-current{
+    color: #FF1493;
+  }
+  .aplayer.aplayer-narrow .aplayer-body{
+    left: -66px !important;
+  }
+  .aplayer.aplayer-fixed .aplayer-lrc {
+    display: none;
+  }
+  .aplayer .aplayer-lrc.aplayer-lrc-hide {
+      display:none !important;
+  }
+  .aplayer.aplayer-fixed .lrc-show {
+    display: block;
+    background: rgba(255, 255, 255, 0.8);
+  }
+</style>
+<meting-js
+
+    id="2660651585"
+
+    server="netease"
+
+    type="playlist"
+
+    fixed="true"
+
+    autoplay="false"
+
+    loop="all"
+
+    order="random"
+
+    preload="auto"
+
+    volume="0.7"
+
+    mutex="true"
+
+</meting-js>
+<script>
+  $(function(){
+    $('body').on('click', '.aplayer', function(){
+      if($('.aplayer-button').hasClass('aplayer-play')) {
+        $('.aplayer-lrc').removeClass('lrc-show');
+      } else {
+        $('.aplayer-lrc').addClass('lrc-show');
+      }
+    })
+  });
+</script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":270,"height":400},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
