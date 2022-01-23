@@ -678,14 +678,15 @@ print(f"square={square}")
 <h2 id="十六-切片"><a href="#十六-切片" class="headerlink" title="十六.切片"></a>十六.切片</h2><h4 id="1-切片适用："><a href="#1-切片适用：" class="headerlink" title="1.切片适用："></a>1.切片适用：</h4><p>字符串、列表、元组</p>
 <h4 id="2-切片的格式"><a href="#2-切片的格式" class="headerlink" title="2.切片的格式"></a>2.切片的格式</h4><p>(1) 字符串/列表/元组[开始索引:结束索引:步长]</p>
 <p>(2) 切片的区间是左闭右开：[开始索引，结束索引)，从开始索引到结束索引的前一位，不包括结束索引</p>
-<p>(3) [：结束索引]：省略开始索引，表示默认从索引0(第一个元素)开始</p>
-<p>(4) [开始索引:]：省略结束索引，表示默认到最后一个元素结束</p>
+<p>(3) [  ：结束索引]：省略开始索引，表示默认从索引0(第一个元素)开始</p>
+<p>(4) [开始索引:  ]：省略结束索引，表示默认到最后一个元素结束</p>
 <p>(5) [开始索引：结束索引]:省略步长，表示步长默认是1</p>
-<p>(6) [:]:省略开始索引和结束索引，表示复制列表，从第一个元素到最后一个元素</p>
-<p>(7) 如果步长是-1，表示从右向左切片</p>
-<p>(8) 索引是负数：表示倒数第几个元素，-1表示倒数第一个元素，-3表示倒数第三个元素</p>
-<p>(9) 开始索引是负数：表示从倒数第几个元素开始，是包括倒数第几个元素</p>
-<p>(10) 结束索引是负数：表示到倒数第几个元素之前的元素，不包括倒数第几个元素，因为区间是左闭右开</p>
+<p>(6) [  :  ]:省略开始索引和结束索引，表示复制列表，从第一个元素到最后一个元素</p>
+<p>(7) [  :  ： step]:省略开始索引和结束索引，从第一个元素到最后一个元素，步长为step</p>
+<p>(8) 如果步长是-1，表示从右向左切片</p>
+<p>(9) 索引是负数：表示倒数第几个元素，-1表示倒数第一个元素，-3表示倒数第三个元素</p>
+<p>(10) 开始索引是负数：表示从倒数第几个元素开始，是包括倒数第几个元素</p>
+<p>(11) 结束索引是负数：表示到倒数第几个元素之前的元素，不包括倒数第几个元素，因为区间是左闭右开</p>
 <pre><code>num_str = "abcde"
 print(f"num_str={num_str}")
 print(f"num_str[2:5]={num_str[2:5]}")  # 从索引2到索引5，即第3个元素到第5个元素
@@ -1313,7 +1314,7 @@ finally:
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..."/>
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -1325,10 +1326,10 @@ finally:
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: 'Posts',
-            // PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
+            POSTS: '文章',
+            // PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',

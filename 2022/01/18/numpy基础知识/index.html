@@ -440,7 +440,7 @@ b[0] = 0.5
 <p>(2) 二维数组索引</p>
 <ul>
 <li>a[行索引, 列索引]</li>
-<li>a[start<span class="github-emoji"><span>🔚</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f51a.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>step, start<span class="github-emoji"><span>🔚</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f51a.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>step]:每一个维度都支持切片，左闭右开的区间[start,end)，不包括end，start和end都是索引号，索引从0开始</li>
+<li>a[start : end : step, start : end : step]:每一个维度都支持切片，左闭右开的区间[start,end)，不包括end，start和end都是索引号，索引从0开始</li>
 <li>a[索引]: 单个索引是索引一整行</li>
 <li>a[:, 列索引]: 省略行索引，表示从第一行到最后一行，即 整列 </li>
 <li>负索引：倒数第几行 / 倒数第几列</li>
@@ -808,7 +808,7 @@ b = np.expand_dims(a, axis=1)
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..."/>
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -820,10 +820,10 @@ b = np.expand_dims(a, axis=1)
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: 'Posts',
-            // PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
+            POSTS: '文章',
+            // PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',

@@ -292,7 +292,292 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          
+          <h2 id="一-导包"><a href="#一-导包" class="headerlink" title="一.导包"></a>一.导包</h2><pre><code>import matplotlib.pyplot as plt
+</code></pre>
+<h2 id="二-图形风格"><a href="#二-图形风格" class="headerlink" title="二.图形风格"></a>二.图形风格</h2><h4 id="1-表示颜色的字符参数"><a href="#1-表示颜色的字符参数" class="headerlink" title="1.表示颜色的字符参数"></a>1.表示颜色的字符参数</h4><ul>
+<li>蓝色: b</li>
+<li>绿色: g</li>
+<li>红色: r</li>
+<li>青色: c</li>
+<li>品红: m</li>
+<li>黄色: y</li>
+<li>黑色: k</li>
+<li>白色: w</li>
+</ul>
+<h4 id="2-表示类型的字符参数"><a href="#2-表示类型的字符参数" class="headerlink" title="2.表示类型的字符参数"></a>2.表示类型的字符参数</h4><ul>
+<li>实线：’-‘</li>
+<li>虚线： ‘–’</li>
+<li>虚点线： ‘-.’</li>
+<li>点虚线： ‘:’</li>
+<li>点： ‘.’</li>
+</ul>
+<h2 id="三-Matplotlib三层结构"><a href="#三-Matplotlib三层结构" class="headerlink" title="三.Matplotlib三层结构"></a>三.Matplotlib三层结构</h2><h4 id="1-容器层"><a href="#1-容器层" class="headerlink" title="1.容器层"></a>1.容器层</h4><ul>
+<li>画板层（canvas）：位于最底层，用户接触不到</li>
+<li>画布层（figure）：建立在画板层之上，画布层是指整个图像，通过 plt.figure(figsize=, dpi=)设置画布的大小和分辨率</li>
+<li>绘图区 / 坐标系 (axes) ：建立在画布层之上，figure,axes = plt.subplots(nrows=, ncols=, figsize=, dpi=)</li>
+<li>辅助显示层和图像层建立在 绘图区/坐标系（axes）之上</li>
+</ul>
+<p><strong>一个画布figure可以包含多个（绘图区/坐标系）axes，但是一个axes只能属于一个figure</strong></p>
+<p><strong>一个（绘图区/坐标系）axes可以包含多个坐标轴axis，包含2个就是2d坐标系，3个就是3d坐标系</strong></p>
+<h4 id="2-辅助显示层"><a href="#2-辅助显示层" class="headerlink" title="2.辅助显示层"></a>2.辅助显示层</h4><p>辅助显示层主要包括 绘图区/坐标系（axes）的外观、边框线（spines）、坐标轴（axis）、坐标轴名称（axis label）、坐标轴刻度（tick）、坐标轴刻度标签（tick label）、网格线（grid）、图例（legend）、标题（title）</p>
+<ul>
+<li>修改x轴的刻度：plt.xticks()</li>
+<li>修改y轴的刻度：plt.yticks()</li>
+<li>添加描述信息：plt.title()、plt.xlabel()、plt.ylabel()</li>
+<li>添加网格：plt.grid()</li>
+<li>显示图例：plt.legend()</li>
+</ul>
+<h4 id="3-图像层"><a href="#3-图像层" class="headerlink" title="3.图像层"></a>3.图像层</h4><p>设置图像的颜色、风格</p>
+<ul>
+<li>折线图：plt.plot()</li>
+<li>散点图: plt.scatter()</li>
+<li>柱状图: plt.bar()</li>
+<li>直方图: plt.hist()</li>
+<li>饼图：plt.pie()</li>
+</ul>
+<h2 id="四-单个子图（面向过程）"><a href="#四-单个子图（面向过程）" class="headerlink" title="四.单个子图（面向过程）"></a>四.单个子图（面向过程）</h2><h4 id="1-步骤"><a href="#1-步骤" class="headerlink" title="1.步骤"></a>1.步骤</h4><p>(1) 准备数据：x=，y=</p>
+<p>(2) 创建画布：plt.figure(figsize=(,), dpi=)</p>
+<p>figsize：图的长宽   dpi：图像的分辨率</p>
+<p>(3）保存图片到指定路径: plt.savefig(“path”)</p>
+<p>(4) 绘制图像：plt.plot(x，y,color=””,linestyle=””,label=””,linewidth=)</p>
+<ul>
+<li>如果省略x,plot(y): 表示x默认是从0到N-1</li>
+<li>linestyle是线的风格</li>
+<li>label是图例的文字</li>
+</ul>
+<p>(5) 显示图像：plt.show( )</p>
+<h4 id="2-自定义x、y的刻度"><a href="#2-自定义x、y的刻度" class="headerlink" title="2.自定义x、y的刻度"></a>2.自定义x、y的刻度</h4><ul>
+<li>x轴的刻度：plt.xticks(x, **kwargs)</li>
+<li>y轴的刻度：plt.yticks(y, **kwargs)</li>
+<li>kwargs是刻度对应的文字说明</li>
+</ul>
+<h4 id="3-添加网格显示"><a href="#3-添加网格显示" class="headerlink" title="3.添加网格显示"></a>3.添加网格显示</h4><p>plt.grid(True,linestyle=’’, alpha=)</p>
+<h4 id="4-添加描述信息"><a href="#4-添加描述信息" class="headerlink" title="4.添加描述信息"></a>4.添加描述信息</h4><p>(1) x轴描述信息：plt.xlabel(“时间”)</p>
+<p>(2) y轴描述信息：plt.ylabel(“温度”)</p>
+<p>(3) 标题：plt.title(“中午11点0分到12点之间的温度变化图示”)</p>
+<h4 id="5-同一个坐标系下画多个图形"><a href="#5-同一个坐标系下画多个图形" class="headerlink" title="5.同一个坐标系下画多个图形"></a>5.同一个坐标系下画多个图形</h4><p>多次plt.plot</p>
+<h4 id="6-显示图例"><a href="#6-显示图例" class="headerlink" title="6.显示图例"></a>6.显示图例</h4><p>(1) 在plot里面增加label=””</p>
+<p>(2) plt.legend(loc=”best”)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201201530932.png"></p>
+<pre><code>import matplotlib. pyplot as plt
+import numpy as np
+
+x = range(60)  # 1.准备数据x、y
+y_shanghai = [np.random.uniform(15,18) for i in x]
+y_beijing = [np.random.uniform(1, 3) for i in x]
+
+plt.figure(figsize=(20,8), dpi=80)  # 2.创建画布
+
+plt.plot(x, y_shanghai, color="r", linestyle = "--", label = "shangHai")  # 3.绘制图像，第一个图像
+plt.plot(x, y_beijing, color = "b", label = "beiJing")  # 第二个图像
+
+plt.legend(loc="best")  # 4.显示图例
+
+x_label = ['one', 'two', 'three', 'four', 'five']   # x的刻度说明
+plt.xticks([0, 15, 30, 45, 60], x_label)  # 修改x刻度
+plt.yticks(range(0, 40, 5))  # 修改y刻度
+plt.grid(linestyle = "--", alpha = 0.5)  #添加网格显示
+plt.xlabel("timeChange")  #添加x轴描述信息
+plt.ylabel("wenDu")  # 添加y轴描述信息
+plt.title("test" ) # 添加标题
+plt.show( )  # 显示图像
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201201652917.png"></p>
+<h2 id="五-单个子图（面向对象的画法）"><a href="#五-单个子图（面向对象的画法）" class="headerlink" title="五.单个子图（面向对象的画法）"></a>五.单个子图（面向对象的画法）</h2><h4 id="2-步骤"><a href="#2-步骤" class="headerlink" title="2.步骤"></a>2.步骤</h4><p>(1) 准备数据：x=，y=</p>
+<p>(2) 创建画布：fig,ax = plt.subplots()</p>
+<p>(3）保存图片到指定路径: plt.savefig(“path”)</p>
+<p>(4) 绘制图像：ax.plot(x，y,color=””,linestyle=””,label=””)</p>
+<ul>
+<li>如果省略x,plot(y): 表示x默认是从0到N-1</li>
+<li>linestyle是线的风格</li>
+<li>label是图例的文字</li>
+</ul>
+<p>(5) 显示图像：plt.show( )</p>
+<h4 id="2-自定义x、y的刻度-1"><a href="#2-自定义x、y的刻度-1" class="headerlink" title="2.自定义x、y的刻度"></a>2.自定义x、y的刻度</h4><ul>
+<li>x轴的刻度：ax.set_xticks(x)</li>
+<li>x轴的刻度对应的文字说明：ax.set_xticklabels()</li>
+<li>y轴的刻度：ax.set_yticks(y)</li>
+<li>y轴的刻度对应的文字说明：ax.set_yticklabels()</li>
+</ul>
+<h4 id="3-添加网格显示-1"><a href="#3-添加网格显示-1" class="headerlink" title="3.添加网格显示"></a>3.添加网格显示</h4><p>ax.grid(True,linestyle=’’, alpha=)</p>
+<h4 id="4-添加描述信息-1"><a href="#4-添加描述信息-1" class="headerlink" title="4.添加描述信息"></a>4.添加描述信息</h4><p>(1) x轴描述信息：ax.set_xlabel(“时间”)</p>
+<p>(2) y轴描述信息：ax.set_ylabel(“温度”)</p>
+<p>(3) 标题：ax.set_title(“中午11点0分到12点之间的温度变化图示”)</p>
+<h4 id="5-显示图例"><a href="#5-显示图例" class="headerlink" title="5.显示图例"></a>5.显示图例</h4><p>(1) 在plot里面增加label=””</p>
+<p>(2) ax.legend(loc=”best”)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201201530932.png"></p>
+<p><strong>plt.函数名()是面向过程的画图方法，axes.set()_方法名是面向对象的画图方法</strong></p>
+<pre><code>import matplotlib. pyplot as plt
+import numpy as np
+
+x = range(60)  # 1.准备数据x、y
+y_shanghai = [np.random.uniform(15,18) for i in x]
+y_beijing = [np.random.uniform(1, 3) for i in x]
+
+fig,ax = plt.subplots(figsize=(20,8), dpi=80)  # 2.创建画布
+
+ax.plot(x, y_shanghai, color="r", linestyle = "--", label = "shangHai")  # 3.绘制图像，第一个图像
+ax.plot(x, y_beijing, color = "b", label = "beiJing")  # 第二个图像
+
+ax.legend(loc="best")  # 显示图例
+
+x_label = ['one', 'two', 'three', 'four', 'five']   # x的刻度说明
+ax.set_xticks([0, 15, 30, 45, 60])  # 修改x刻度
+ax.set_xticklabels(x_label)  # 设置x的刻度说明
+ax.set_yticks(range(0, 40, 5))  # 修改y刻度
+ax.grid(linestyle = "--", alpha = 0.5)  #添加网格显示
+ax.set_xlabel("timeChange")  #添加描述信息
+ax.set_ylabel("wenDu")
+ax.set_title("test" )
+plt.show( )  # 显示图像
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201201703513.png"></p>
+<h2 id="六-多个子图（面向对象的画法）"><a href="#六-多个子图（面向对象的画法）" class="headerlink" title="六.多个子图（面向对象的画法）"></a>六.多个子图（面向对象的画法）</h2><h4 id="2-步骤-1"><a href="#2-步骤-1" class="headerlink" title="2.步骤"></a>2.步骤</h4><p>(1) 准备数据：x=，y=</p>
+<p>(2) 创建画布：fig,ax = plt.subplots(nrows=, ncols=, *fig_kw) </p>
+<p>创建一个带有多个axes(坐标系/绘图区)的图</p>
+<ul>
+<li>nrows: subplot的行数</li>
+<li>ncols: subplot的列数</li>
+<li>*fig_ kw: 创建figure时的其他关键字，例如plt.subplots(2,2,figsize=(8,6))</li>
+</ul>
+<p>(3）保存图片到指定路径: plt.savefig(“path”)</p>
+<p>(4) 绘制图像：ax[i].plot(x，y,color=””,linestyle=””,label=””)，i从0开始</p>
+<ul>
+<li>如果省略x,plot(y): 表示x默认是从0到N-1</li>
+<li>linestyle是线的风格</li>
+<li>label是图例的文字</li>
+</ul>
+<p>(5) 显示图像：plt.show( )</p>
+<h4 id="2-自定义x、y的刻度-2"><a href="#2-自定义x、y的刻度-2" class="headerlink" title="2.自定义x、y的刻度"></a>2.自定义x、y的刻度</h4><ul>
+<li>x轴的刻度：ax[i].set_xticks(x)</li>
+<li>x轴的刻度对应的文字说明：ax[i].set_xticklabels()</li>
+<li>y轴的刻度：ax[i].set_yticks(y)</li>
+<li>y轴的刻度对应的文字说明：ax[i].set_yticklabels()</li>
+</ul>
+<h4 id="3-添加网格显示-2"><a href="#3-添加网格显示-2" class="headerlink" title="3.添加网格显示"></a>3.添加网格显示</h4><p>ax[i].grid(True,linestyle=’’, alpha=)</p>
+<h4 id="4-添加描述信息-2"><a href="#4-添加描述信息-2" class="headerlink" title="4.添加描述信息"></a>4.添加描述信息</h4><p>(1) x轴描述信息：ax[i].set_xlabel(“时间”)</p>
+<p>(2) y轴描述信息：ax[i].set_ylabel(“温度”)</p>
+<p>(3) 标题：ax[i].set_title(“中午11点0分到12点之间的温度变化图示”)</p>
+<h4 id="5-显示图例-1"><a href="#5-显示图例-1" class="headerlink" title="5.显示图例"></a>5.显示图例</h4><p>(1) 在plot里面增加label=””</p>
+<p>(2) ax[i].legend(loc=”best”)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201201530932.png"></p>
+<pre><code>import matplotlib. pyplot as plt
+import numpy as np
+
+x = range(60)  # 1.准备数据x、y
+y_shanghai = [np.random.uniform(15,18) for i in x]
+y_beijing = [np.random.uniform(1, 3) for i in x]
+
+fig,ax = plt.subplots(nrows=1, ncols=2,figsize=(20,8), dpi=80)  # 2.创建画布
+
+ax[0].plot(x, y_shanghai, color="r", linestyle = "--", label = "shangHai")  # 3.绘制图像，第一个图像
+ax[1].plot(x, y_beijing, color = "b", label = "beiJing")  # 第二个图像
+
+ax[0].legend(loc="best")  # 显示图例
+ax[1].legend(loc="best")
+
+x_label = ['one', 'two', 'three', 'four', 'five']   # x的刻度说明
+ax[0].set_xticks([0, 15, 30, 45, 60])  # 修改x刻度
+ax[0].set_xticklabels(x_label)  # 设置x的刻度说明
+ax[0].set_yticks(range(0, 40, 5))  # 修改y刻度
+ax[1].set_xticks([0, 15, 30, 45, 60])  # 修改x刻度
+ax[1].set_xticklabels(x_label)  # 设置x的刻度说明
+ax[1].set_yticks(range(0, 40, 5))  # 修改y刻度
+
+ax[0].grid(linestyle = "--", alpha = 0.5)  #添加网格显示
+ax[1].grid(linestyle = "--", alpha = 0.5)
+
+ax[0].set_xlabel("timeChange1")  #添加描述信息
+ax[0].set_ylabel("wenDu1")
+ax[0].set_title("test1" )
+ax[1].set_xlabel("timeChange2")  #添加描述信息
+ax[1].set_ylabel("wenDu2")
+ax[1].set_title("test2" )
+plt.show( )  # 显示图像
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201201708737.png"></p>
+<h2 id="七-常见的图像"><a href="#七-常见的图像" class="headerlink" title="七.常见的图像"></a>七.常见的图像</h2><h4 id="1-折线图-plot：反映数据的变化趋势"><a href="#1-折线图-plot：反映数据的变化趋势" class="headerlink" title="1.折线图 plot：反映数据的变化趋势"></a>1.折线图 plot：反映数据的变化趋势</h4><p>绘制图像：</p>
+<p>(1) 面向过程的单个子图：plt.plot(x，y,color=””,linestyle=””,label=””)</p>
+<p>(2) 面向过程的同一个坐标系下画多个图形: 多次plt.plot</p>
+<p>(3) 面向对象的单个子图：ax.plot(x，y,color=””,linestyle=””,label=””)</p>
+<p>(4) 面向对象的多个子图：ax[i].plot(x，y,color=””,linestyle=””,label=””)</p>
+<h4 id="2-散点图-scatter：反映变量之间的关联或者点的分布规律"><a href="#2-散点图-scatter：反映变量之间的关联或者点的分布规律" class="headerlink" title="2.散点图 scatter：反映变量之间的关联或者点的分布规律"></a>2.散点图 scatter：反映变量之间的关联或者点的分布规律</h4><p>绘制图像：</p>
+<p>(1) 面向过程的单个子图：plt.scatter(x，y,color=””,linestyle=””,label=””)</p>
+<p>(2) 面向过程的同一个坐标系下画多个图形: 多次plt.scatter</p>
+<p>(3) 面向对象的单个子图：ax.scatter(x，y,color=””,linestyle=””,label=””)</p>
+<p>(4) 面向对象的多个子图：ax[i].scatter(x，y,color=””,linestyle=””,label=””)</p>
+<pre><code>import matplotlib. pyplot as plt
+
+x = [225.98, 247.07, 253.14, 457.85, 241.58, 301.01, 20.67, 288.64, 163.56, 120.06, 207.83]
+y = [196.63, 203.88, 210.75, 372.74, 202.41, 247.61, 24.9, 239.34, 140.32, 104.15, 176.84]
+fig,ax = plt.subplots(figsize=(20,8), dpi=80)  # 2.创建画布
+ax.scatter(x,y)
+ax.grid(linestyle = "--", alpha = 0.5)  #添加网格显示
+
+ax.set_xlabel("X")  #添加x轴的描述信息
+ax.set_ylabel("Y")
+ax.set_title("test1" )
+
+plt.show( )  # 显示图像
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201201720416.png"></p>
+<h4 id="3-柱状图-bar：对比"><a href="#3-柱状图-bar：对比" class="headerlink" title="3.柱状图 bar：对比"></a>3.柱状图 bar：对比</h4><p>绘制图像：</p>
+<p>(1) 面向过程的单个子图：plt.bar(x，y,color=””,label=””)</p>
+<p>(2) 面向过程的同一个坐标系下画多个图形: 多次plt.bar</p>
+<p>(3) 面向对象的单个子图：ax.bar(x，y, width=, color=””,label=””)</p>
+<p>(4) 面向对象的多个子图：ax[i].bar(x，y, width=, color=””,label=””)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201201619461.png"></p>
+<pre><code>import matplotlib. pyplot as plt
+
+first_day = [10587.6,10062.5,1275.7]
+first_weekend = [ 36224.9,34479.6,11830]
+
+fig,ax = plt.subplots(figsize=(20,8), dpi=80)  # 2.创建画布
+
+ax.bar(range(3), first_day, width=0.2, label="FirstDay")
+ax.bar([0.2, 1.2, 2.2], first_weekend, width=0.2, label="SecondDay")
+ax.legend(loc="best")
+
+movie_name = ["one", "two", "three"]
+ax.set_xticks(range(3))
+ax.set_xticklabels(movie_name)
+ax.grid(linestyle = "--", alpha = 0.5)  #添加网格显示
+plt. show()
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201201738640.png"></p>
+<h4 id="4-直方图-histogram：分布状况"><a href="#4-直方图-histogram：分布状况" class="headerlink" title="4.直方图 histogram：分布状况"></a>4.直方图 histogram：分布状况</h4><p>绘制图像：</p>
+<p>(1) 面向过程的单个子图：plt.hist(x，bins=, normed=, density=True,**kwargs)</p>
+<p>(2) 面向对象的单个子图：ax.hist(x，bins=, normed=, density=True,**kwargs)</p>
+<p>(3) 面向对象的多个子图：ax[i].hist(x，bins=, normed=, density=True, **kwargs)</p>
+<p>density: 是否显示频率</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201201618083.png"></p>
+<ul>
+<li>直方图描述的是一组数据的频次分布，是以矩形的长度表示每一组的频数或数量，宽度则表示各组的组距，直方图有助于我们知道数据的分布情况</li>
+<li>直方图首先要对数据进行分组，然后统计每个分组内数据的数量,纵轴表示频数，每个矩形的高代表对应的频数</li>
+<li>直方图的柱子宽度可以不一样，柱状图的柱子宽度必须一样</li>
+<li>直方图Y轴上的变量可以是频次(数据出现了多少次)、频率(频次/总次数)、频率/组距</li>
+<li>在绘制直方图的时候需要多次尝试改变组距</li>
+<li>组数 bins: 把数据按照不同的范围分组，分成的组的个数称为组数</li>
+<li>组距: 每一组两个区间端点的差</li>
+<li>组数 bins= (max(time) - min(time)) / 组距</li>
+</ul>
+<pre><code>import matplotlib. pyplot as plt
+
+time = [131,98,125,131,124,139,131,117,128,108,135,138,131,102,107,114]
+
+fig,ax = plt.subplots(figsize=(20,8), dpi=80)
+distance = 4
+group_num = int((max(time) - min(time)) / distance)
+
+ax.hist(time, bins=group_num)
+
+ax.set_xticks(range(min(time), max(time) + 2, distance))  # 修改x轴的刻度
+
+ax.grid(linestyle = "--", alpha = 0.5)  #添加网格显示
+plt. show()
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201201750173.png"></p>
+<h4 id="5-饼图：占比"><a href="#5-饼图：占比" class="headerlink" title="5.饼图：占比"></a>5.饼图：占比</h4>
         </div>
         <!-- .entry-content -->
         <div class="single-reward">
@@ -378,7 +663,7 @@
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..."/>
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -390,10 +675,10 @@
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: 'Posts',
-            // PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
+            POSTS: '文章',
+            // PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',
