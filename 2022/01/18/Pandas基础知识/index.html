@@ -292,7 +292,130 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          
+          <h2 id="一-导包"><a href="#一-导包" class="headerlink" title="一.导包"></a>一.导包</h2><pre><code>import pandas as pd
+</code></pre>
+<h2 id="二-Pandas的基本数据结构"><a href="#二-Pandas的基本数据结构" class="headerlink" title="二.Pandas的基本数据结构"></a>二.Pandas的基本数据结构</h2><h4 id="1-Series"><a href="#1-Series" class="headerlink" title="1.Series"></a>1.Series</h4><p>带索引的一维数组，和Numpy的一维数组类似，Series要求所有类型相同</p>
+<p>一维Series可以用一维列表初始化，默认情况下，Series的下标是数字，类型是统一的</p>
+<p>DataFrame是Series的容器</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202202052211213.png"></p>
+<h4 id="2-DataFrame"><a href="#2-DataFrame" class="headerlink" title="2.DataFrame"></a>2.DataFrame</h4><p>DataFrame是既有行索引，又有列索引的二维数组，DataFrame是Series的容器，DataFrame要求每一列数据的格式相同</p>
+<pre><code>df = pd.DateFrame(数据, index=, columns=)  # index是行索引，columns是列索引，索引值从0开始
+</code></pre>
+<pre><code>import numpy as np
+import pandas as pd
+
+stock_change = np.random.normal(0, 1, (5, 4))
+pd.DataFrame(stock_change)
+stock = ["股票{}".format(i) for i in range(5)]
+date = pd.date_range(start="20180101", periods=4, freq="B")
+df = pd.DataFrame(stock_change, index=stock, columns=date)
+print(df)
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201272151257.png"></p>
+<h2 id="三-DataFrame的属性"><a href="#三-DataFrame的属性" class="headerlink" title="三.DataFrame的属性"></a>三.DataFrame的属性</h2><h4 id="1-查看类型"><a href="#1-查看类型" class="headerlink" title="1.查看类型"></a>1.查看类型</h4><pre><code>df.shape
+</code></pre>
+<h4 id="2-查看行索引列表"><a href="#2-查看行索引列表" class="headerlink" title="2.查看行索引列表"></a>2.查看行索引列表</h4><pre><code>df.index
+</code></pre>
+<h4 id="3-查看列索引列表"><a href="#3-查看列索引列表" class="headerlink" title="3.查看列索引列表"></a>3.查看列索引列表</h4><pre><code>df.columns
+</code></pre>
+<h4 id="4-查看数据值"><a href="#4-查看数据值" class="headerlink" title="4.查看数据值"></a>4.查看数据值</h4><pre><code>df.values
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202201272156613.png"></p>
+<h4 id="5-T"><a href="#5-T" class="headerlink" title="5.T"></a>5.T</h4><h4 id="6-查看最前面几行的数据（默认是5）"><a href="#6-查看最前面几行的数据（默认是5）" class="headerlink" title="6.查看最前面几行的数据（默认是5）"></a>6.查看最前面几行的数据（默认是5）</h4><pre><code>df.head()
+</code></pre>
+<h4 id="7-查看最后几行的数据-默认是5"><a href="#7-查看最后几行的数据-默认是5" class="headerlink" title="7.查看最后几行的数据(默认是5)"></a>7.查看最后几行的数据(默认是5)</h4><pre><code>df.tail(num)
+</code></pre>
+<h2 id="四-DataFrame索引的设置"><a href="#四-DataFrame索引的设置" class="headerlink" title="四.DataFrame索引的设置"></a>四.DataFrame索引的设置</h2><h4 id="1-修改行列索引值"><a href="#1-修改行列索引值" class="headerlink" title="1.修改行列索引值"></a>1.修改行列索引值</h4><pre><code>df.index=
+</code></pre>
+<p>不能修改单个的索引值</p>
+<pre><code>df.index[3]="test"  # 错误的
+</code></pre>
+<h4 id="2-重设索引"><a href="#2-重设索引" class="headerlink" title="2.重设索引"></a>2.重设索引</h4><pre><code>data.reset_index(drop=False)
+</code></pre>
+<p>drop:默认为False，不删除原来索引，如果为True,删除原来的索引值</p>
+<h4 id="3-以某列值设置为新的索引"><a href="#3-以某列值设置为新的索引" class="headerlink" title="3.以某列值设置为新的索引"></a>3.以某列值设置为新的索引</h4><pre><code>set_index(keys, drop=True)
+</code></pre>
+<p>keys: 列索引名或者列索引名称的列表</p>
+<p>drop: 默认是True，当做新的索引，删除原来的列</p>
+<h2 id="五-DataFrame的数据操作"><a href="#五-DataFrame的数据操作" class="headerlink" title="五.DataFrame的数据操作"></a>五.DataFrame的数据操作</h2><h4 id="1-直接使用行列索引（先列后行）"><a href="#1-直接使用行列索引（先列后行）" class="headerlink" title="1.直接使用行列索引（先列后行）"></a>1.直接使用行列索引（先列后行）</h4><pre><code>df['列索引名', '行索引名']
+</code></pre>
+<h4 id="2-按名字索引"><a href="#2-按名字索引" class="headerlink" title="2.按名字索引"></a>2.按名字索引</h4><pre><code>df.loc['行索引名', '列索引名']
+</code></pre>
+<h4 id="3-按数字索引"><a href="#3-按数字索引" class="headerlink" title="3.按数字索引"></a>3.按数字索引</h4><pre><code>df.iloc()
+df.iloc[开始索引, 结束索引]  # 是左闭右开的区间[,)，不包括结束索引的数据
+</code></pre>
+<h4 id="4-赋值操作"><a href="#4-赋值操作" class="headerlink" title="4.赋值操作"></a>4.赋值操作</h4><pre><code>data["列名"] = 值
+
+data.列名 = 值
+
+data.iloc[start, end] = 值  # [start,end)
+</code></pre>
+<h2 id="六-DataFrame的运算"><a href="#六-DataFrame的运算" class="headerlink" title="六.DataFrame的运算"></a>六.DataFrame的运算</h2><h4 id="1-逻辑运算"><a href="#1-逻辑运算" class="headerlink" title="1.逻辑运算"></a>1.逻辑运算</h4><pre><code>data["p_change"] &gt; 2 # 返回一组带索引的布尔值
+</code></pre>
+<pre><code>data[(data["p_change"] &gt; 2) &amp;&amp; (data["open"] &gt; 15)] # 筛选 p_change &gt; 2 并且 open &gt; 15 的数据
+</code></pre>
+<pre><code>data.query(条件) 
+</code></pre>
+<h2 id="七-Series的创建"><a href="#七-Series的创建" class="headerlink" title="七.Series的创建"></a>七.Series的创建</h2><p>series结构只有行索引</p>
+<h4 id="1-通过已有数据创建"><a href="#1-通过已有数据创建" class="headerlink" title="1.通过已有数据创建"></a>1.通过已有数据创建</h4><p>(1) 指定内容，默认索引</p>
+<pre><code>pd.Series(np.arange(10))
+</code></pre>
+<p>(2) 指定索引</p>
+<pre><code>pd.Series([6,7,4,5,1], index=[1,2,3,4,5])
+</code></pre>
+<h4 id="2-通过字典数据创建"><a href="#2-通过字典数据创建" class="headerlink" title="2.通过字典数据创建"></a>2.通过字典数据创建</h4><pre><code>pd.Series({'red':100, 'blue':200})
+</code></pre>
+<h2 id="八-排序"><a href="#八-排序" class="headerlink" title="八.排序"></a>八.排序</h2><h4 id="1-对内容排序"><a href="#1-对内容排序" class="headerlink" title="1.对内容排序"></a>1.对内容排序</h4><p>(1) DataFrame</p>
+<pre><code>df.sort_values(key=, ascending=) # 默认升序
+</code></pre>
+<p>降序：ascending = False<br>升序：ascending = True</p>
+<p>单个键：by = “”<br>多个键：by = [“”, “”]</p>
+<p>(2) Series</p>
+<pre><code>series.sort_values(ascending=) # series排序时，只有一列，不需要参数
+</code></pre>
+<h4 id="2-对索引排序"><a href="#2-对索引排序" class="headerlink" title="2.对索引排序"></a>2.对索引排序</h4><p>(1) DataFrame</p>
+<pre><code>df.sort_index()
+</code></pre>
+<p>(2) Series</p>
+<pre><code>series.sort_index()
+</code></pre>
+<h2 id="九-文件的读取和存储"><a href="#九-文件的读取和存储" class="headerlink" title="九.文件的读取和存储"></a>九.文件的读取和存储</h2><h4 id="1-CSV"><a href="#1-CSV" class="headerlink" title="1.CSV"></a>1.CSV</h4><p>(1) 读取数据</p>
+<pre><code>pd.read_csv("路径")
+</code></pre>
+<p>(2) 存储数据</p>
+<pre><code>dataFrame.to_csv("路径", columns=["列名"])
+</code></pre>
+<h4 id="2-JSON"><a href="#2-JSON" class="headerlink" title="2.JSON"></a>2.JSON</h4><pre><code>pd.read_json("路径")
+</code></pre>
+<h2 id="十-处理缺失值"><a href="#十-处理缺失值" class="headerlink" title="十.处理缺失值"></a>十.处理缺失值</h2><h4 id="1-缺失值是np-nan"><a href="#1-缺失值是np-nan" class="headerlink" title="1.缺失值是np.nan"></a>1.缺失值是np.nan</h4><p>(1) 判断数据中是否有缺失值</p>
+<pre><code>pd.isnull(df) # 返回一个布尔值对象
+
+pd.notnull(df)
+</code></pre>
+<p>(2) 删除有缺失值的数据 或者  替换/填充缺失值</p>
+<pre><code>df.dropna(inplace=False)  # 删除含有缺失值的数据
+df.fillna(value, inplace=False) # 替换/填充
+</code></pre>
+<p>inplace = True：覆盖之前的数据<br>axis = 0：选择行或者列<br>how = “all”：删除全为空值的行或者列</p>
+<h4 id="2-缺失值不是np-nan"><a href="#2-缺失值不是np-nan" class="headerlink" title="2.缺失值不是np.nan"></a>2.缺失值不是np.nan</h4><p>(1) 把缺失值替换成np.nan</p>
+<pre><code>df.replace(to_replace="?", value=np.nan)
+</code></pre>
+<h2 id="十一-数据离散化"><a href="#十一-数据离散化" class="headerlink" title="十一.数据离散化"></a>十一.数据离散化</h2><h4 id="1-对数据进行分组"><a href="#1-对数据进行分组" class="headerlink" title="1.对数据进行分组"></a>1.对数据进行分组</h4><p>(1) 自动分组</p>
+<pre><code>sr = pd.qcut(data, bins)
+</code></pre>
+<p>(2) 自定义分组</p>
+<pre><code>sr = pd.cut(data, bins)
+</code></pre>
+<h4 id="2-统计每组的个数"><a href="#2-统计每组的个数" class="headerlink" title="2.统计每组的个数"></a>2.统计每组的个数</h4><pre><code>series.value_counts()
+</code></pre>
+<h4 id="3-将分组好的结果转换成one-hot编码"><a href="#3-将分组好的结果转换成one-hot编码" class="headerlink" title="3.将分组好的结果转换成one-hot编码"></a>3.将分组好的结果转换成one-hot编码</h4><pre><code>pd.get_dummies(sr, prefix="分组名字")
+</code></pre>
+<h2 id="十二-合并"><a href="#十二-合并" class="headerlink" title="十二.合并"></a>十二.合并</h2><h4 id="1-按行或列合并"><a href="#1-按行或列合并" class="headerlink" title="1.按行或列合并"></a>1.按行或列合并</h4><pre><code>pd.concat((data1,data2), axis=)
+</code></pre>
+<p>axis=0：列<br>axis=1：行</p>
+<h4 id="2-按索引合并"><a href="#2-按索引合并" class="headerlink" title="2.按索引合并"></a>2.按索引合并</h4><pre><code>pd.merge(left, right, how="inner", on=[索引])
+</code></pre>
+
         </div>
         <!-- .entry-content -->
         <div class="single-reward">
@@ -395,7 +518,7 @@
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
+            <input type="text" class="ins-search-input" placeholder="Type something..."/>
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -407,10 +530,10 @@
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: '文章',
-            // PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
+            POSTS: 'Posts',
+            // PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',
