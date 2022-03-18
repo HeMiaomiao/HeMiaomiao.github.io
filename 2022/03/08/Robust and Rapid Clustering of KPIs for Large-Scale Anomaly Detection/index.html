@@ -313,7 +313,7 @@
 <p>大部分异常检测算法（例如Opprentice、EDAGS、DONUT），对于每个KPI都需要一个单独的模型，所以由于模型选择的开销、参数调整、模型训练、异常标签，在数百万KPI上进行大规模异常检测很困难。如果能根据KPI的相似性识别同种类的KPI，然后把它们分成一些簇，可能对于每个簇只需要一个异常检测算法，这样就能减小开销。</p>
 <p><strong>2.研究现状</strong>摘要的第一段扩充 (别人在这个方向上做的相关工作，指出相关工作的局限性 / 目前该课题的研究进行到了哪一步，有什么缺陷)</p>
 <p>时间序列聚类被研究超过20年，但是大部分论都是关注聚类方法和在理想的时间序列数据上进行相似性度量，理想的时间序列通常都是低纬度（通常少于1000个数据点），并且曲线是光滑的，没有异常出现。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203171102721.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203171102721.png" alt=""></p>
 <p><strong>3.作者要解决的问题是什么</strong></p>
 <p>KPI聚类面临着两个主要问题：</p>
 <ol>
@@ -350,16 +350,16 @@
 <li>异常：是指明显的波动，通常超过2个标准差</li>
 <li>影响：因为噪声和异常能扭曲KPI之间的相似性，所以可能会误导聚类算法</li>
 </ol>
-<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203171106731.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203171106731.png" alt=""></p>
 <p>(2) 振幅差异</p>
 <p>如果移除KPI的振幅差异，可能有些KPI会有相似的图案，那么这些KPI能被分成一组</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203171108265.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203171108265.png" alt=""></p>
 <p>(3) 相移</p>
 <ol>
 <li>相移：指的是两个KPI之间的全局水平移动</li>
 <li>影响：相移会让发现相似的KPI变得困难</li>
 </ol>
-<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203171106933.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203171106933.png" alt=""></p>
 <p><strong>2.ROCKA模型</strong></p>
 <p>(1) ROCKA有四个步骤：</p>
 <ol>
@@ -368,7 +368,7 @@
 <li>聚类：是在采样的KPI的基线上进行聚类，对噪声和相移是健壮的</li>
 <li>分配：计算每个簇的质心，把未被标签的KPI根据它们到质心的距离进行分配</li>
 </ol>
-<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203171601077.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203171601077.png" alt=""></p>
 <p>为了对大量KPI进行聚类，提出的聚类模型使用随机采样的KPI的子集，然后分配剩余的KPI到结果簇里。因为即使KPI数量非常大，对于聚类来说只需要小的样本数据集就够了，例如数据集超过9000时间序列，2000个样本就足够聚类。</p>
 <p>(2) 预处理</p>
 <p>KPI通常都会有缺失值，不过缺失值的比例比较小。</p>
@@ -380,7 +380,7 @@
 <p>(3)  基线提取</p>
 <ol>
 <li>平滑极值：异常是偏离大部分平均值，通常异常点在时间序列数据里面的比例少于5%，所以去除偏离平均值的前5%的数据，然后使用线性插值的方式进行填充</li>
-<li>提取基线：因为噪声会影响KPI之间的基于形状的相似性，所以需要提取基线代表每个KPI。在KPI上使用滑动窗口移动平均法，把KPI曲线分成基线和残差两部分，残差是原始数据和基线之间的差值。因为残差包含了随机噪声，所以不被用在聚类里面，最后再对基线进行标准化。<br><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203180847852.png"></li>
+<li>提取基线：因为噪声会影响KPI之间的基于形状的相似性，所以需要提取基线代表每个KPI。在KPI上使用滑动窗口移动平均法，把KPI曲线分成基线和残差两部分，残差是原始数据和基线之间的差值。因为残差包含了随机噪声，所以不被用在聚类里面，最后再对基线进行标准化。<br><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203180847852.png" alt=""></li>
 </ol>
 <p>(4) 基于密度聚类</p>
 <p>根据KPI基线的形状相似性使用基于密度的聚类</p>
@@ -409,15 +409,14 @@
 <ul>
 <li>算法思想：在密集的区域找一些核心，然后通过相似的传递性扩大核心从而形成聚类。一个核心在密度半径(density radius)内至少有minPts个目标（不包括核心本身），一个目标和核心的距离在密度半径内才能形成一个簇，密度半径表示密集区域的密度。</li>
 <li>步骤：</li>
-<li>估计密度半径(density radius)的方法：设置minPts=k,         $k_{dis}$         是一个目标和它k个最近的邻居之间的SBD值，曲线平坦的部分的 $$k_{dis}$$ 值作为候选的密度半径，候选的密度半径的值需要足够的小才能保证一个核心和它的邻居是相似的，如果值大，说明这是一个稀疏的区域，目标之间不相似。一个目标的 $k_{dis}$ 值如果大，那这个目标就是一个离群点，它和大多数其它的目标不相似，不应该被聚类到任何簇里面。</li>
+<li>估计密度半径(density radius)的方法：设置minPts=k, $k<em>{dis}$是一个目标和它k个最近的邻居之间的SBD值，曲线平坦的部分的 $k</em>{dis}$值作为候选的密度半径，候选的密度半径的值需要足够的小才能保证一个核心和它的邻居是相似的，如果值大，说明这是一个稀疏的区域，目标之间不相似。一个目标的$k_{dis}$ 值如果大，那这个目标就是一个离群点，它和大多数其它的目标不相似，不应该被聚类到任何簇里面。</li>
 </ul>
-<p>寻找候选密度半径：用max_radius表示密度半径的最大值，如果 </p>
-<p>$ k_{dis} \leq $ max_d</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203181627451.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203181556349.png"></p>
+<p>寻找候选密度半径：用max<em>radius表示密度半径的最大值，如果$ k</em>{dis} \leq $ max_d</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203181627451.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203181556349.png" alt=""></p>
 <p>曲线平坦的部分表明在大量的目标的周围密度是连续的，作为候选的密度半径，因为这个部分有大量的核心能去扩大簇</p>
 <p>陡峭的部分是明显的密度改变</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203181604494.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203181604494.png" alt=""></p>
 <p>(5) 分配</p>
 <h2 id="十-实验experiments（作者是怎么通过实验证明自己的模型解决了问题）"><a href="#十-实验experiments（作者是怎么通过实验证明自己的模型解决了问题）" class="headerlink" title="十.实验experiments（作者是怎么通过实验证明自己的模型解决了问题）"></a>十.实验experiments（作者是怎么通过实验证明自己的模型解决了问题）</h2><p><strong>1.数据集</strong></p>
 <p><strong>2.实验结果：图和表是怎么证明作者解决了问题</strong></p>
@@ -522,6 +521,11 @@
   </div><!-- #primary -->
 </div>
 
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
 
 
     </div>    
@@ -826,5 +830,21 @@ $(document).ready(function() {
     })
   });
 </script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":270,"height":400},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
