@@ -297,73 +297,74 @@
 <h2 id="泛化误差"><a href="#泛化误差" class="headerlink" title="泛化误差"></a>泛化误差</h2><p>模型在新数据上的误差</p>
 <h2 id="降维"><a href="#降维" class="headerlink" title="降维"></a>降维</h2><h4 id="1-特征选择"><a href="#1-特征选择" class="headerlink" title="1.特征选择"></a>1.特征选择</h4><h4 id="2-PCA-主成分分析"><a href="#2-PCA-主成分分析" class="headerlink" title="2.PCA 主成分分析"></a>2.PCA 主成分分析</h4><h2 id="欠拟合"><a href="#欠拟合" class="headerlink" title="欠拟合"></a>欠拟合</h2><p>在训练数据上错误率比较高，模型不能很好地拟合数据</p>
 <h2 id="过拟合"><a href="#过拟合" class="headerlink" title="过拟合"></a>过拟合</h2><p>在训练数据上错误率低，在测试数据上错误率很高</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203021023056.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203021042712.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203021023056.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203021042712.png" alt=""></p>
 <p><strong>抑制过拟合的方法：正则化</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203021116298.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203021116298.png" alt=""></p>
 <h2 id="dropout-丢弃法"><a href="#dropout-丢弃法" class="headerlink" title="dropout 丢弃法"></a>dropout 丢弃法</h2><p>1.是一种在学习的过程中随机删除神经元的方法</p>
 <p>1.丢弃法将一些输出项随机置0来控制模型复杂度</p>
 <p>2.常作用在多层感知机的隐藏层输出上</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203021905423.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203021905423.png" alt=""></p>
 <h2 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h2><h4 id="1-交叉熵损失函数"><a href="#1-交叉熵损失函数" class="headerlink" title="1.交叉熵损失函数"></a>1.交叉熵损失函数</h4><p>(1) 交叉熵刻画的是实际输出与期望输出的距离，也就是交叉熵的值越小，两个概率分布就越接近</p>
 <p>(2) 目标值需要进行one-hot编码，能与概率值一一对应</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203021640375.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203021640375.png" alt=""></p>
 <h2 id="神经元（感知机）"><a href="#神经元（感知机）" class="headerlink" title="神经元（感知机）"></a>神经元（感知机）</h2><p>1.概念</p>
 <p>神经元模型是一个包含权重的输入，并且使用激活功能产生输出信号的基础计算单元，包括三个部分：输入、激活、输出</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203021124840.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203021626685.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203021124840.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203021626685.png" alt=""></p>
 <p>激活部分一般由两模块组成：<br>第一个模块是对输入部分进行加权求和，并且加入偏置项之后得到的结果进行如公式所示的表征函数f()转换处理</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203021612111.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203021612111.png" alt=""></p>
 <p>第二个模块是对f()处理后的结果进行激活，常用的激活函数有：sigmoid函数等</p>
 <h2 id="激活函数"><a href="#激活函数" class="headerlink" title="激活函数"></a>激活函数</h2><p>激活函数是加权输入和神经元输出的简单映射</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203021117207.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203021650700.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203021117207.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203021650700.png" alt=""></p>
 <h2 id="softmax函数"><a href="#softmax函数" class="headerlink" title="softmax函数"></a>softmax函数</h2><p>把神经网络的输出转化成概率</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203021634574.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203021634574.png" alt=""></p>
 <h2 id="全连接"><a href="#全连接" class="headerlink" title="全连接"></a>全连接</h2><p>任意一个神经元和前后层的所有神经元相连接</p>
 <h2 id="多层感知机（神经网络）"><a href="#多层感知机（神经网络）" class="headerlink" title="多层感知机（神经网络）"></a>多层感知机（神经网络）</h2><p>是一种前馈人工神经网络模型，其将输入的多个数据集映射到单一的输出的数据集上，传统的神经网络有输入层、隐藏层、输出层，其中隐藏层的层数根据需要而定</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203021627464.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203021627464.png" alt=""></p>
 <h2 id="卷积神经网络-CNN"><a href="#卷积神经网络-CNN" class="headerlink" title="卷积神经网络 CNN"></a>卷积神经网络 CNN</h2><p>包括输入层，隐藏层（包含：卷积层、激活层、池化层），输出层（全连接层）</p>
 <h4 id="1-卷积层（Convolution"><a href="#1-卷积层（Convolution" class="headerlink" title="1.卷积层（Convolution)"></a>1.卷积层（Convolution)</h4><p>(1) 卷积层的作用是特征提取</p>
 <p>(2) 每层卷积层是由若干个卷积单元（卷积核 Convolution Kernel，又称 滤波器 Filter）组成</p>
 <p>(3) 组成卷积核的每个元素都有与之对应的偏置和权重系数</p>
 <p>(4) 卷积的过程就是待卷积区域与卷积核点乘并加上偏置后的激活输出</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203021708165.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203021914045.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203021914862.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203021919524.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203021708165.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203021914045.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203021914862.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203021919524.png" alt=""></p>
 <p>(5) 卷积核的填充（padding）</p>
 <p>在进行卷积层的处理之前，有时要向输入数据的周围填入固定的数据（比如0等）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203021702444.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203021702444.png" alt=""></p>
 <p>(6) 卷积层的输出也称为特征映射（feature map）</p>
 <h4 id="2-池化层（Polling）"><a href="#2-池化层（Polling）" class="headerlink" title="2.池化层（Polling）"></a>2.池化层（Polling）</h4><p>(1) 池化层的作用是对由卷积层的输出进行信息过滤和特征提取</p>
 <p>(2) 最大池化：是从目标区域中取出最大值</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203021923603.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203021923603.png" alt=""></p>
 <h4 id="3-全连接层（Full-Connection）"><a href="#3-全连接层（Full-Connection）" class="headerlink" title="3.全连接层（Full Connection）"></a>3.全连接层（Full Connection）</h4><p>起分类器的作用</p>
 <h2 id="循环神经网络-RNN"><a href="#循环神经网络-RNN" class="headerlink" title="循环神经网络 RNN"></a>循环神经网络 RNN</h2><p>在时间t，模型输出值Yt取决于两个参数：隐藏层到输出层的连接权重Wy和当期状态值Ht，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203041917720.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203041917720.png" alt=""></p>
 <p>输入值Xt和上期的状态值Ht-1通过相应的连接权重Wh和Wx，加权相加，再通过激活函数TanH，生成当期的状态值Ht,而Ht在下期计算中又会作为状态输入值与Xt+1一起参与到Ht+1的计算</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203041917594.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203041917594.png" alt=""></p>
 <h2 id="循环神经网络的优化问题"><a href="#循环神经网络的优化问题" class="headerlink" title="循环神经网络的优化问题"></a>循环神经网络的优化问题</h2><p>1.梯度消失</p>
 <p>2.梯度爆炸</p>
 <p>3.长时依赖</p>
 <h2 id="LSTM-长短时记忆网络"><a href="#LSTM-长短时记忆网络" class="headerlink" title="LSTM 长短时记忆网络"></a>LSTM 长短时记忆网络</h2><p>主要是解决循环神经网络RNN存在的梯度消失和梯度爆炸的问题，LSTM的结构和标准RNN类似，区别是LSTM把隐藏层的每个普通节点换成了一个记忆细胞，具备选择性记忆的功能，可以选择记忆重要信息，过滤掉噪声信息,减轻记忆负担</p>
 <p>3个Sigmoid函数，两个Tanh函数，Sigmoid函数可以返回0到1区间的值，TanH可以返回-1到1区间的值，3个Sigmoid函数分别管理着三扇门：遗忘门、输入门、输出门</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203041938205.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203041938205.png" alt=""></p>
 <p>本期记忆状态值Ct由上期状态记忆值Ct-1通过遗忘门过滤到本期的部分加上本期新增的部分，上期过滤的部分是依靠遗忘门，当遗忘门的值为0时意味着上期记忆完全遗忘，当遗忘门的值为1时，上期记忆全部保留</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203041937251.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203041938134.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203041937251.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203041938134.png" alt=""></p>
 <p>输出门的Sigmoid函数和当期记忆值Ct的TanH值相乘，得到本期的输出值Ht，Ct和Ht会循环流入到t+1时刻参与到下期的计算</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203041938845.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203041938845.png" alt=""></p>
 <h2 id="门控循环单元GRU"><a href="#门控循环单元GRU" class="headerlink" title="门控循环单元GRU"></a>门控循环单元GRU</h2><p>两个Sigmoid函数代表两扇门：更新门、重置门</p>
 <p>计算当期状态值Ht时，同时考虑历史信息部分和新增信息部分，更新门确定着上期状态能进入到当期的比例，当它与上期状态值Ht-1相乘，就得到了新状态中历史信息的部分</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203041952261.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203041952261.png" alt=""></p>
 <p>重置门决定了上期信息的遗忘比例，它与上期状态Ht-1相乘，并且和当期输入信息部分Xt相加，再通过TanH函数转化得到当期信息数据，当期信息数据和对应比例(1-Zt)相乘，得到新状态中新增信息的部分</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203041947683.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203041947683.png" alt=""></p>
 <p>历史信息部分和新增信息部分相加得到最终当期状态值</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203041947861.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203041947861.png" alt=""></p>
 <h2 id="注意力机制-Attention-Mechanism"><a href="#注意力机制-Attention-Mechanism" class="headerlink" title="注意力机制 Attention Mechanism"></a>注意力机制 Attention Mechanism</h2><h2 id="自编码器-AE"><a href="#自编码器-AE" class="headerlink" title="自编码器 AE"></a>自编码器 AE</h2><h2 id="变分自编码器-VAE"><a href="#变分自编码器-VAE" class="headerlink" title="变分自编码器 VAE"></a>变分自编码器 VAE</h2><h2 id="seq2seq-编码器和解码器"><a href="#seq2seq-编码器和解码器" class="headerlink" title="seq2seq 编码器和解码器"></a>seq2seq 编码器和解码器</h2><h2 id="生成对抗网络-GAN"><a href="#生成对抗网络-GAN" class="headerlink" title="生成对抗网络 GAN"></a>生成对抗网络 GAN</h2><p>生成器（G）试图将输入的噪声转换为假样本，试图欺骗鉴别器（D），而鉴别器（D）试图区分数据是真实的样本还是来自生成器（G）的假样本，在训练迭代过程中，生成器和鉴别器持续地进化和对抗，直到达到平衡状态，鉴别器无法识别出生成器的假样本，训练结束</p>
-<h2 id="深度卷积生成对抗网络-DCGAN"><a href="#深度卷积生成对抗网络-DCGAN" class="headerlink" title="深度卷积生成对抗网络 DCGAN"></a>深度卷积生成对抗网络 DCGAN</h2>
+<h2 id="深度卷积生成对抗网络-DCGAN"><a href="#深度卷积生成对抗网络-DCGAN" class="headerlink" title="深度卷积生成对抗网络 DCGAN"></a>深度卷积生成对抗网络 DCGAN</h2><h2 id="DBSCAN算法"><a href="#DBSCAN算法" class="headerlink" title="DBSCAN算法"></a>DBSCAN算法</h2><p>DBSCAN算法是经典的基于密度的聚类算法，它依靠数据点间定义的密度度量来聚类。它通过指定数据聚类最小点数MinPts，和聚类距离半径ε自动依据数据点的密度聚类。相对于我们熟悉的K-means算法，不需要指定聚类的个数。聚类是一种无监督学习，它在样本没有标记的情况可以把数据分成不同的组，聚类算法分组的依据是数据间的距离度量值。</p>
+
         </div>
         <!-- .entry-content -->
         <div class="single-reward">
@@ -394,7 +395,7 @@
           
             <div class="post-nepre half previous">
           
-            <a href="/2022/03/08/KPI%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B%E8%AE%BA%E6%96%87/" rel="prev">
+            <a href="/2022/03/08/KPI%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B/" rel="prev">
               <div class="background">
                 <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/comment.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/comment.jpg">
               </div>
@@ -402,7 +403,7 @@
               Previous Post</span>
               <div class="info">
                 <h3>
-                KPI异常检测论文</h3>
+                KPI异常检测的基础知识</h3>
                 <hr>
               </div>
             </a>

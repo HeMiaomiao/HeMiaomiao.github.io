@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  
+  <title itemprop="name">Miaomiao&#39;s Blog</title>
+  
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC" media="all">
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="stylesheet" id="saukra_css-css" href="/css/style.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/lib.min.css" media="all">
+  <link rel="stylesheet" href="/css/font.css" media="all">
+  <link rel="stylesheet" href="/css/insight.css" media="all">
+  <link rel="stylesheet" href="/css/jquery.fancybox.min.css" media="all">
+  <link rel="stylesheet" href="/css/zoom.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+  
+<!--   <link rel="stylesheet" id="saukra_css-css" href="https://2heng.xin/wp-content/cache/autoptimize/css/autoptimize_ad42a61f4c7d4bdd9f91afcff6b5dda5.css
+" type="text/css" media="all"> -->
+  <script>
+  /*Initial Variables*/
+  var mashiro_option = new Object();
+  var mashiro_global = new Object();
+  mashiro_option.NProgressON = true;
+  /* 
+   * 邮箱信息之类的东西可以填在这里，这些js变量基本都作用于sakura-app.js
+   * 这样的设置仅是为了方便在基于PHP开发的主题中设置js变量，既然移植到了Node上，我想或许可以精简这一逻辑吧
+   */
+  mashiro_option.email_domain = "";
+  mashiro_option.email_name = "";
+  mashiro_option.cookie_version_control = "";
+  mashiro_option.qzone_autocomplete = false;
+  mashiro_option.site_name = "Miaomiao's Blog";
+  mashiro_option.author_name = "Miaomiao's Blog";
+  mashiro_option.site_url = "https://hemiaomiao.github.io/";
+  mashiro_option.v_appId = "K6UwYN6dMijp5h01cRysnTrG-gzGzoHsz";
+  mashiro_option.v_appKey = "NI1nkxc4Yhim5rlut3lno7p5";
+  mashiro_option.mathjax = "1";
+  
+  mashiro_option.qq_api_url = "https://api.mashiro.top/qqinfo/"; 
+  mashiro_option.qq_avatar_api_url = "https://api.mashiro.top/qqinfo/";
+
+  // mashiro_option.jsdelivr_css_src = "https://cdn.jsdelivr.net/gh/moezx/cdn@3.4.5/css/lib.min.css";
+  // mashiro_option.float_player_on = true;
+
+  /*End of Initial Variables*/
+  </script>
+  <script type="text/javascript">
+  var bg = "https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109161805207.jpg".split(",");
+  var bgindex = Math.floor(Math.random()*bg.length);
+  if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+    alert('朋友，IE浏览器未适配哦~');
+  }
+  </script>
+  <style type="text/css">
+  .hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}
+  </style>
+  <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
+  </style>
+<meta name="generator" content="Hexo 5.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+
+<script src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/sakura.js"></script>
+<script src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+<script type="text/javascript">
+    var OriginTitile=document.title,st;
+	document.addEventListener("visibilitychange",function(){
+        document.hidden?(document.title="ヽ(●-`Д´-)ノ你要玩捉迷藏嘛",clearTimeout(st)):(document.title="(Ő∀Ő3)ノ好哦！",st=setTimeout(function(){document.title=OriginTitile},3e3))
+    })
+</script>
+<body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
+  <div class="scrollbar" id="bar">
+  </div>
+  <a href="#" class="cd-top faa-float animated"></a>
+  <section id="main-container">
+    <div class="headertop ">
+  <div id="banner_wave_1"></div>
+  <div id="banner_wave_2"></div>
+  <figure id="centerbg" class="centerbg">
+    <div class="focusinfo no-select">
+      <div class="header-tou">
+        <a href="https://hemiaomiao.github.io/">
+          <img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109161806483.jpg">
+        </a>
+      </div>
+      <div class="header-info">
+        <p>未来可期</p>
+        <div class="top-social_v2">
+          <li id="bg-pre">
+            <img class="flipx" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+          
+            
+              
+                <li>
+                  <a href="https://music.163.com/" target="_blank" class="social-github" title="wangyiyun">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/wangyiyun.png">
+                  </a>
+                </li>
+              
+            
+          
+          <li id="bg-next">
+            <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+        </div>
+      </div>
+    </div>
+  </figure>
+  <div id="video-container" style="">
+    <video style="object-fit: fill" id="bgvideo" class="video" video-name="" src="" width="auto" preload="auto">
+    </video>
+    <div id="video-btn" class="loadvideo videolive">
+    </div>
+    <div id="video-add">
+    </div>
+    <div class="video-stu">
+    </div>
+  </div>
+  <div class="headertop-down faa-float animated" onclick="headertop_down()">
+    <span>
+      <i class="fa fa-chevron-down" aria-hidden="true">
+      </i>
+    </span>
+  </div>
+</div>
+    <div id="page" class="site wrapper">
+      <header class="site-header no-select gizle sabit" role="banner">
+  <div class="site-top">
+    <div class="site-branding">
+      <span class="site-title">
+        <span class="logolink moe-mashiro">
+          <a href="/">
+            <span class="sakurasono"></span>
+            <span class="shironeko">Miaomiao&#39;s Blog</span>
+          </a>
+        </span>
+      </span>
+    </div>
+    <div class="searchbox search-form-submit">
+      <i class="iconfont js-toggle-search iconsearch icon-search">
+      </i>
+    </div>
+    <div id="show-nav" class="showNav mobile-fit">
+      <div class="line line1">
+      </div>
+      <div class="line line2">
+      </div>
+      <div class="line line3">
+      </div>
+    </div>
+    <div class="lower-cantiner">
+      <div class="lower">
+        <nav class="mobile-fit-control hide">
+          <ul id="menu-new" class="menu">
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+                    首页
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+                    归档
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/categories/%E6%8A%80%E6%9C%AF/">
+                          <i class="fa fa-code" aria-hidden="true"></i>
+                          技术
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/%E7%A7%91%E7%A0%94/">
+                          <i class="fa fa-book" aria-hidden="true"></i>
+                          科研
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/%E6%9D%82%E9%A1%B9/">
+                          <i class="fa fa-heart" aria-hidden="true"></i>
+                          杂项
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/%E8%8F%9C%E8%B0%B1/">
+                          <i class="fa fa-angellist" aria-hidden="true"></i>
+                          菜谱
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/%E8%BD%AC%E8%BD%BD/">
+                          <i class="fa fa-share" aria-hidden="true"></i>
+                          转载
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="/links/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-link faa-shake" aria-hidden="true"></i>
+                    友人帐
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+                    关于
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/about/">
+                          <i class="fa fa-meetup" aria-hidden="true"></i>
+                          我？
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
+
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+          <header class="entry-header">
+            <h1 class="entry-title"></h1>
+            <p class="entry-census">&nbsp;·&nbsp;2022-4-8&nbsp;·&nbsp;<span id="busuanzi_value_page_pv"></span>次阅读</p></p>
+
+            <hr>
+          </header>
+        
+        <div class="entry-content">
+          <p> title: Robust Anomaly Detection for Multivariate Time Series through Stochastic Recurrent Neural Network<br>author: Miaomiao<br>avatar: ‘<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/startdash/wangshiwu.jpg">https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/startdash/wangshiwu.jpg</a>‘<br>authorLink: ‘<a href="https://hemiaomiao.github.io/">https://hemiaomiao.github.io/</a>‘<br>authorAbout: 坚持<br>categories: 科研<br>comments: true<br>tags:</p>
+<ul>
+<li>论文</li>
+<li>KPI异常检测<br>photos: ‘<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109171644434.jpg">https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109171644434.jpg</a>‘<br>date: 2022-04-08 14:35:34<br>top:<br>authorDesc:<br>keywords:<br>description:</li>
+</ul>
+<h2 id="一-标题"><a href="#一-标题" class="headerlink" title="一.标题"></a>一.标题</h2><p>Robust Anomaly Detection for Multivariate Time Series through Stochastic Recurrent Neural Network</p>
+<p>基于随机循环神经网络的多维时间序列异常检测</p>
+<h2 id="二-时间"><a href="#二-时间" class="headerlink" title="二.时间"></a>二.时间</h2><p>2019年</p>
+<h2 id="三-关键字"><a href="#三-关键字" class="headerlink" title="三.关键字"></a>三.关键字</h2><ul>
+<li>Anomaly Detection</li>
+<li>Multivariate Time Series </li>
+<li>Stochastic Model</li>
+<li>Recurrent Neural Network</li>
+</ul>
+<h2 id="四-作者"><a href="#四-作者" class="headerlink" title="四.作者"></a>四.作者</h2><p>Dan Pei</p>
+<h2 id="五-文章来源"><a href="#五-文章来源" class="headerlink" title="五.文章来源"></a>五.文章来源</h2><p>SIGKDD：ACM Knowledge Discovery and Data Mining（A类会议）</p>
+<h2 id="六-摘要Abstract（介绍作者在做什么-知道作者要研究什么）"><a href="#六-摘要Abstract（介绍作者在做什么-知道作者要研究什么）" class="headerlink" title="六.摘要Abstract（介绍作者在做什么 / 知道作者要研究什么）"></a>六.摘要Abstract（介绍作者在做什么 / 知道作者要研究什么）</h2><p><strong>1.研究背景 / 作者研究这个方向的原因</strong></p>
+<p>像服务器、宇宙飞船、发动机这样的工业设备（即实体）是通过多维时间序列进行监控，多维时间序列的异常检测对于保证实体的服务质量非常重要。</p>
+<p><strong>注：</strong> 多维时间序列 即 多变量时间序列  即 多元时间序列</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202204091538449.png" alt=""></p>
+<p>（该图是来自服务器数据集的2天8个指标的多维时间序列片段）</p>
+<p><strong>2.研究方向存在的问题 / 作者要解决的问题</strong></p>
+<p>因为多维时间序列存在复杂的时间依赖性和随机性，所以多维时间序列的异常检测面临困难。</p>
+<p><strong>3.作者解决这个问题的方法</strong></p>
+<ul>
+<li>提出了模型OmniAnomaly，是针对多维时间序列异常检测的随机循环神经网络，在不同的设备上有很好的鲁棒性</li>
+<li>模型OmniAnomaly的核心思想：通过随机变量连接（stochastic variable connection）、二维正规化流动（planar normalizing flow）这样的关键技术学习多维时间序列的特征，通过特征重构输入数据，使用重构概率（ reconstruction probability）去决定异常，从而捕获多维时间序列的正常模式。</li>
+<li>模型OmniAnomaly能根据组成的</li>
+<li>的重构的可能性提供异常的解释。</li>
+</ul>
+<p><strong>4.作者模型的效果</strong></p>
+<p>在3个实际的数据集上实现了总体0.86的F1-score，超过了前沿的方法0.09，解释的精确度达到了0.89。</p>
+<p><strong>5.结论Conclusion</strong></p>
+<p>实体水平的异常检测能帮助运维人员及时发现设备的异常，OmniAnomaly模型在不同的设备上有很好的鲁棒性，它的关键技术可以被应用到其它时间序列模型的任务中，另外OmniAnomaly模型根据重构概率可以有效地解释检测到的实体异常。OmniAnomaly模型在三个数据集上超过了前沿的方法，它的优秀表现证明了它是一个鲁棒的模型。</p>
+<h2 id="七-引言Introduction"><a href="#七-引言Introduction" class="headerlink" title="七.引言Introduction"></a>七.引言Introduction</h2><p><strong>1.研究背景 / 作者为什么要研究这个课题</strong></p>
+<p>像服务器、宇宙飞船、机器人辅助系统、发动机这样的工业设备（即实体）是通过多维时间序列进行监控，所以多维时间序列的异常检测对于保证实体的服务质量非常重要。</p>
+<p><strong>2.研究现状</strong>摘要的第一段扩充 (别人在这个方向上做的相关工作，指出相关工作的局限性 / 目前该课题的研究进行到了哪一步，有什么缺陷)</p>
+<p>实体有stochasticity和强的时间依赖性，所以研究应该采取随机性方法和时间独立的模型。但是在多维时间序列的异常检测方面，过去的研究既没有采取确定性的方法，也没有采取随机的方法，而是忽略时间序列的时间依赖性。</p>
+<p><strong>3.作者要解决的问题是什么</strong></p>
+<p><strong>5.作者提出的模型</strong></p>
+<p>作者的核心思想是考虑时间依赖性和随机性，学习潜在的特征去捕获多维时间序列的正常模式。观测值和正常模式之间的差别越大，就更可能是异常。这个想法有两个难题：</p>
+<ol>
+<li><p>考虑多维时间序列的时间依赖性和随机性，怎么去学习潜在特征</p>
+<ul>
+<li>过去的相关工作：<ol>
+<li>《Sequential neural models with stochastic layers》展现了单独的随机模型是很难去捕获多维时间序列的长期依赖性和概率分布，所以让确定性的RNN的隐藏变量作为随机模型的内部存储器。</li>
+<li>《A Multimodal Anomaly Detector for Robot-Assisted Feeding Using an LSTM-Based Variational Autoencoder》用基于LSTM的VAE代替前馈神经网络RNN，但是它的随机变量没有时间依赖性。</li>
+</ol>
+</li>
+<li>本篇论文的方法：随机变量是输入数据的潜在特征，为了学习输入数据的潜在特征，提出一种随机循环神经网络(stochastic recurrent neural network）,对随机变量的时间依赖性进行建模。随机循环神经网络组合了GRU、有随机变量连接和planar Normalizing Flows的VAE。随机变量连接技术是为了在潜在空间对随机变量的时间依赖性进行建模，采用的是线性高斯状态空间模型（Linear Gaussian State Space Model），用来连接随机变量和GRU潜在的变量。planar Normalizing Flows（planar NF）是为了捕获输入数据的分布，它使用一系列可逆的映射去学习潜在随机空间的非高斯后分布。</li>
+</ul>
+</li>
+<li><p>怎么为检测到的实体水平的异常提供解释</p>
+<ul>
+<li>解释为什么一个观测值被检测成异常</li>
+<li>本篇论文的方法：因为在实际中运维人员手动检查和解决实体异常的时候，通常会找最偏离历史模式的最重要的几个指标，所以通过一些有最低重构概率的单变量时间序列去解释实体异常。</li>
+</ul>
+</li>
+</ol>
+<p><strong>7.作者的贡献</strong></p>
+<ol>
+<li>OmniAnomaly是第一个多维时间序列异常检测算法，它能解决随机变量的时间依赖性从而学习输入数据的特征</li>
+<li>提出了第一个基于多维时间序列异常检测算法的异常解释方法</li>
+<li>OmniAnomaly里的四个关键技术：GRU、planar NF、stochastic variable connection、调整的Peaks-Over-Threshold方法在实验里面有很好的效果。</li>
+</ol>
+<h2 id="八-相关工作"><a href="#八-相关工作" class="headerlink" title="八.相关工作"></a>八.相关工作</h2><p>针对多维时间序列异常检测的方法有以下：</p>
+<h4 id="1-监督学习方法"><a href="#1-监督学习方法" class="headerlink" title="1.监督学习方法"></a>1.监督学习方法</h4><ul>
+<li>论文：<ol>
+<li>《A multimodal execution monitor with anomaly classification for robot-assisted feeding》</li>
+<li>《 Failure detection in assembly: Force signature analysis》</li>
+</ol>
+</li>
+<li>缺点：模型训练需要标签，只能已知的异常类型</li>
+</ul>
+<h4 id="2-无监督学习方法"><a href="#2-无监督学习方法" class="headerlink" title="2.无监督学习方法"></a>2.无监督学习方法</h4><p><strong>1. 确定性模型(Deterministic model)</strong></p>
+<ul>
+<li><p>论文：</p>
+<ol>
+<li><p>把LSTM用于多维时间序列的异常检测，使用预测错误确定异常</p>
+<ul>
+<li>《Multivariate industrial time series with cyber-attack simulation: Fault detection using an lstm-based predictive data model》</li>
+<li>《Detecting Spacecraft Anomalies Using LSTMs and Nonparametric Dynamic Thresholding》</li>
+</ul>
+</li>
+<li><p>提出了基于LSTM的编码器解码器（Encoder-Decoder），重构正常的时间序列的行为，使用重构错误进行多维时间序列的异常检测</p>
+<ul>
+<li>《 LSTM-based encoder-decoder for multi-sensor anomaly detection》</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>缺点：LSTM能解决时间序列的时间依赖性，但是它没有随机变量</p>
+</li>
+</ul>
+<p><strong>2.随机的模型(Stochastic based model)</strong></p>
+<ul>
+<li><p>论文：</p>
+<ol>
+<li><p>提出了DAGMM模型，这个模型融合了自动编码器 (AE)和高斯混合模型(GMM)。使用自动编码器对输入数据进行降维从而得到潜在的特征，使用高斯混合模型估计特征的密度</p>
+<ul>
+<li>《Deep autoencoding gaussian mixture model for unsupervised anomaly detection》</li>
+<li>缺点：这个模型是为了多维变量设计的，而不是多维时间序列，忽视了时间序列内在的时间依赖性</li>
+</ul>
+</li>
+<li><p>表明随机变(stochastic variable)能提高RNN的表现，因为随机变量能捕获时间序列的概率分布</p>
+<ul>
+<li>《Sequential neural models with stochastic layers》</li>
+</ul>
+</li>
+<li><p>合并了LSTM和变分自编码器VAE，忽视了随机变量的独立性</p>
+<ul>
+<li>《A Multimodal Anomaly Detector for Robot-Assisted Feeding Using an LSTM-Based Variational Autoencoder》</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<p><strong>3.OmniAnomaly模型和以上两种方法的区别</strong></p>
+<ul>
+<li>OmniAnomaly是组合了GRU和VAE的随机循环神经网络，时间序列的时间依赖性和随机性能被建模。</li>
+<li>OmniAnomaly应用了例如随机变量连接的技术对随机变量之间的时间依赖性进行建模，所以随机变量能更好的代表输入数据。</li>
+</ul>
+<h2 id="九-预备知识"><a href="#九-预备知识" class="headerlink" title="九.预备知识"></a>九.预备知识</h2><p><strong>1.RNN  循环神经网络</strong></p>
+<ul>
+<li>参考的论文：《Sequential neural models with stochastic layers》</li>
+<li>思想：</li>
+<li>优点：RNN因为采用了确定性的隐藏变量，所以能够代表时间依赖性</li>
+<li>缺点：简单的RNN不能学习序列的长期依赖性</li>
+</ul>
+<p><strong>2.GRU  门控循环单元</strong></p>
+<ul>
+<li>==本篇论文在OmniAnomaly模型里面采用GRU来捕获时间序列的时间依赖性==</li>
+<li>参考的论文：《Empirical evaluation of gated recurrent neural networks on sequence modeling》</li>
+<li>提出的背景：是RNN的变体，通过门控机制解决学习序列的长期依赖性问题</li>
+<li>思想：</li>
+<li><p>GRU是对LSTM的改进，LSTM有三个门函数：输入门、遗忘门和输出门。GRU有两个门：更新门和重置门。更新门用于控制前一时刻的状态信息被带入到当前状态中的比例，重置门决定了上期信息的遗忘比例。</p>
+</li>
+<li><p>优点：GRU适合数据集不是非常大的时候用于模型训练，因为GRU比LSTM的参数更少，结构更简单。</p>
+</li>
+<li>缺点：</li>
+</ul>
+<p><strong>3.LSTM  长短时记忆网络</strong> </p>
+<p>参考的论文：《Empirical evaluation of gated recurrent neural networks on sequence modeling》</p>
+<ul>
+<li>提出的背景：是RNN的变体，通过门控机制解决学习序列的长期依赖性问题</li>
+<li>思想：</li>
+<li>优点：</li>
+<li>缺点：</li>
+</ul>
+<p><strong>4.变分推断 Variational Inference</strong></p>
+<ul>
+<li>变分推断的目的是找到一个分布q(z)去逼近没有办法计算的后验分布p(x|z)，问题转换为找到一个q(z)令ELBO能够取到最大值</li>
+</ul>
+<p><strong>5.VAE  变分自编码器 (Variational Auto-encoders)</strong></p>
+<ul>
+<li>参考的论文：《Auto-Encoding Variational Bayes》</li>
+<li>背景：VAE是一个深度贝叶斯定理模型，被成功应用在季节性单变量时间序列的异常检测</li>
+<li>思想：VAE通过降维把高维的输入$x_t$表示成隐变量$z_t$，然后通过$z_t$重构$x_t$。VAE里面有两个神经网络，分别是推断网络和生成网络。$p_\theta(z_t)$是$z_t$的先验，$x_t$是从后验分布$p_\theta(x_t|z_t)$中采样的，但是后验分布$p_\theta(x_t|z_t)$没有办法计算，在VAE里面通过使用推断网络$q_\Phi(z_t|x_t)$来近似隐变量 Z的后验分布$p_\theta(x_t|z_t)$，推断网络是生成的隐变量z的分布，生成网络是根据隐变量z生成${x}’$的分布。</li>
+<li>VAE和AE的区别：尽管VAE 和自编码器AE 结构类似，区别是VAE 的“编码器”和“解码器” 的输出是变量的概率分布，而不是某种特定的编码<ul>
+<li>在VAE里面使用一种变分推断算法SGVB (随机梯度变分贝叶斯：Stochastic Gradient Variational Bayes)是，通过最大化ELBO (evidence of lower bound )来训练参数$\Phi$和$\theta$，其中$\Phi$是推断网络的参数，$\theta$是生成网络的参数。</li>
+<li><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202204121317113.png" alt=""></li>
+<li>蒙特卡罗积分 (Monte Carlo integration)被用来计算上述的期望，$z_t^{(l)}$ ($l$=1,2,……L)是从推断网络$q_\Phi(z_t|x_t)$中采样的。</li>
+<li><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202204121317350.png" alt=""></li>
+<li>在推断网络里面，$q_\Phi(z_t|x_t)$被假设成高斯分布，但是因为$q_\Phi(z_t|x_t)$可能不是高斯分布，所以这个假设可能会使网络过拟合。为了学习非高斯的后验密度$q_\Phi(z_t|x_t)$，论文 (Variational Inference with Normalizing Flows)提出了名叫planar NF的方法。</li>
+<li>planar NF通过使用可逆的映射对后验密度$q_\Phi(z_t|x_t)$进行变换，首先从$q_\Phi(z_t|x_t)$中采样得到$z_t^0$，然后通过一系列可逆的映射得到$z_t^K=f^K(f^{K-1}(…f^1(z_t^0)))$，$f^K(K=1,2…K)$是可逆的映射函数$(f^K(z_t^{K-1})=Z_t^{K-1}+u*tanh(w^Tz_t^{K-1}+b))$（u、w、b是参数），在推断网络里面，使用planar NF的最终输出$z_t^K$作为随机变量$z_t$，即$z_t=z_t^K$。</li>
+</ul>
+</li>
+<li>优点：</li>
+<li>缺点：</li>
+</ul>
+<p><strong>6.Planar NF</strong></p>
+<ul>
+<li>参考的论文：《Variational Inference with Normalizing Flows》</li>
+<li>提出的背景：是为了学习推理网络里面非高斯的后验密度 $q_ϕ(z_t|x_t)$</li>
+<li>思想：planar NF通过使用可逆的映射对后验密度$q_\Phi(z_t|x_t)$进行变换，首先从$q_\Phi(z_t|x_t)$中采样得到$z_t^0$，然后通过一系列可逆的映射得到$z_t^K=f^K(f^{K-1}(…f^1(z_t^0)))$，$f^K(K=1,2…K)$是可逆的映射函数$(f^K(z_t^{K-1})=Z_t^{K-1}+u*tanh(w^Tz_t^{K-1}+b))$（u、w、b是参数），在推断网络里面，使用planar NF的最终输出$z_t^K$作为随机变量$z_t$，即$z_t=z_t^K$。</li>
+<li>优点：</li>
+<li>缺点：</li>
+</ul>
+<p><strong>7.问题描述</strong></p>
+<ul>
+<li>多维时间序列的定义：$x = {x_1, x_2, …, x_N}$ （N是时间序列的长度）</li>
+<li>观测值xt是在t时刻M维的向量：$x_t = [x_t^1, x_t^2, …, x_t^M]$</li>
+<li>多维时间序列x是M行N列的矩阵：$x ∈ R^{M*N}$</li>
+<li>多维时间序列异常检测的目的是确定观测值$x_t$是不是异常</li>
+</ul>
+<p><strong>7.OmniAnomaly的总体结构</strong></p>
+<p>OmniAnomaly的结构分成两个部分：离线训练和在线检测</p>
+<ol>
+<li><p>离线训练的步骤：（离线训练过程通常定期进行）</p>
+<ul>
+<li>数据预处理 (data preprocessing)模块：把数据集标准化，然后使用滑动窗口把数据集划分成序列</li>
+<li>模型训练 (Model Training)模块：经过预处理之后，一个多维时间序列进入模型训练模块，学习一个能捕获多维时间序列的正常模式和输出每个观测值的异常分数的模型</li>
+<li>阈值选择 (Threshold Selection)模块：得到的异常分数在阈值选择模块使用通过POT方法自动选择一个异常阈值</li>
+</ul>
+</li>
+<li><p>在线检测的步骤</p>
+<ul>
+<li>数据预处理 (data preprocessing)模块</li>
+<li>在线检测 (Online Detection)模块：在线检测模块存储了被训练好的模型，经过预处理之后一个新的观测值进入在线检测模块会得到异常分数</li>
+<li>异常结果 (Anomaly Result)模块：比较异常分数和阈值选择模块得到的阈值，如果观测值的异常分数比阈值小，那么该观测值就是异常的</li>
+<li>异常解释 (Anomaly Interpretation)模块：如果观测值是异常的，通过对观测值里面每个维度的估计和贡献排序(ranking the contribution)(例如重构概率)来解释异常</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202204091538436.png" alt=""></p>
+<h2 id="十-作者提出的模型OmniAnomaly的设计"><a href="#十-作者提出的模型OmniAnomaly的设计" class="headerlink" title="十.作者提出的模型OmniAnomaly的设计"></a>十.作者提出的模型OmniAnomaly的设计</h2><h4 id="1-OmniAnomaly模型的网络结构"><a href="#1-OmniAnomaly模型的网络结构" class="headerlink" title="1.OmniAnomaly模型的网络结构"></a>1.OmniAnomaly模型的网络结构</h4><ul>
+<li><p><strong>OmniAnomaly的基本思想</strong></p>
+<ol>
+<li>使用GRU来捕获在x-space里面的多元观测值之间的时间依赖性</li>
+<li>使用VAE进行特征学习，把观测值映射成随机变量</li>
+<li>为了对隐空间里面随机变量之间的时间依赖性进行明确地建模，提出了随机变量连接技术SSM (Linear Gaussian State Space Model)，<u>==连接随机变量，以及随机变量和GRU隐藏变量的连接==</u>。</li>
+<li>为了帮助推断网络qnet里面的随机变量捕获输入数据的分布，本篇论文采用了planar NF，planar NF使用一系列可逆的映射来学习隐随机空间里面的非高斯后验分布。</li>
+</ol>
+</li>
+<li><p><strong>OmniAnomaly的图形模型</strong></p>
+<ol>
+<li><p>OmniAnomaly由推断网络qnet和生成网络pnet组成，OmniAnomaly模型里面的推断网络qnet和生成网络pnet是同时被训练的。<img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202204121443159.png" alt=""></p>
+<ul>
+<li>节点对应不同的变量，在t时刻，$x_t$是输入的观测值，$x_t^{‘}$是是$x_t$的重构，$e_t$和$d_t$是GRU细胞里面的内存变量，它们是确定性的，$z_t$是z-space的随机变量，边代表变量之间的依赖性。       </li>
+</ul>
+</li>
+<li><p><strong>生成网络pnet</strong>：使用隐特征$z_{t-T:t}$去重构输入$x_{t-T:t}$</p>
+<ol>
+<li><p>使用线性高斯状态空间模型 (linear Gaussian SSM) 去连接z-space变量，并且使他们暂时依赖。</p>
+<ul>
+<li>$T_\Theta$是转移矩阵，$O_\Theta$是观测矩阵，$v_t$是转移噪声，$\epsilon _t$是观测噪声</li>
+<li><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202204121706533.png" alt=""></li>
+</ul>
+<ol>
+<li>在t时刻$z_t$和t-1时刻的变量$d_{t-1}$通过一个GRU细胞去产生一个确定性变量$d_t$</li>
+</ol>
+<ul>
+<li><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202204121721842.png" alt=""></li>
+<li>$r_t^d$是重置门</li>
+<li><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202204121727180.png" alt=""></li>
+<li>$c_t^d$是更新门</li>
+<li>$c_{t}^{d}=sigmod(w^{c^{d}}z_{t}+u^{c^{d}}d_{t-1}+b^{c^{d}})$</li>
+</ul>
+<ol>
+<li>然后$d_t$通过dense layer进一步处理去产生变量${x_t}’$的均值$\mu_{x_t}$和标准差$\sigma_{x_t}$（${x_t}’$是$x_t$的重构）</li>
+</ol>
+<ul>
+<li><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202204121721140.png" alt=""></li>
+<li><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202204121721479.png" alt=""></li>
+<li>${x_{t}}’$是从$\mathbb{N}(\mu_{x_t},\sigma_{x_t}^{2}I)$中采样，从$z_t$中产生</li>
+<li>如果t时刻有异常，${x_{t}}’$和原始数据$x_{t}$可能会明显不同，所以可以根据$x_{t}$的重构概率去检测异常  </li>
+</ul>
+<ol>
+<li><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202204091535387.png" alt=""></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p><strong>推断网络qnet：</strong>被优化来接近生成网络pnet，并且获得好的隐特征</p>
+<ol>
+<li>在t时刻输入的观测值$x_t$和在t-1时刻GRU里面的隐藏变量$e_{t-1}$被送到GRU的细胞从而产生隐藏变量$e_t$，$e_t$是用来捕获$x_t$和之前的x-space观测值之间的长期复杂的时间信息。<ul>
+<li><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202204091530617.png" style="zoom:67%;"></li>
+<li>$r_t^{e}$是重置门，决定怎样和过去的记忆合并一个新的输入。<img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202204121623963.png" alt=""></li>
+<li>$c_t^{e}$是更新门，决定过去的记忆需要保存多少。</li>
+<li><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202204121623802.png" alt=""></li>
+</ul>
+</li>
+<li><p>然后$e_t$连接$z_{t-1}$，进入dense layer从而产生随机变量$z_t$的均值$\mu_{z_t}$和标准差$\sigma_{z_t}$。</p>
+<ul>
+<li><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202204091530681.png" style="zoom:67%;"></li>
+<li><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202204091530830.png" style="zoom:67%;"></li>
+<li>$h^{\Phi}$表示有ReLU激活函数的dense layer</li>
+<li>$\mu_{z_t}$来自于linear layer </li>
+<li>$\sigma_{z_t}$由soft-plus激活函数和小的$\epsilon$产生，用来阻止数值溢出</li>
+<li>推断网络qnet的输出$z_t^{0}$是对角高斯，从$\mathbb{N}(\mu_{z_t},\sigma_{z_t}^{2}I)$中采样</li>
+<li>为了学习非高斯后验分布$q_{\phi}(z_t|x_t)$，使用 planar NF去近似$z_t$,$z_t^{K}$是$z_t^{0}$经过K个二维映射$f^K$变换得到的</li>
+</ul>
+</li>
+<li><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202204091534331.png" alt=""></li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+<h4 id="2-离线的模型训练"><a href="#2-离线的模型训练" class="headerlink" title="2.离线的模型训练"></a>2.离线的模型训练</h4><p>通过优化ELBO来训练VAE模型，在训练数据集里面每个输入序列数据的长度是T+1，对于第$l$个样本$z_{t-T:t}^{(l)}$ ($1\leq l\leq L$，$L$是样本的长度)，损失函数 (loss function) 如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202204122038752.png" alt=""></p>
+<ul>
+<li>第一项$\log (p_{\theta (x_{t-T:t}|z_{t-T:t})})$是负重构误差损失，$x_i$的后验概率$p_{\theta (x_i|z_{t-T:i})}$服从$\mathbb{N}(\mu_{x_i},\sigma_{x_i}^{2}I)$分布</li>
+<li><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202204122039137.png" alt=""></li>
+<li>第二项和第三项是正则化，也就是KL散度 (Kullback-Leibler loss)</li>
+<li><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202204122053094.png" alt=""></li>
+<li>第二项$\log (p_{\theta (z_{t-T:t})})=\sum_{i=t-T}^{t}\log (p_{\theta (z_i|z_{i-1})})$,$z_i$是通过用标准多元正态分布初始化Linear Gaussian SSM获得的。</li>
+<li>第三项$-\log (q_{\phi}(z_{t-T:t}|x_{t-T:t}))=-\sum_{i=t-T}^{t}\log (q_\phi (z_i|z_{i-1},x_{t-T:i}))$，是用来近似推断网络qnet中z空间里面的$z_i$的真实后验分布</li>
+<li>$z_i$即$z_i^{K}$，是通过planar NF变换得到的</li>
+<li><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202204122116707.png" alt=""></li>
+<li><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202204122116096.png" alt=""></li>
+<li><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202204122116209.png" alt=""></li>
+</ul>
+<h4 id="3-在线检测"><a href="#3-在线检测" class="headerlink" title="3.在线检测"></a>3.在线检测</h4><p>OmniAnomaly的输入是一个长度为T+1的序列数据，因为采用序列$x_{t-T:t}$作为输入去重构$x_t$，重构能够通过条件概率$\log (p_{\theta (x_{t}|z_{t-T:t})})$进行估计，在模型里面这个重构概率被作为异常分数。$x_t$的异常分数被表示成$S_t$，所以$S_t=\log (p_{\theta (x_{t}|z_{t-T:t})})$。分数越高意味着输入$x_t$被重构的很好，分数越小，则观测值被重构的可能性越小，因此更可能是异常的。如果$x_t$的异常分数$S_t$低于异常阈值，则$x_t$被标记成异常，否则是正常的。</p>
+<p><strong>注：</strong> $x_{t-T:t}$：是$x_t$和在$x_t$之前的T个连续的观测值</p>
+<h4 id="4-自动的阈值选择（离线训练阶段）"><a href="#4-自动的阈值选择（离线训练阶段）" class="headerlink" title="4.自动的阈值选择（离线训练阶段）"></a>4.自动的阈值选择（离线训练阶段）</h4><ol>
+<li>使用${N}’$个观测值的单变量时间序列，计算出每个观测值的异常分数</li>
+<li>然后所有的异常分数形成一个单变量时间序列$\left \{ S_{1},S_{2},…,S_{ {N}’ } \right \}$</li>
+<li>根据极值理论 (EVT：Extreme Value Theory) 的原则设置离线的阈值$th_F$<ul>
+<li>极值理论 EVT：EVT的目标是找到极值定律，极值通常在概率分布的尾部<ul>
+<li>优点：在寻找极值的时候，不假设数据的分布    </li>
+</ul>
+</li>
+<li>Peaks-Over-Threshold (POT)：是EVT第二定理<ul>
+<li>基本思想：通过带参数的广义帕累托分布generalized Pareto distribution (GPD)去拟合概率分布的尾部</li>
+<li>==本篇论文采用POT去学习异常分数的阈值==</li>
+<li>不像经典的POT专注于分布高端的值，异常位于分布的尾端，所以本篇论文调整GPD函数如下：</li>
+<li><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202204122146161.png" alt=""></li>
+<li>$th$是异常分数的初始阈值</li>
+<li>$\gamma $是GPD的形状</li>
+<li>$\beta $是GPD的尺度参数</li>
+<li>$S$是$\left \{ S_{1},S_{2},…,S_{ {N}’ } \right \}$的任何值</li>
+<li>低于阈值$th$的部分被表示为$th − S$，根据经验设置一个低分位数</li>
+<li><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202204122156931.png" alt=""></li>
+<li>通过最大似然估计Maximum Likelihood Estimation(MLE)去估计参数$\hat{\gamma }和\hat{\beta  }$</li>
+<li>q是观测$S&lt;th$的概率</li>
+<li>${N}’$是观测的数量</li>
+<li>${N_{th}}’$是$S_i$的数量($S_i$&lt;th)</li>
+<li>对于POT方法，只有两个参数：低分位数(low quantile)和q需要调整，这两个参数能根据经验设置，例如低分位数小于7%，q是$10^{-4}$</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="5-异常解释"><a href="#5-异常解释" class="headerlink" title="5.异常解释"></a>5.异常解释</h4><ul>
+<li>目的：异常解释解决方案的目标是用重构概率排名前几位的单变量时间序列去解释检测到的实体异常，所以必须得到每个$x_t^{i}$的重构概率（i是$x_t$的第i个维度）。</li>
+<li>在OmniAnomaly模型里面，需要计算M维$x_t$的重构概率</li>
+<li>因为<img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202204130017891.png" alt=""></li>
+<li>所以<img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202204130017309.png" alt=""></li>
+<li>所以$x_t$的条件概率被分解成：<img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202204130017743.png" alt=""></li>
+<li>$p_{\theta }(x_t|z_{t-T:t})\sim \mathbb{N}(\mu _{x_t},\sigma _{x_t}^{2})$</li>
+<li>$S_t^{i}$是$x_t^{i}$的异常分数</li>
+<li><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202204130023336.png" alt=""></li>
+<li><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202204130023957.png" alt=""></li>
+<li>对于检测到的异常$x_t$，通过估计$x_t$每个维度的分布（也就是重构概率）来解释异常</li>
+<li>按照升序对$S_t^{i}$进行排序 ($1\leq i\leq M$)，形成列表$AS_T$</li>
+<li>$x_t^{i}$在列表$AS_T$里面的排名越高，则$S_t^{i}$越小，$x_t^{i}$到$x_t$的更高分布</li>
+<li>列表$AS_T$作为异常解释展现给运维人员，排名高的几个维度能为运维人员理解检测到的实体异常提供足够的线索</li>
+</ul>
+<h2 id="十一-实验experiments（作者是怎么通过实验证明自己的模型解决了问题）"><a href="#十一-实验experiments（作者是怎么通过实验证明自己的模型解决了问题）" class="headerlink" title="十一.实验experiments（作者是怎么通过实验证明自己的模型解决了问题）"></a>十一.实验experiments（作者是怎么通过实验证明自己的模型解决了问题）</h2><p><strong>1.数据集</strong></p>
+<p>在三个数据集上进行实验，证明OmniAnomaly的有效性</p>
+<ul>
+<li>SMD (Server Machine Dataset),</li>
+<li>SMAP (Soil Moisture Active Passive satellite) </li>
+<li>MSL (Mars Science Laboratory rover)</li>
+</ul>
+<p><strong>2.评价指标</strong></p>
+<ul>
+<li>Precision</li>
+<li>Recall</li>
+<li>F1-Score (denoted as F1)</li>
+</ul>
+<p>F1=<img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202204130042104.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202204130042825.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202204130042080.png" alt=""></p>
+<p><strong>2.实验结果：图和表是怎么证明作者解决了问题</strong></p>
+<p><strong>3.实验的步骤</strong></p>
+<p><strong>4.每个步骤得出的结论</strong></p>
+<p><strong>5.评价指标是什么</strong></p>
+<p><strong>6.作者的模型在哪些指标上好，在哪些指标不好</strong></p>
+<p><strong>7.作者和什么方法进行了对比，差距是什么</strong></p>
+<h2 id="十二-讨论"><a href="#十二-讨论" class="headerlink" title="十二.讨论"></a>十二.讨论</h2><h2 id="十一-作者重要的参考文献"><a href="#十一-作者重要的参考文献" class="headerlink" title="十一.作者重要的参考文献"></a>十一.作者重要的参考文献</h2><h2 id="十二-用自己的话写一段摘要总结复述文章的内容"><a href="#十二-用自己的话写一段摘要总结复述文章的内容" class="headerlink" title="十二.用自己的话写一段摘要总结复述文章的内容"></a>十二.用自己的话写一段摘要总结复述文章的内容</h2><h2 id="十三-思考这篇文章的不足之处-这篇文章还可以怎么改进"><a href="#十三-思考这篇文章的不足之处-这篇文章还可以怎么改进" class="headerlink" title="十三.思考这篇文章的不足之处 / 这篇文章还可以怎么改进"></a>十三.思考这篇文章的不足之处 / 这篇文章还可以怎么改进</h2><h2 id="十四-带着自己思考的问题去搜文献，看看有没有人研究过作者论文的不足之处-这篇论文之后有没有相关的工作对其进行改进"><a href="#十四-带着自己思考的问题去搜文献，看看有没有人研究过作者论文的不足之处-这篇论文之后有没有相关的工作对其进行改进" class="headerlink" title="十四.带着自己思考的问题去搜文献，看看有没有人研究过作者论文的不足之处 / 这篇论文之后有没有相关的工作对其进行改进**"></a>十四.带着自己思考的问题去搜文献，看看有没有人研究过作者论文的不足之处 / 这篇论文之后有没有相关的工作对其进行改进**</h2>
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2022/04/17/%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8%20AE/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109171644434.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109171644434.jpg">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                自编码器 AE</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2022/04/02/Deep-Learning-for-Anomaly-Detection-A-Review/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109171644434.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109171644434.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                Deep Learning for Anomaly Detection:A Review</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "K6UwYN6dMijp5h01cRysnTrG-gzGzoHsz",
+        appKey: "NI1nkxc4Yhim5rlut3lno7p5",
+        path: window.location.pathname,
+        placeholder: "欢迎评论哦 ..."
+      })
+  }
+</script>
+
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+          <a href="" class="profile gravatar"><img src="" itemprop="image" alt="" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="" itemprop="url" rel="author"></a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i></p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
+</div>
+
+
+
+    </div>    
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            // PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+    <!-- <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 Miaomiao<br>
+      powered_by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer> -->
+<footer id="colophon" class="site-footer" role="contentinfo">
+  <div class="site-info">
+    <div class="footertext">
+      <div class="img-preload">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/wordpress-rotating-ball-o.svg">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/disqus-preloader.svg">
+      </div>
+      <p style="color: #666666;">&copy 2020年</p>
+    </div>
+    <div class="footer-device">
+    <p style="font-family: 'Ubuntu', sans-serif;">
+	    <span style="color: #b9b9b9;">Miaomiao's Blog
+        </span>
+      </p>
+    </div>
+  </div><!-- .site-info -->
+</footer>
+
+
+
+<!-- <script src="/js/tocbot.js"></script> -->
+<script type="text/javascript" src="/js/lib.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/InsightSearch.js"></script>
+<script type="text/javascript" src="/js/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="/js/zoom.min.js"></script>
+<script type="text/javascript" src="/js/sakura-app.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine@1.3.4/dist/Valine.min.js'></script>
+<script src="/js/botui.js"></script>
+<!-- 不蒜子 网页计数器 -->
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script> -->
+<script type="text/javascript">
+/* <![CDATA[ */
+if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  var Poi = {"pjax":"1","movies":{"url": "https://www.bilibili.com/video/BV1sW411g7XC?from=search&seid=18438728832443631125","name":"Unbroken.mp4","live":"close"},"windowheight":"fixed","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+} else {
+  var Poi = {"pjax":"1","movies":{"url": "https://www.bilibili.com/video/BV1sW411g7XC?from=search&seid=18438728832443631125","name":"Unbroken.mp4","live":"open"},"windowheight":"auto","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+}
+/* ]]> */
+
+</script>
+<script>
+$(document).ready(function() {
+  if ($(".toc").length > 0 && document.body.clientWidth > 1200) {
+    if ($(".pattern-center").length > 0) { //有图的情况
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -400,
+          scrollSmoothOffset: -85
+      });
+    } else {
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -85,
+          scrollSmoothOffset: -85
+      });
+    }
+    var offsetTop = $('.toc').offset().top - 95;
+    window.onscroll = function() {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+      if (scrollTop >= offsetTop) {
+        $('.toc').addClass('toc-fixed');
+      } else {
+        $('.toc').removeClass('toc-fixed');
+      }
+    }
+  }
+});
+</script>
+
+    <div class="openNav no-select" style="height: 50px;">
+      <div class="iconflat no-select" style="width: 50px; height: 50px;">
+        <div class="icon"></div>
+      </div>
+      <div class="site-branding search-form-submit">
+        <i class="iconfont js-toggle-search iconsearch icon-search"></i>
+      </div>
+    </div>
+  </section>
+  <div id="mo-nav" class="">
+  <div class="m-avatar">
+    <img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109161806483.jpg">
+  </div>
+  <p style="text-align: center; color: #333; font-weight: 900; font-family: 'Ubuntu', sans-serif; letter-spacing: 1.5px">Miaomiao's Blog</p>
+  <p style="text-align: center; word-spacing: 20px;">
+    
+      
+        <a href="https://music.163.com/" class="fa " target="_blank" style="color: #; margin-left:20px"></a>
+      
+    
+  </p>
+  <ul id="menu-new-1" class="menu">
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+            首页
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/archives">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+            归档
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/categories/%E6%8A%80%E6%9C%AF/">
+                  <i class="fa fa-code" aria-hidden="true"></i>
+                  技术
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/%E7%A7%91%E7%A0%94/">
+                  <i class="fa fa-book" aria-hidden="true"></i>
+                  科研
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/%E6%9D%82%E9%A1%B9/">
+                  <i class="fa fa-heart" aria-hidden="true"></i>
+                  杂项
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/%E8%8F%9C%E8%B0%B1/">
+                  <i class="fa fa-angellist" aria-hidden="true"></i>
+                  菜谱
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/%E8%BD%AC%E8%BD%BD/">
+                  <i class="fa fa-share" aria-hidden="true"></i>
+                  转载
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="/links/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-link faa-shake" aria-hidden="true"></i>
+            友人帐
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+            关于
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/about/">
+                  <i class="fa fa-meetup" aria-hidden="true"></i>
+                  我？
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+  <p style="text-align: center; font-size: 13px; color: #b9b9b9;">&copy 2020 Miaomiao</p>
+</div>
+<button onclick="topFunction()" class="mobile-cd-top" id="moblieGoTop" title="Go to top" style="display: none;"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<!-- require MetingJS -->
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+<style>
+  .aplayer .aplayer-lrc {
+    height: 35px;
+  }
+  .aplayer .aplayer-lrc p{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px !important;
+  }
+  .aplayer .aplayer-lrc p.aplayer-lrc-current{
+    color: #FF1493;
+  }
+  .aplayer.aplayer-narrow .aplayer-body{
+    left: -66px !important;
+  }
+  .aplayer.aplayer-fixed .aplayer-lrc {
+    display: none;
+  }
+  .aplayer .aplayer-lrc.aplayer-lrc-hide {
+      display:none !important;
+  }
+  .aplayer.aplayer-fixed .lrc-show {
+    display: block;
+    background: rgba(255, 255, 255, 0.8);
+  }
+</style>
+<meting-js
+
+    id="2660651585"
+
+    server="netease"
+
+    type="playlist"
+
+    fixed="true"
+
+    autoplay="false"
+
+    loop="all"
+
+    order="random"
+
+    preload="auto"
+
+    volume="0.7"
+
+    mutex="true"
+
+</meting-js>
+<script>
+  $(function(){
+    $('body').on('click', '.aplayer', function(){
+      if($('.aplayer-button').hasClass('aplayer-play')) {
+        $('.aplayer-lrc').removeClass('lrc-show');
+      } else {
+        $('.aplayer-lrc').addClass('lrc-show');
+      }
+    })
+  });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":270,"height":400},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

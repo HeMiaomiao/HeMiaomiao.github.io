@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  
+  <title itemprop="name">ALSR:An adaptive label screening and relearning approach for interval-oriented anomaly detection | Miaomiao&#39;s Blog</title>
+  
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC" media="all">
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="stylesheet" id="saukra_css-css" href="/css/style.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/lib.min.css" media="all">
+  <link rel="stylesheet" href="/css/font.css" media="all">
+  <link rel="stylesheet" href="/css/insight.css" media="all">
+  <link rel="stylesheet" href="/css/jquery.fancybox.min.css" media="all">
+  <link rel="stylesheet" href="/css/zoom.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+  
+<!--   <link rel="stylesheet" id="saukra_css-css" href="https://2heng.xin/wp-content/cache/autoptimize/css/autoptimize_ad42a61f4c7d4bdd9f91afcff6b5dda5.css
+" type="text/css" media="all"> -->
+  <script>
+  /*Initial Variables*/
+  var mashiro_option = new Object();
+  var mashiro_global = new Object();
+  mashiro_option.NProgressON = true;
+  /* 
+   * 邮箱信息之类的东西可以填在这里，这些js变量基本都作用于sakura-app.js
+   * 这样的设置仅是为了方便在基于PHP开发的主题中设置js变量，既然移植到了Node上，我想或许可以精简这一逻辑吧
+   */
+  mashiro_option.email_domain = "";
+  mashiro_option.email_name = "";
+  mashiro_option.cookie_version_control = "";
+  mashiro_option.qzone_autocomplete = false;
+  mashiro_option.site_name = "Miaomiao's Blog";
+  mashiro_option.author_name = "Miaomiao's Blog";
+  mashiro_option.site_url = "https://hemiaomiao.github.io/";
+  mashiro_option.v_appId = "K6UwYN6dMijp5h01cRysnTrG-gzGzoHsz";
+  mashiro_option.v_appKey = "NI1nkxc4Yhim5rlut3lno7p5";
+  mashiro_option.mathjax = "1";
+  
+  mashiro_option.qq_api_url = "https://api.mashiro.top/qqinfo/"; 
+  mashiro_option.qq_avatar_api_url = "https://api.mashiro.top/qqinfo/";
+
+  // mashiro_option.jsdelivr_css_src = "https://cdn.jsdelivr.net/gh/moezx/cdn@3.4.5/css/lib.min.css";
+  // mashiro_option.float_player_on = true;
+
+  /*End of Initial Variables*/
+  </script>
+  <script type="text/javascript">
+  var bg = "https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109161805207.jpg".split(",");
+  var bgindex = Math.floor(Math.random()*bg.length);
+  if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+    alert('朋友，IE浏览器未适配哦~');
+  }
+  </script>
+  <style type="text/css">
+  .hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}
+  </style>
+  <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
+  </style>
+<meta name="generator" content="Hexo 5.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+
+<script src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/sakura.js"></script>
+<script src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+<script type="text/javascript">
+    var OriginTitile=document.title,st;
+	document.addEventListener("visibilitychange",function(){
+        document.hidden?(document.title="ヽ(●-`Д´-)ノ你要玩捉迷藏嘛",clearTimeout(st)):(document.title="(Ő∀Ő3)ノ好哦！",st=setTimeout(function(){document.title=OriginTitile},3e3))
+    })
+</script>
+<body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
+  <div class="scrollbar" id="bar">
+  </div>
+  <a href="#" class="cd-top faa-float animated"></a>
+  <section id="main-container">
+    <div class="headertop ">
+  <div id="banner_wave_1"></div>
+  <div id="banner_wave_2"></div>
+  <figure id="centerbg" class="centerbg">
+    <div class="focusinfo no-select">
+      <div class="header-tou">
+        <a href="https://hemiaomiao.github.io/">
+          <img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109161806483.jpg">
+        </a>
+      </div>
+      <div class="header-info">
+        <p>未来可期</p>
+        <div class="top-social_v2">
+          <li id="bg-pre">
+            <img class="flipx" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+          
+            
+              
+                <li>
+                  <a href="https://music.163.com/" target="_blank" class="social-github" title="wangyiyun">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/wangyiyun.png">
+                  </a>
+                </li>
+              
+            
+          
+          <li id="bg-next">
+            <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+        </div>
+      </div>
+    </div>
+  </figure>
+  <div id="video-container" style="">
+    <video style="object-fit: fill" id="bgvideo" class="video" video-name="" src="" width="auto" preload="auto">
+    </video>
+    <div id="video-btn" class="loadvideo videolive">
+    </div>
+    <div id="video-add">
+    </div>
+    <div class="video-stu">
+    </div>
+  </div>
+  <div class="headertop-down faa-float animated" onclick="headertop_down()">
+    <span>
+      <i class="fa fa-chevron-down" aria-hidden="true">
+      </i>
+    </span>
+  </div>
+</div>
+    <div id="page" class="site wrapper">
+      <header class="site-header no-select gizle sabit" role="banner">
+  <div class="site-top">
+    <div class="site-branding">
+      <span class="site-title">
+        <span class="logolink moe-mashiro">
+          <a href="/">
+            <span class="sakurasono"></span>
+            <span class="shironeko">Miaomiao&#39;s Blog</span>
+          </a>
+        </span>
+      </span>
+    </div>
+    <div class="searchbox search-form-submit">
+      <i class="iconfont js-toggle-search iconsearch icon-search">
+      </i>
+    </div>
+    <div id="show-nav" class="showNav mobile-fit">
+      <div class="line line1">
+      </div>
+      <div class="line line2">
+      </div>
+      <div class="line line3">
+      </div>
+    </div>
+    <div class="lower-cantiner">
+      <div class="lower">
+        <nav class="mobile-fit-control hide">
+          <ul id="menu-new" class="menu">
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+                    首页
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+                    归档
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/categories/%E6%8A%80%E6%9C%AF/">
+                          <i class="fa fa-code" aria-hidden="true"></i>
+                          技术
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/%E7%A7%91%E7%A0%94/">
+                          <i class="fa fa-book" aria-hidden="true"></i>
+                          科研
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/%E6%9D%82%E9%A1%B9/">
+                          <i class="fa fa-heart" aria-hidden="true"></i>
+                          杂项
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/%E8%8F%9C%E8%B0%B1/">
+                          <i class="fa fa-angellist" aria-hidden="true"></i>
+                          菜谱
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/%E8%BD%AC%E8%BD%BD/">
+                          <i class="fa fa-share" aria-hidden="true"></i>
+                          转载
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="/links/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-link faa-shake" aria-hidden="true"></i>
+                    友人帐
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+                    关于
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/about/">
+                          <i class="fa fa-meetup" aria-hidden="true"></i>
+                          我？
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109171644434.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109171644434.jpg">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      ALSR:An adaptive label screening and relearning approach for interval-oriented anomaly detection</h1>
+      <p class="entry-census">
+        <span>
+          <a href="https://hemiaomiao.github.io/">
+            <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/startdash/wangshiwu.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="https://hemiaomiao.github.io/">Miaomiao</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2022-3-31<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
+  </div>
+
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <h2 id="一-标题"><a href="#一-标题" class="headerlink" title="一.标题"></a>一.标题</h2><p>ALSR: An adaptive label screening and relearning approach for<br>interval-oriented anomaly detection</p>
+<h2 id="二-时间"><a href="#二-时间" class="headerlink" title="二.时间"></a>二.时间</h2><p>2019年</p>
+<h2 id="三-关键字"><a href="#三-关键字" class="headerlink" title="三.关键字"></a>三.关键字</h2><ul>
+<li>多类型KPI Multi-type KPIs</li>
+<li>异常检测 Anomaly Detection</li>
+<li>根因定位 Root Cause Location</li>
+<li>机器学习 Machine Learning</li>
+</ul>
+<h2 id="四-作者"><a href="#四-作者" class="headerlink" title="四.作者"></a>四.作者</h2><p>靖宇涵</p>
+<h2 id="五-文章来源"><a href="#五-文章来源" class="headerlink" title="五.文章来源"></a>五.文章来源</h2><p>会议论文：2019 IEEE Symposium on Computers and Communications (ISCC)</p>
+<h2 id="六-摘要Abstract（介绍作者在做什么-知道作者要研究什么）"><a href="#六-摘要Abstract（介绍作者在做什么-知道作者要研究什么）" class="headerlink" title="六.摘要Abstract（介绍作者在做什么 / 知道作者要研究什么）"></a>六.摘要Abstract（介绍作者在做什么 / 知道作者要研究什么）</h2><p><strong>1.研究背景 / 作者做这个研究的原因</strong></p>
+<p><strong>2.作者要解决的问题</strong></p>
+<p>当前的异常检测方法通常采用机器学习的方法，从单个时间点而非事件的角度进行异常检测，这类方法既没有有效地利用异常区间的标签，也没有关注异常点之间的差异性。因此，异常检测的性能不够精确，在实际应用中的效果有限。</p>
+<p><strong>3.作者解决这个问题的方法</strong></p>
+<p>提出了基于多阶段机器学习的连续区间异常检测模型 ALSR：它使用了一个标签筛选模型和一个再学习模型，标签筛选模型利用异常区间的连续性从训练集中移除一些不需要的数据。再学习模型利用随机森林算法对被检出的真/假异常进行重新分类，有效地减少了异常误报的数量。利用滑动窗口提取的多个特征组成的特征集被证明能很好地描述KPI时间序列的特征</p>
+<p><strong>4.作者模型的效果</strong></p>
+<p>在包含25项KPI数据的数据集上进行了综合实验，获得了0.965的F-score，优于现有的异常检测方案</p>
+<p><strong>5.结论Conclusion</strong></p>
+<ol>
+<li>基于多阶段机器学习的KPI异常检测模型，从算法层面直接考虑连续性异常区间的特点，提出的标签筛选算法与传统的单点异常检测或者变点异常检测不同，充分利用了异常区间内部具有明显异常特征的异常点。</li>
+<li>为了有效降低异常误报的频率，提出了再学习算法，从更细的粒度分析了被检出异常之间的差异性，在一定程度上修正了正常/异常二分类器的检测误差</li>
+</ol>
+<h2 id="七-引言Introduction"><a href="#七-引言Introduction" class="headerlink" title="七.引言Introduction"></a>七.引言Introduction</h2><p><strong>1.研究方向的背景 / 作者为什么要研究这个课题</strong></p>
+<p>有监督学习和无监督学习是AIOps中通常用的两种方法，无监督学习存在的问题是KPI的正常模式很难定义，例如单类SVM、生成模型等，可以在一定程度上模拟正常数据，但是模拟的正常数据和真实的正常数据之间的差异是不容忽视的。有监督学习的问题是很大程度上取决于标签的准确性。现有的基于监督机器学习的异常检测方法使用单独的时间点进行训练和检测，既不能有效地利用连续异常区间形式的异常标签，也没有分辨区间内部异常点之间的差异。使用未处理的、基于单点的异常训练和检测方案会降低标注数据的有效性。此外，忽略异常点之间的差异性也限制了异常检测方案的泛化性能。</p>
+<p><strong>2.研究现状</strong></p>
+<p><strong>3.作者要解决的问题是什么</strong></p>
+<p>在通常的异常检测场景中，异常时以事件、即连续异常区间的形式出现的。现有的异常检测方案主要使用两种方式进行异常检测：</p>
+<ol>
+<li>简单地使用单个时间点作为训练和检测的基本单位</li>
+<li>对异常区间进行变点检测，即关注异常区间的起始点和结束点，异常区间内部的点被完全忽略。</li>
+</ol>
+<p>两种方案都没有充分利用存在于连续性异常区间内部的异常点。</p>
+<p><strong>4.作者为什么要解决这个问题（作者研究这个问题的原因）</strong></p>
+<p><strong>5.作者提出的模型</strong></p>
+<p><strong>6.作者的模型是怎么解决问题的（作者的模型在做什么事情)</strong></p>
+<p>作者提出的多阶段KPI异常检测模型是使用标签筛选之后的数据进行训练，既对区间内部的异常点进行了差异化处理，同时又兼顾了异常区间内部点的有效利用。</p>
+<p><strong>7.作者的创新点</strong></p>
+<p>提出一种有监督的学习方法：基于多阶段机器学习的KPI异常检测模型。</p>
+<ol>
+<li>提出标签筛选算法：利用异常区间内部不同异常点之间的差异性来过滤训练数据，它在算法层面考虑了连续异常区间的特点，并且更加适用于面向区间的异常检测场景</li>
+<li>使用轻量级的再学习方案，分析被检出异常之间的差异性。它对被检出的异常误报和真实异常进行重新分类，从而在不降低召回率的基础上尽量提升精确率</li>
+<li>使用统计特征、时间序列模型等方案进行特征提取。精心选择的12项特征能够被应用于拥有不同变化模式的主流KPI类型，同时，中等量级的特征集合能够避免过度的特征冗余。</li>
+</ol>
+<h2 id="八-相关概念介绍"><a href="#八-相关概念介绍" class="headerlink" title="八.相关概念介绍"></a>八.相关概念介绍</h2><p>KPI时间序列数据可以从页面访问流量、在线人数、点击量等不同指标中获得，三种典型的KPI数据：强周期性KPI、稳定型KPI、波动型KPI，本文的KPI数据不考虑概念漂移，在典型的KPI异常检测场景，KPI异常数据往往以连续区间的形式存在，即异常一旦出现，就会持续一段时间，而不是仅仅存在于单独的时间点，同时，在实际的异常报警中，运维人员更关注每一个异常事件(连续异常区间)的检出，而非每一个异常点的检出。因此，连续区间KPI异常的检出有别于单点异常的检出。算法可以不必精确地确定每一个发生异常的时间点，但是应当在事件的规模上进行准确度更高的异常检测。</p>
+<p>单KPI指标数据的异常检测：</p>
+<p>常见的机器学习算法有随机森林、深度神经网络、支持向量机等。</p>
+<p>基于时间序列预测的算法：常见的有ARIMA模型，机器学习算法有循环神经网络、LSTM等</p>
+<p>机器学习在KPI异常检测的应用：</p>
+<p>1.监督学习模型：在有标签的场景中，异常检测可以概况为正常/异常的二分类问题，有两种方法</p>
+<p>(1) 基于时间序列预测值和阈值结合进行判断<br>(2) 通过分类器的算法模型：支持向量机SVM，全连接的多层感知机 DNN</p>
+<p>2.无监督学习模型</p>
+<p>(1) 生成模型：GAN、变分自编码器 VAE、隐马尔可夫模型 HMM<br>(2) 单类分类器：单类支持向量机 OCSVM”</p>
+<h2 id="九-作者提出的模型"><a href="#九-作者提出的模型" class="headerlink" title="九.作者提出的模型"></a>九.作者提出的模型</h2><ul>
+<li>基于多阶段机器学习的KPI异常检测模型由特征提取、标签筛选模型、基础DNN模型、再学习模型四个部分组成。</li>
+<li>为了在连续异常区间中自适应地识别和移除冗余的异常点，提出了基于DNN网络的标签筛选模型，这样充分考虑了异常点之间的差异，尽可能多地利用了具有更高重要性的异常点</li>
+<li>被检测器分类为异常的点会存在一些误报，所以提出了对被检出异常进行进一步重新分类的再学习模型。</li>
+<li>标签筛选模型主要针对连续异常区间的特点，将异常区间中少部分不能展现出异常特征的点移除，使得后续模型对于区间内的异常特征有更准确的识别。</li>
+<li>基础DNN模型则使用基于深度神经网络设计的全连接结构，负责进行正常/异常点的分类工作。</li>
+<li>最后的再学习模型则是在小范围内对基础DNN模型检出的异常点做进一步的筛查，以便去除可能存在的少量假正例</li>
+</ul>
+<h4 id="1-特征提取"><a href="#1-特征提取" class="headerlink" title="1.特征提取"></a>1.特征提取</h4><p>使用滑动窗口提取特征，模型使用了12项特征</p>
+<ol>
+<li>值：标准化的原始KPI值</li>
+<li>统计特征：均值、方差、极差、四分位数、差分等（原始值和统计特征用于分析KPI数据的短期特征）</li>
+<li>时间序列预测特征：指数加权移动平均 EWMA预测、AR预测等（时间序列预测结果用于在一定程度上衡量数据的异常可能性）</li>
+<li>小波分析特征：Db2小波分解（小波分解用于分析KPI数据在频率域上的特征）</li>
+</ol>
+<h4 id="2-标签筛选方案设计"><a href="#2-标签筛选方案设计" class="headerlink" title="2.标签筛选方案设计"></a>2.标签筛选方案设计</h4><p>使用滑动窗口提取特征产生的训练集被用于标签筛选模型，在标签筛选模型训练之后，被判断为冗余的异常点将会从原始的训练集中被移除，标签筛选模型的分类结果会被保留。</p>
+<p>(1) 冗余的异常点：异常区间开始的T个时间戳之外的假负例的点，即异常区间中少部分不能展现出异常特征的点。     </p>
+<p>(2) 标签筛选模型：使用具有全连接结构的DNN网络，标签筛选模型的分类结果包含四类，真正例、假正例、真负例、假负例</p>
+<ul>
+<li>真正例 True Positive：对于一段标记的连续异常区间，如果异常检测算法在该连续异常区间开始后的T个时间戳之内检测到了该连续异常区间，则认为此异常检测算法成功地检测到了整段连续异常区间，因此该异常区间内的每一个异常点都记作面向区间的真正例。</li>
+<li>假负例 False Negative：对于一段标记的连续异常区间，如果异常检测算法在该连续异常区间开始后的T个时间戳之外检测到了该连续异常区间，则该异常区间内的每一个异常点都记作面向区间的假负例。</li>
+<li>假正例 False Positive：对于一个没有标记异常的时间点，如果异常检测算法检测出了异常，则记作假正例。</li>
+<li>真负例 True Negative：对于一个没有标记异常的时间点，如果异常检测算法没有检测出了异常，则记作真负例）。</li>
+</ul>
+<h4 id="3-基础DNN模型"><a href="#3-基础DNN模型" class="headerlink" title="3.基础DNN模型"></a>3.基础DNN模型</h4><p>标签筛选模型筛选过的训练集被用于基础DNN模型的训练，基础DNN模型的输出是正常和异常的分类概率</p>
+<h4 id="4-再学习方案设计"><a href="#4-再学习方案设计" class="headerlink" title="4.再学习方案设计"></a>4.再学习方案设计</h4><p>将基础DNN模型输出的分类概率加入到标签筛选模型筛选过的训练集中，按照一定比例和数量随机从基础DNN模型输出的真正例、假正例、真负例中采样，组成再学习模型的训练集，进行再学习模型的训练，再学习模型使用随机森林算法。</p>
+<p><strong>*注：</strong> 标签筛选模型和基础DNN模型的目的是进行正常/异常点的分类，再学习的对象是基础DNN模型检测出的异常点，这些异常点存在误报，去除可能存在的假正例，再学习模型是一个假正例/真正例的分类器。</p>
+<h4 id="5-连续区间异常检测评价指标"><a href="#5-连续区间异常检测评价指标" class="headerlink" title="5.连续区间异常检测评价指标"></a>5.连续区间异常检测评价指标</h4><p>精确率、召回率、F-score，根据精确率和召回率绘制的PR曲线</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hemiaomiao/cdn/blogImage/202203310826022.png" alt=""></p>
+<h2 id="十-实验experiments（作者是怎么通过实验证明自己的模型解决了问题）"><a href="#十-实验experiments（作者是怎么通过实验证明自己的模型解决了问题）" class="headerlink" title="十.实验experiments（作者是怎么通过实验证明自己的模型解决了问题）"></a>十.实验experiments（作者是怎么通过实验证明自己的模型解决了问题）</h2><p><strong>1.数据集</strong></p>
+<p>iops.ai官网公开的预赛训练集和决赛训练集，选择了其中的25条KPI曲线，分成三组，12项强周期型KPI数据，6项稳定型数据、7项波动型KPI数据</p>
+<p><strong>2.评价指标是什么</strong></p>
+<p>F-score和AUCPR值(PR曲线下的面积)作为衡量异常检测的表现效果，AUCPR值越大表示异常检测效果越好，PR曲线越接近右上角，表示同时具有更高的精确率和召回率。<br>(PR曲线：精确率和召回率曲线)</p>
+<p><strong>3.实验的步骤</strong></p>
+<p>把支持向量机 SVM、长短期记忆网络LSTM、随机森林RF、Opprentice和多阶段KPI异常检测模型在三组数据集上作对比实验</p>
+<p><strong>4.实验结果：图和表是怎么证明作者解决了问题</strong></p>
+<p>多阶段KPI异常检测模型ALSR具有更好的稳定性，ALSR在总体数据集上的F-score是0.965，优于其它算法</p>
+<h2 id="十一-这篇文章存在哪些缺陷"><a href="#十一-这篇文章存在哪些缺陷" class="headerlink" title="十一.这篇文章存在哪些缺陷"></a>十一.这篇文章存在哪些缺陷</h2><p>1.本文主要讨论了三种主流的KPI类型，在实际场景中，还有很多其他变化类型的KPI，对于异常检测算法可以进一步讨论同一个模型对于不同类型的KPI的通用性，以及多种异常检测模型的自适应选择方案，从而应对复杂多变的实际运维场景<br>2.有监督学习往往准确度高，但是对标签有依赖性，实际应用中很难获取大量标签，无监督学习不需要标签，但是因为缺乏参照，阈值和参数很难确定，实际场景中可能只存在少量标签的异常检测需求，可以考虑把有监督学习和无监督学习算法结合，使用无监督学习降低对标签的依赖性，同时使用少量的标签和用户反馈进行有监督学习。</p>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/links.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2022/03/31/%E5%9F%BA%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B%E7%AE%97%E6%B3%95%E7%A0%94%E7%A9%B6/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109171644434.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109171644434.jpg">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                基于深度学习的时序数据异常检测算法研究</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2022/03/31/%E5%9F%BA%E4%BA%8E%E5%A4%9A%E9%98%B6%E6%AE%B5%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84KPI%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B%E4%B8%8E%E7%9B%B8%E5%85%B3%E6%80%A7%E6%A8%A1%E5%9E%8B%E7%A0%94%E7%A9%B6/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109171644434.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109171644434.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                基于多阶段机器学习的KPI异常检测与相关性模型研究</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "K6UwYN6dMijp5h01cRysnTrG-gzGzoHsz",
+        appKey: "NI1nkxc4Yhim5rlut3lno7p5",
+        path: window.location.pathname,
+        placeholder: "欢迎评论哦 ..."
+      })
+  }
+</script>
+
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+          <a href="https://hemiaomiao.github.io/" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/startdash/wangshiwu.jpg" itemprop="image" alt="Miaomiao" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="https://hemiaomiao.github.io/" itemprop="url" rel="author">Miaomiao</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>坚持</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
+</div>
+
+
+
+    </div>    
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            // PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+    <!-- <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 Miaomiao<br>
+      powered_by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer> -->
+<footer id="colophon" class="site-footer" role="contentinfo">
+  <div class="site-info">
+    <div class="footertext">
+      <div class="img-preload">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/wordpress-rotating-ball-o.svg">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/disqus-preloader.svg">
+      </div>
+      <p style="color: #666666;">&copy 2020年</p>
+    </div>
+    <div class="footer-device">
+    <p style="font-family: 'Ubuntu', sans-serif;">
+	    <span style="color: #b9b9b9;">Miaomiao's Blog
+        </span>
+      </p>
+    </div>
+  </div><!-- .site-info -->
+</footer>
+
+
+
+<!-- <script src="/js/tocbot.js"></script> -->
+<script type="text/javascript" src="/js/lib.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/InsightSearch.js"></script>
+<script type="text/javascript" src="/js/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="/js/zoom.min.js"></script>
+<script type="text/javascript" src="/js/sakura-app.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine@1.3.4/dist/Valine.min.js'></script>
+<script src="/js/botui.js"></script>
+<!-- 不蒜子 网页计数器 -->
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script> -->
+<script type="text/javascript">
+/* <![CDATA[ */
+if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  var Poi = {"pjax":"1","movies":{"url": "https://www.bilibili.com/video/BV1sW411g7XC?from=search&seid=18438728832443631125","name":"Unbroken.mp4","live":"close"},"windowheight":"fixed","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+} else {
+  var Poi = {"pjax":"1","movies":{"url": "https://www.bilibili.com/video/BV1sW411g7XC?from=search&seid=18438728832443631125","name":"Unbroken.mp4","live":"open"},"windowheight":"auto","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+}
+/* ]]> */
+
+</script>
+<script>
+$(document).ready(function() {
+  if ($(".toc").length > 0 && document.body.clientWidth > 1200) {
+    if ($(".pattern-center").length > 0) { //有图的情况
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -400,
+          scrollSmoothOffset: -85
+      });
+    } else {
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -85,
+          scrollSmoothOffset: -85
+      });
+    }
+    var offsetTop = $('.toc').offset().top - 95;
+    window.onscroll = function() {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+      if (scrollTop >= offsetTop) {
+        $('.toc').addClass('toc-fixed');
+      } else {
+        $('.toc').removeClass('toc-fixed');
+      }
+    }
+  }
+});
+</script>
+
+    <div class="openNav no-select" style="height: 50px;">
+      <div class="iconflat no-select" style="width: 50px; height: 50px;">
+        <div class="icon"></div>
+      </div>
+      <div class="site-branding search-form-submit">
+        <i class="iconfont js-toggle-search iconsearch icon-search"></i>
+      </div>
+    </div>
+  </section>
+  <div id="mo-nav" class="">
+  <div class="m-avatar">
+    <img src="https://cdn.jsdelivr.net/gh/HeMiaomiao/cdn/blogImage/202109161806483.jpg">
+  </div>
+  <p style="text-align: center; color: #333; font-weight: 900; font-family: 'Ubuntu', sans-serif; letter-spacing: 1.5px">Miaomiao's Blog</p>
+  <p style="text-align: center; word-spacing: 20px;">
+    
+      
+        <a href="https://music.163.com/" class="fa " target="_blank" style="color: #; margin-left:20px"></a>
+      
+    
+  </p>
+  <ul id="menu-new-1" class="menu">
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+            首页
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/archives">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+            归档
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/categories/%E6%8A%80%E6%9C%AF/">
+                  <i class="fa fa-code" aria-hidden="true"></i>
+                  技术
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/%E7%A7%91%E7%A0%94/">
+                  <i class="fa fa-book" aria-hidden="true"></i>
+                  科研
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/%E6%9D%82%E9%A1%B9/">
+                  <i class="fa fa-heart" aria-hidden="true"></i>
+                  杂项
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/%E8%8F%9C%E8%B0%B1/">
+                  <i class="fa fa-angellist" aria-hidden="true"></i>
+                  菜谱
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/%E8%BD%AC%E8%BD%BD/">
+                  <i class="fa fa-share" aria-hidden="true"></i>
+                  转载
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="/links/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-link faa-shake" aria-hidden="true"></i>
+            友人帐
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+            关于
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/about/">
+                  <i class="fa fa-meetup" aria-hidden="true"></i>
+                  我？
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+  <p style="text-align: center; font-size: 13px; color: #b9b9b9;">&copy 2020 Miaomiao</p>
+</div>
+<button onclick="topFunction()" class="mobile-cd-top" id="moblieGoTop" title="Go to top" style="display: none;"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<!-- require MetingJS -->
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+<style>
+  .aplayer .aplayer-lrc {
+    height: 35px;
+  }
+  .aplayer .aplayer-lrc p{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px !important;
+  }
+  .aplayer .aplayer-lrc p.aplayer-lrc-current{
+    color: #FF1493;
+  }
+  .aplayer.aplayer-narrow .aplayer-body{
+    left: -66px !important;
+  }
+  .aplayer.aplayer-fixed .aplayer-lrc {
+    display: none;
+  }
+  .aplayer .aplayer-lrc.aplayer-lrc-hide {
+      display:none !important;
+  }
+  .aplayer.aplayer-fixed .lrc-show {
+    display: block;
+    background: rgba(255, 255, 255, 0.8);
+  }
+</style>
+<meting-js
+
+    id="2660651585"
+
+    server="netease"
+
+    type="playlist"
+
+    fixed="true"
+
+    autoplay="false"
+
+    loop="all"
+
+    order="random"
+
+    preload="auto"
+
+    volume="0.7"
+
+    mutex="true"
+
+</meting-js>
+<script>
+  $(function(){
+    $('body').on('click', '.aplayer', function(){
+      if($('.aplayer-button').hasClass('aplayer-play')) {
+        $('.aplayer-lrc').removeClass('lrc-show');
+      } else {
+        $('.aplayer-lrc').addClass('lrc-show');
+      }
+    })
+  });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":270,"height":400},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
